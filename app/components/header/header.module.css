@@ -1,0 +1,39 @@
+.header {
+    position: fixed;
+    right: 20px;
+    left: 20px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+
+    padding: 20px 0;
+    height: 120px;
+
+    transition: height 0.3s;
+    background-color: var(--clr2);
+}
+
+.logoMenu {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 50px;
+
+    transition: gap 0.3s;
+}
+
+.scrolled {
+    height: 60px;
+}
+
+.header.scrolled .logoMenu {
+    gap: 0;
+}
+
+@media screen and (max-width: 1230px) {
+    .logoMenu {
+        gap: 20px;
+    }
+}

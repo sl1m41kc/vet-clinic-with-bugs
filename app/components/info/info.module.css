@@ -1,0 +1,38 @@
+.address {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.info {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+}
+
+.text {
+    color: var(--clr1);
+    font-size: 0.875rem;
+}
+
+.phone {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+
+    padding: 10px 20px;
+
+    background-color: var(--clr1);
+    color: var(--clr2);
+    border-radius: 30px;
+}
+
+@media screen and (max-width: 1230px) {
+    .info {
+        gap: 20px;
+    }
+
+    .address {
+        gap: 10px;
+    }
+}

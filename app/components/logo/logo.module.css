@@ -1,0 +1,60 @@
+.logo {
+    position: relative;
+    height: 100px;
+    width: 400px;
+
+    transition: width 0.3s, height 0.3s;
+}
+
+.scrolled {
+    height: 60px;
+    width: 300px;
+}
+
+@media screen and (max-width: 1230px) {
+    .logo {
+        height: 80px;
+        width: 350px;
+    }
+
+    .scrolled {
+        height: 60px;
+        width: 300px;
+    }
+}
+
+@media screen and (max-width: 1080px) {
+    .logo {
+        height: 70px;
+        width: 300px;
+    }
+
+    .scrolled {
+        height: 60px;
+        width: 300px;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .logo {
+        height: 80px;
+        width: 350px;
+    }
+
+    .scrolled {
+        height: 60px;
+        width: 300px;
+    }
+}
+
+@media screen and (max-width: 430px) {
+    .logo {
+        height: 60px;
+        width: 300px;
+    }
+
+    .scrolled {
+        height: 50px;
+        width: 280px;
+    }
+}
