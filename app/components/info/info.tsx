@@ -1,13 +1,18 @@
-import React from "react";
+import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 
 import location from "/public/location.svg";
 import phone from "/public/phone_iphone.svg";
+import bluePhone from '/public/phone_iphone_blue.svg'
 
 import styles from './info.module.css'
 
 const Info = () => {
+  const [image, setImage] = useState(phone)
+
+  const mouseEnter = () => setImage(bluePhone)
+  const mouseLeave = () => setImage(phone)
   return (
     <div className={styles.info}>
       <div className={styles.address}>
@@ -23,8 +28,8 @@ const Info = () => {
           Большевистская, 132
         </p>
       </div>
-      <Link className={styles.phone} href="tel:+7 (383) 285-02-04">
-        <Image src={phone} alt="phone" /> +7 (383) 285-02-04
+      <Link onMouseEnter={mouseEnter} onMouseLeave={mouseLeave} className={styles.phone} href="tel:+7 (383) 285-02-04">
+        <Image src={image} alt="phone" /> +7 (383) 285-02-04
       </Link>
     </div>
   );
