@@ -26,7 +26,7 @@
     color: var(--clr2);
     border-radius: 30px;
 
-    transition: background-color 0.5s, color 0.5s, transform 0.5s;
+    transition: background-color 0.3s, color 0.3s, transform 0.3s;
 }
 
 .phone:hover {
@@ -36,7 +36,7 @@
 }
 
 .phone:active {
-    transform: scale(0.95);
+    transform: scale(0.99);
 }
 
 @media screen and (max-width: 1230px) {

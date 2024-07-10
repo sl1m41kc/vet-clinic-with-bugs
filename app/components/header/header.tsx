@@ -28,7 +28,7 @@ const Header = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  if (width <= 1024)
+  if (width < 1025)
     return (
       <header className={clsx(styles.header, { [styles.scrolled]: isScrolled })}>
         <div className={styles.logoMenu}>

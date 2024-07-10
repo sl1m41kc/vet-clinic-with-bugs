@@ -1,0 +1,40 @@
+.arrowButton {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+
+    padding: 10px 20px;
+
+    color: var(--clr1);
+    border-radius: 30px;
+
+    transition: background-color 0.3s, color 0.3s, transform 0.3s;
+}
+
+.changedColor {
+    background-color: none;
+    border: 1px solid var(--clr4);
+}
+
+.changedColor:hover {
+    color: var(--clr2);
+    background-color: var(--clr1);
+    transform: scale(1.05);
+}
+
+.changedColor:active {
+    transform: scale(0.99);
+}
+
+.notChangedColor {
+    background-color: var(--clr2);
+}
+
+.notChangedColor:hover {
+    background-color: var(--clr3);
+    transform: scale(1.05);
+}
+
+.notChangedColor:active {
+    transform: scale(0.99);
+}
