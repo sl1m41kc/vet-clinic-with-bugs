@@ -11,6 +11,12 @@
     transition: background-color 0.3s, color 0.3s, transform 0.3s;
 }
 
+.arrow {
+    width: 24px;
+    height: 24px;
+    fill: var(--clr1);
+}
+
 .changedColor {
     background-color: none;
     border: 1px solid var(--clr4);

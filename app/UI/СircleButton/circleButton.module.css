@@ -1,0 +1,40 @@
+.circleButton {
+    border-radius: 100%;
+    border: 1px solid var(--clr4);
+    padding: 15px;
+
+    background-color: none;
+}
+
+.arrow {
+    transition: transform 0.3s;
+}
+
+.arrow_img {
+    transform: rotate(-45deg);
+
+}
+
+.arrow:hover {
+    background-color: var(--clr3);
+    border: none;
+    transform: scale(1.05);
+}
+
+.arrow:active {
+    transform: scale(0.99);
+}
+
+.cross {
+    transition: transform 0.3s;
+}
+
+.cross:hover {
+    background-color: var(--clr2);
+    border: 1px solid var(--clr6);
+    transform: scale(1.05);
+}
+
+.cross:active {
+    transform: scale(0.99);
+}

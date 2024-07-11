@@ -1,15 +1,13 @@
 .header {
     position: fixed;
-    right: 20px;
-    left: 20px;
 
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: 10px;
 
-    padding: 20px 0;
-    height: 120px;
+    padding: 20px;
+    width: 100%;
 
     transition: height 0.3s;
     background-color: var(--clr2);
@@ -27,7 +25,7 @@
 }
 
 .scrolled {
-    height: 60px;
+    padding: 10px 20px;
 }
 
 .header.scrolled .logoMenu {
@@ -37,5 +35,14 @@
 @media screen and (max-width: 1230px) {
     .logoMenu {
         gap: 20px;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .header {
+        padding: 10px;
+    }
+    .scrolled {
+        padding: 5px 10px;
     }
 }

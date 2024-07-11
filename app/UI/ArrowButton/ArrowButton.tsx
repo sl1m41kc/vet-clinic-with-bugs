@@ -8,20 +8,22 @@ import whiteArrow from "/public/arrow_forward_white.svg";
 import styles from "./arrowButton.module.css";
 import clsx from "clsx";
 
-const ArrowButton = ({
-  text,
-  arrowChange,
-}: {
+interface IProps {
   text: string;
   arrowChange: boolean;
-}) => {
+}
+
+const ArrowButton = ({ text, arrowChange }: IProps) => {
   const [arrow, setArrow] = useState(blueArrow);
 
   const mouseEnter = () => setArrow(whiteArrow);
   const mouseLeave = () => setArrow(blueArrow);
   return (
     <button
-      className={clsx(styles.arrowButton, {[styles.changedColor]: arrowChange, [styles.notChangedColor]: !arrowChange})}
+      className={clsx(styles.arrowButton, {
+        [styles.changedColor]: arrowChange,
+        [styles.notChangedColor]: !arrowChange,
+      })}
       onMouseEnter={() => {
         if (arrowChange) mouseEnter();
       }}
@@ -30,7 +32,7 @@ const ArrowButton = ({
       }}
     >
       {text}
-      <Image src={arrow} alt="A_dog_runs_against_the_background_of_a_park" />
+      <Image src={arrow} alt="стрелка" />
     </button>
   );
 };

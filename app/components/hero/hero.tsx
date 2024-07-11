@@ -4,7 +4,7 @@ import Image from "next/image";
 import hero from "/public/hero.png";
 
 import styles from "./hero.module.css";
-import ArrowButton from "../arrowButton/arrowButton";
+import ArrowButton from "@/app/UI/ArrowButton/ArrowButton";
 
 const Hero = () => {
   return (
@@ -14,7 +14,7 @@ const Hero = () => {
         className={styles.img}
         fill
         src={hero}
-        alt="a_dog_runs_in_the_background_of_the_park"
+        alt="собака бежит на фоне парка"
         priority
         placeholder="blur"
       />

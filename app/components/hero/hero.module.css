@@ -56,12 +56,12 @@
 }
 
 .discount {
-    font-size: 4rem;
+    font-size: 4em;
     font-weight: bold;
 }
 
 .term {
-    font-size: 1.125rem;
+    font-size: 1.125em;
 }
 
 @media (orientation: portrait) {
