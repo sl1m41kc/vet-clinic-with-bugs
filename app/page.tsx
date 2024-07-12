@@ -1,7 +1,9 @@
-import Header from "./components/Header/Header";
-import Hero from "./components/Hero/Hero";
+import Header from "@/app/components/Header/Header";
+import Hero from "@/app/components/Hero/Hero";
 
+import GridAdvantages from "./components/GridAdvantages/GridAdvantages";
 import "./globals.css";
+
 
 export default function Home() {
   return (
@@ -9,9 +11,7 @@ export default function Home() {
       <Header />
       <div className="container">
         <Hero />
-        <div className="h-screen flex items-center justify-center bg-green-100">
-          content
-        </div>
+        <GridAdvantages/>
         <div className="h-screen flex items-center justify-center bg-green-100">
           content
         </div>

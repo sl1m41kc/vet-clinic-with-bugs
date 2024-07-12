@@ -18,7 +18,9 @@ body {
 .container {
     width: min(1400px, 100%);
     margin-inline: auto;
+    padding-top: 100px;
     padding-inline: 20px;
+
 }
 
 @media screen and (max-width: 1030px) {

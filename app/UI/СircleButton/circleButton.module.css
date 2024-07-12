@@ -10,7 +10,7 @@
     transition: transform 0.3s;
 }
 
-.arrow_img {
+.arrow_icon {
     transform: rotate(-45deg);
 
 }

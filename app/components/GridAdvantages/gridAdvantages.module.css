@@ -1,0 +1,44 @@
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    height: 500px;
+}
+
+.block1{
+    background-color: red;
+    height: 100%;
+}
+
+.block2{
+    background-color: green;
+    height: 100%;
+}
+
+.block3{
+    grid-column: 3;
+    background-color: yellow;
+    max-height: 250px;
+    height: 100%;
+}
+
+.block4 {
+    grid-column: 3;
+    background-color: yellow;
+    max-height: 250px;
+    height: 100%;
+}
+
+@media screen and (max-width: 1200px) {
+    .grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .block3{
+        grid-column: 1;
+
+    }
+    
+    .block4 {
+        grid-column: 2;
+    }
+}

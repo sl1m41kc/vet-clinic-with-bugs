@@ -1,9 +1,8 @@
 import React from "react";
-import Image from "next/image";
 import clsx from "clsx";
 
-import arrow from "/public/arrow_forward_blue.svg";
-import cross from "/public/close.svg";
+import ArrowSVG from '/public/arrow_forward_blue.svg'
+import CrossSVG from '/public/close.svg'
 
 import styles from "./circleButton.module.css";
 
@@ -15,11 +14,12 @@ const CircleButton = ({ image }: IProps) => {
   return (
     <button
       className={clsx(styles.circleButton, {
-        [styles.arrow]: image === arrow,
-        [styles.cross]: image === cross
+        [styles.arrow]: image === 'arrow',
+        [styles.cross]: image === 'cross'
       })}
     >
-      <Image className={clsx({[styles.arrow_img]: image === arrow})} src={image} alt="" />
+      {/* <Image className={clsx({[styles.arrow_img]: image === arrow})} src={image} alt="" /> */}
+      {image === 'arrow' ? <ArrowSVG className={styles.arrow_icon}/> : <CrossSVG/>}
     </button>
   );
 };

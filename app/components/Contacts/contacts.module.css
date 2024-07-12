@@ -29,10 +29,20 @@
     transition: background-color 0.3s, color 0.3s, transform 0.3s;
 }
 
+.icon {
+    fill: var(--clr2);
+
+    transition: fill 0.3s;
+}
+
 .phone:hover {
     background-color: var(--clr3);
     color: var(--clr1);
     transform: scale(1.05);
+}
+
+.phone:hover .icon{
+    fill: var(--clr1);
 }
 
 .phone:active {

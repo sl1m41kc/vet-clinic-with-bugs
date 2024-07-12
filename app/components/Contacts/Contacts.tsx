@@ -1,22 +1,18 @@
-import React, { useState } from "react";
-import Image from "next/image";
+import React from "react";
 import Link from "next/link";
 
-import location from "/public/location.svg";
-import phone from "/public/phone_iphone.svg";
-import bluePhone from "/public/phone_iphone_blue.svg";
+import LocationSVG from "/public/location.svg";
+import PhoneSVG from "/public/phone_iphone.svg";
 
 import styles from "./contacts.module.css";
+import clsx from "clsx";
 
 const Info = () => {
-  const [image, setImage] = useState(phone);
 
-  const mouseEnter = () => setImage(bluePhone);
-  const mouseLeave = () => setImage(phone);
   return (
     <div className={styles.info}>
       <div className={styles.address}>
-        <Image src={location} alt="локация иконка" />
+        <LocationSVG />
         <p className={styles.text}>
           Красный проспект, 169/1
           <br />
@@ -29,12 +25,10 @@ const Info = () => {
         </p>
       </div>
       <Link
-        onMouseEnter={mouseEnter}
-        onMouseLeave={mouseLeave}
         className={styles.phone}
         href="tel:+73832850204"
       >
-        <Image src={image} alt="телефон иконка" /> +7 (383) 285-02-04
+        <PhoneSVG className={styles.icon}/> +7 (383) 285-02-04
       </Link>
     </div>
   );
