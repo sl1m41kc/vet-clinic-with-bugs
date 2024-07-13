@@ -4,11 +4,12 @@ import Image from "next/image";
 import hero from "/public/hero.png";
 
 import styles from "./hero.module.css";
+import '@/app/globals.css'
 import ArrowButton from "@/app/UI/ArrowButton/ArrowButton";
 
 const Hero = () => {
   return (
-    <div className={styles.hero}>
+    <div className={`container ${styles.hero}`}>
       <div className={styles.blackout}></div>
       <Image
         className={styles.img}

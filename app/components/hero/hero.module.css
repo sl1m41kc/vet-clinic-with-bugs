@@ -3,7 +3,7 @@
 
     display: flex;
     align-items: center;
-    margin-top: 40px;
+    margin-top: 140px;
     height: 500px;
     width: 100%;
 
@@ -66,5 +66,6 @@
     .hero {
         align-items: flex-end;
         justify-content: center;
+        margin-top: 100px;
     }
 }
