@@ -3,22 +3,26 @@
     grid-template-columns: 36fr 36fr 24fr;
     grid-template-rows: 1fr 1fr;
     gap: 20px;
+
+    width: 100%;
+    height: auto;
 }
 
-.block1{
-    background-color: red;
+.block{
     width: 100%;
-    height: 240px;
+    height: 250px;
 }
 
 .gridCard {
     grid-row: span 2;
-    height: 500px;
+    width: 100%;
+    height: 520px;
 }
 
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 1280px) {
     .grid {
         grid-template-columns: 36fr 36fr;
+        grid-template-rows: auto;
     }
 
     .gridCard {
@@ -26,7 +30,7 @@
     }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1024px) {
     .grid {
         grid-template-columns: 36fr;
     }

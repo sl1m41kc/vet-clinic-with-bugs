@@ -1,18 +1,18 @@
 .circleButton {
     border-radius: 100%;
     border: 1px solid var(--clr4);
-    padding: 15px;
+    padding: 9px;
 
     background-color: none;
 }
 
 .arrow {
-    transition: transform 0.3s;
+    transition: transform 0.3s, background-color 0.3s;
 }
 
 .arrow_icon {
     transform: rotate(-45deg);
-
+    fill: var(--clr1);
 }
 
 .arrow:hover {
@@ -26,7 +26,7 @@
 }
 
 .cross {
-    transition: transform 0.3s;
+    transition: transform 0.3s, background-color 0.3s;
 }
 
 .cross:hover {
