@@ -13,6 +13,7 @@
 
 body {
     font-size: 16px;
+    margin-inline: 20px;
 }
 
 .container {
@@ -21,14 +22,14 @@ body {
     margin-bottom: 20px;
 }
 
-@media screen and (max-width: 1030px) {
+@media (max-width: 1030px) {
     body {
         font-size: 14px;
     }
 }
 
-@media screen and (max-width: 670px) {
+@media (max-width: 670px) {
     body {
-        padding-inline: 10px;
+        margin-inline: 10px;
     }
 }

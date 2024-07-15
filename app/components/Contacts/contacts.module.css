@@ -49,7 +49,7 @@
     transform: scale(0.99);
 }
 
-@media screen and (max-width: 1230px) {
+@media (max-width: 1230px) {
     .info {
         gap: 20px;
     }

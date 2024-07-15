@@ -5,7 +5,6 @@ import LocationSVG from "/public/location.svg";
 import PhoneSVG from "/public/phone_iphone.svg";
 
 import styles from "./contacts.module.css";
-import clsx from "clsx";
 
 const Info = () => {
 

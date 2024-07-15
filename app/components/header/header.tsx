@@ -5,7 +5,7 @@ import useResize from "@/app/hooks/useResize";
 import useScroll from "@/app/hooks/useScroll";
 
 import BurgerMenu from "@/app/components/BurgerMenu/BurgerMenu";
-import Logo from "@/app/components/Logo/logo";
+import Logo from "@/app/components/Logo/Logo";
 import Info from "@/app/components/Contacts/Contacts";
 
 import styles from "./header.module.css";
