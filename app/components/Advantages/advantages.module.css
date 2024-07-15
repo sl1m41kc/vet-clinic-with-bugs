@@ -12,9 +12,3 @@
         grid-template-columns: repeat(2, 24fr);
     }
 }
-
-@media (max-width: 1024px) {
-    .advantages {
-        grid-template-columns: repeat(1, 24fr);
-    }
-}

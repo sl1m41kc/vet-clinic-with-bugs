@@ -22,7 +22,7 @@ const Header = () => {
         <BurgerMenu />
         <Logo scrolled={isScrolled}/>
       </div>
-      {width > 1024 && <Info />}
+      {width > 650 && <Info />}
     </header>
   );
 };

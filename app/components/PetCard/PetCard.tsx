@@ -17,7 +17,7 @@ const PetCard = ({ title, description, image, reverse }: IProps) => {
     return (
       <div className={`${styles.card} ${styles.reverse_card}`}>
         <div className={styles.reverse_image}>
-          <Image draggable={false} src={image} alt="" />
+          <Image loading="lazy" draggable={false} src={image} alt="" />
         </div>
         <div className={styles.button}>
           <CircleButton image="arrow" />
@@ -38,7 +38,7 @@ const PetCard = ({ title, description, image, reverse }: IProps) => {
         <p className={styles.description}>{description}</p>
       </div>
       <div className={styles.image}>
-        <Image draggable={false} src={image} alt='' />
+        <Image loading="lazy" draggable={false} src={image} alt='' />
       </div>
     </div>
   );

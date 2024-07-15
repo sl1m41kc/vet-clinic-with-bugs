@@ -35,4 +35,11 @@
         grid-template-columns: 36fr;
     }
 
+    .gridCard {
+        height: 470px;
+    }
+
+    .block {
+        height: 220px;
+    }
 }

@@ -1,15 +1,11 @@
 import React from 'react'
 import clsx from 'clsx'
 
-interface IProps {
-    title: string,
-    description: string,
-    changeColor: boolean
-}
+import { IAdvantagesCard } from '../../types/IAdvantagesCard'
 
 import styles from './advantagesCard.module.css'
 
-const AdvantagesCard = ({title, description, changeColor}: IProps) => {
+const AdvantagesCard = ({title, description, changeColor}: IAdvantagesCard) => {
   return (
     <div className={clsx(styles.card, {[styles.changeColor]: changeColor})}>
         <h1 className={styles.title}>{title}</h1>

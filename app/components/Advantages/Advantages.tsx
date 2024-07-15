@@ -1,36 +1,29 @@
+"use client";
 import React from "react";
+import useResize from "@/app/hooks/useResize";
 
 import AdvantagesCard from "@/app/components/AdvantagesCard/AdvantagesCard";
+import AdvantagesSwiper from "@/app/components/AdvantagesSwiper/AdvantagesSwiper";
+
+import { advantagesData } from "@/app/data/advantagesData";
 
 import styles from "./advantages.module.css";
 
 const Advantages = () => {
+  const { width } = useResize();
+
+  if (width <= 1024) return <AdvantagesSwiper />;
   return (
     <div className={`container`}>
       <div className={styles.advantages}>
-        <AdvantagesCard
-          title="12"
-          description="лет наша клиника работает для вас"
-          changeColor={false}
-        />
-
-        <AdvantagesCard
-          title="24/7"
-          description="Мы рады вам в любое время"
-          changeColor={true}
-        />
-
-        <AdvantagesCard
-          title="1000+"
-          description="довольных пациентов"
-          changeColor={false}
-        />
-
-        <AdvantagesCard
-          title="36"
-          description="высококвалифицированных специалистов"
-          changeColor={false}
-        />
+        {advantagesData.map((card) => (
+          <AdvantagesCard
+            key={card.title}
+            title={card.title}
+            description={card.description}
+            changeColor={card.changeColor}
+          />
+        ))}
       </div>
     </div>
   );
