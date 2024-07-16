@@ -4,6 +4,7 @@ import GridAdvantages from "./components/GridAdvantages/GridAdvantages";
 import Advatages from "@/app/components/Advantages/Advantages";
 import Title from "@/app/components/Title/Title";
 import MedicialDirections from "./components/MedicalDirections/MedicalDirections";
+import DoctorsSwiper from "./components/DoctorsSwiper/DoctorsSwiper";
 
 export default function Home() {
   return (
@@ -11,9 +12,10 @@ export default function Home() {
       <Header />
       <Hero />
       <GridAdvantages />
-      <Advatages/>
-      <Title/>
-      <MedicialDirections/>
+      <Advatages />
+      <Title />
+      <MedicialDirections />
+      <DoctorsSwiper/>
     </main>
   );
 }

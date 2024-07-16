@@ -1,0 +1,32 @@
+.buttons {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 20px;
+
+    color: var(--clr1);
+}
+
+.button {
+    padding: 10px;
+
+    font-size: 1.5em;
+
+    border: 1px solid var(--clr4);
+    border-radius: 50%;
+
+    transition: background-color 0.3s, border 0.3s;
+}
+
+.button:hover {
+    border: 1px solid var(--clr3);
+    background-color: var(--clr3);
+}
+
+.svg {
+    fill: var(--clr1);
+}
+
+.prev {
+    rotate: 180deg;
+}
