@@ -1,8 +1,8 @@
 import Header from "@/app/components/Header/Header";
 import Hero from "@/app/components/Hero/Hero";
 import GridAdvantages from "./components/GridAdvantages/GridAdvantages";
-import Advatages from "./components/Advantages/Advantages";
-import TextComponent from "./components/TextComponent/TextComponent";
+import Advatages from "@/app/components/Advantages/Advantages";
+import Title from "@/app/components/Title/Title";
 
 export default function Home() {
   return (
@@ -11,7 +11,7 @@ export default function Home() {
       <Hero />
       <GridAdvantages />
       <Advatages/>
-      <TextComponent/>
+      <Title/>
     </main>
   );
 }

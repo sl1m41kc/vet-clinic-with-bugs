@@ -17,34 +17,34 @@
     transition: fill 0.3s;
 }
 
-.changedColor {
+.fill {
     background-color: none;
     border: 1px solid var(--clr4);
 }
 
-.changedColor:hover {
+.fill:hover {
     color: var(--clr2);
     background-color: var(--clr1);
     transform: scale(1.05);
 }
 
-.changedColor:hover .icon {
+.fill:hover .icon {
     fill: var(--clr2);
 }
 
-.changedColor:active {
+.fill:active {
     transform: scale(0.99);
 }
 
-.notChangedColor {
+.notFill {
     background-color: var(--clr2);
 }
 
-.notChangedColor:hover {
+.notFill:hover {
     background-color: var(--clr3);
     transform: scale(1.05);
 }
 
-.notChangedColor:active {
+.notFill:active {
     transform: scale(0.99);
 }

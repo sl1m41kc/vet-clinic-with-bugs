@@ -1,6 +1,6 @@
 .text {
     width: 100%;
-    margin-top: 130px;
+    margin-top: 150px;
 
     font-size: 2.5em;
     line-height: 130%;
@@ -20,5 +20,18 @@
 @media (max-width: 1210px) {
     .moved {
         text-align: left;
+    }
+}
+
+@media (max-width: 1100px) {
+    .text {
+        font-size: 2em;
+    }
+}
+
+@media (max-width: 780px) {
+    .text {
+        font-size: 1.75em;
+        margin-top: 50px;
     }
 }

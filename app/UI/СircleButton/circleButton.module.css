@@ -17,7 +17,7 @@
 
 .arrow:hover {
     background-color: var(--clr3);
-    border: none;
+    border: 1px solid var(--clr3);
     transform: scale(1.05);
 }
 

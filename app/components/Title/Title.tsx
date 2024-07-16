@@ -1,8 +1,8 @@
 import React from "react";
 
-import styles from "./textComponent.module.css";
+import styles from "./title.module.css";
 
-const TextComponent = () => {
+const Title = () => {
   return (
     <div className="container">
       <div className={styles.text}>
@@ -18,4 +18,4 @@ const TextComponent = () => {
   );
 };
 
-export default TextComponent;
+export default Title;

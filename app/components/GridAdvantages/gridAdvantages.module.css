@@ -33,6 +33,7 @@
 @media (max-width: 768px) {
     .grid {
         grid-template-columns: 36fr;
+        gap: 10px;
     }
 
     .gridCard {

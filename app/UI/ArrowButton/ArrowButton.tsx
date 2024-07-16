@@ -15,10 +15,9 @@ const ArrowButton = ({ text, arrowChange }: IProps) => {
 
   return (
     <button
-      className={clsx(styles.arrowButton, {
-        [styles.changedColor]: arrowChange,
-        [styles.notChangedColor]: !arrowChange,
-      })}
+      className={clsx(styles.arrowButton, 
+        arrowChange ? styles.fill : styles.notFill
+      )}
     >
       {text}
       <ArrowSVG className={styles.icon}/>

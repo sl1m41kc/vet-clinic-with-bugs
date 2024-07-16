@@ -10,29 +10,36 @@ import "swiper/swiper-bundle.css";
 
 const AdvantagesSwiper = () => {
   return (
-    <Swiper
-      spaceBetween={10}
-      loop={true}
-      breakpoints={{
-        300: {
-          slidesPerView: 1.5,
-        },
-        
-        600: {
-          slidesPerView: 2.5,
-        }
-      }}
-    >
-      {advantagesData.map((card) => (
-        <SwiperSlide key={card.title}>
-          <AdvantagesCard
-            title={card.title}
-            description={card.description}
-            changeColor={card.changeColor}
-          />
-        </SwiperSlide>
-      ))}
-    </Swiper>
+    <div className="slider">
+      <Swiper
+        breakpoints={{
+          300: {
+            slidesPerView: 1.5,
+            spaceBetween: 10,
+          },
+
+          600: {
+            slidesPerView: 2.5,
+            spaceBetween: 10,
+          },
+
+          768: {
+            slidesPerView: 2.5,
+            spaceBetween: 20,
+          },
+        }}
+      >
+        {advantagesData.map((card) => (
+          <SwiperSlide key={card.title}>
+            <AdvantagesCard
+              title={card.title}
+              description={card.description}
+              changeColor={card.changeColor}
+            />
+          </SwiperSlide>
+        ))}
+      </Swiper>
+    </div>
   );
 };
 
