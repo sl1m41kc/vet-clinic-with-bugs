@@ -6,10 +6,10 @@ import useResize from "@/app/hooks/useResize";
 
 import { medicialDirectionsData } from "@/app/data/medicialDirectionsData";
 
-import MedicialDirection from "@/app/components/MedicialDirection/MedicialDirection";
-import MedicalDirectionsSwiper from "@/app/components/MedicialDirectionsSwiper/MedicialDirectionsSwiper";
+import MedicialDirection from "@/app/components/MedicalDirection/MedicialDirection";
+import MedicalDirectionsSwiper from "@/app/components/MedicalDirectionsSwiper/MedicalDirectionsSwiper";
 
-import classes from "./medicialDirections.module.css";
+import classes from "./medicalDirections.module.css";
 
 const MedicialDirections = () => {
   const { width } = useResize()

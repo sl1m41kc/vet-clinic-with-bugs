@@ -4,10 +4,10 @@ import { Swiper, SwiperSlide } from "swiper/react";
 
 import { medicialDirectionsData } from "@/app/data/medicialDirectionsData";
 
-import MedicialDirection from "@/app/components/MedicialDirection/MedicialDirection";
+import MedicialDirection from "@/app/components/MedicalDirection/MedicialDirection";
 
 import "swiper/css";
-import classes from './medicialDirectionsSwiper.module.css'
+import classes from './medicalDirectionsSwiper.module.css'
 
 const MedicialDirectionsSwiper = () => {
   return (
