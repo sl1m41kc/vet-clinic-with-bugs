@@ -33,9 +33,10 @@ body {
     }
 }
 
-@media (max-width: 670px) {
+@media (max-width: 768px) {
     .container {
         padding-inline: 10px;
+        margin-bottom: 10px;
     }
 
     .slider {
