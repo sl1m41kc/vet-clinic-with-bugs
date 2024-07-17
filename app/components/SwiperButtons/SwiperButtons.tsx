@@ -1,20 +1,28 @@
 import React from "react";
 import clsx from "clsx";
-import { useSwiper } from "swiper/react";
 
 import SwiperArrowSVG from "/public/swiper_arrow.svg";
 
 import classes from "./swiperButtons.module.css";
 
-const SwiperButtons = () => {
-  const swiper = useSwiper();
+interface IProps {
+  buttons : {
+    prev: string,
+    next: string
+  }
+}
+
+const SwiperButtons = ({buttons}: IProps) => {
+  if (!buttons) {
+    return ''; 
+  }
   return (
     <div className="container">
       <div className={classes.buttons}>
-        <button className={classes.button} onClick={() => swiper.slidePrev()}>
+        <button className={clsx(classes.button, buttons.prev)} >
           <SwiperArrowSVG className={clsx(classes.svg, classes.prev)} />
         </button>
-        <button className={classes.button} onClick={() => swiper.slideNext()}>
+        <button className={clsx(classes.button, buttons.next)}>
           <SwiperArrowSVG className={classes.svg} />
         </button>
       </div>

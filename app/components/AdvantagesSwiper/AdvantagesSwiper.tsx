@@ -1,4 +1,5 @@
 import React from "react";
+import clsx from "clsx";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 import { advantagesData } from "@/app/data/advantagesData";
@@ -6,10 +7,11 @@ import { advantagesData } from "@/app/data/advantagesData";
 import AdvantagesCard from "@/app/components/AdvantagesCard/AdvantagesCard";
 
 import "swiper/swiper-bundle.css";
+import classes from './advantagesSwiper.module.css'
 
 const AdvantagesSwiper = () => {
   return (
-    <div className="slider">
+    <div className={clsx("slider", classes.slider)}>
       <Swiper
         breakpoints={{
           300: {

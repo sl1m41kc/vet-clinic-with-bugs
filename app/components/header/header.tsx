@@ -6,7 +6,7 @@ import useScroll from "@/app/hooks/useScroll";
 
 import BurgerMenu from "@/app/components/BurgerMenu/BurgerMenu";
 import Logo from "@/app/components/Logo/Logo";
-import Info from "@/app/components/Contacts/Contacts";
+import Contacts from "@/app/components/Contacts/Contacts";
 
 import styles from "./header.module.css";
 
@@ -17,12 +17,12 @@ const Header = () => {
 
 
   return (
-    <header className={clsx(styles.header, { [styles.scrolled]: isScrolled } )}>
+    <header className={clsx(styles.header, isScrolled && styles.scrolled )}>
       <div className={styles.logoMenu}>
         <BurgerMenu />
         <Logo scrolled={isScrolled}/>
       </div>
-      {width > 650 && <Info />}
+      {width > 650 && <Contacts />}
     </header>
   );
 };

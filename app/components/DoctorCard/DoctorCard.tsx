@@ -13,6 +13,7 @@ const DoctorCard = ({
   fullName,
   professions,
   startWork,
+  alt
 }: IDoctorCard) => {
   const path = "/Doctors/";
 
@@ -30,7 +31,7 @@ const DoctorCard = ({
             className={classes.img}
             fill
             src={`${path}${image}.png`}
-            alt=""
+            alt={alt}
           />
         </div>
         <div className={classes.text}>

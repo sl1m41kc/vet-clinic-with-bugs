@@ -4,7 +4,7 @@ import ArrowButton from "@/app/UI/ArrowButton/ArrowButton";
 
 import VKLogoSVG from "/public/VK_logo.svg";
 
-import styles from "./recordCard.module.css";
+import styles from "./ActionCard.module.css";
 
 interface IProps {
   title: string;
@@ -13,17 +13,17 @@ interface IProps {
   buttonText: string;
 }
 
-const RecordCard = ({ title, description, haveSVG, buttonText }: IProps) => {
+const ActionCard = ({ title, description, haveSVG, buttonText }: IProps) => {
   return (
     <div className={styles.card}>
       <div className={styles.text}>
         <h1 className={styles.title}>{title}</h1>
         <p className={styles.description}>{description}</p>
       </div>
-      <ArrowButton text={buttonText} arrowChange={true} />
+      <ArrowButton text={buttonText} isFill={true} />
       {haveSVG && <VKLogoSVG className={styles.svg} />}
     </div>
   );
 };
 
-export default RecordCard;
+export default ActionCard;

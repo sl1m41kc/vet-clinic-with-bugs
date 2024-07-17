@@ -8,15 +8,15 @@ import styles from "./arrowButton.module.css";
 
 interface IProps {
   text: string;
-  arrowChange: boolean;
+  isFill: boolean;
 }
 
-const ArrowButton = ({ text, arrowChange }: IProps) => {
+const ArrowButton = ({ text, isFill }: IProps) => {
 
   return (
     <button
       className={clsx(styles.arrowButton, 
-        arrowChange ? styles.fill : styles.notFill
+        isFill ? styles.fill : styles.notFill
       )}
     >
       {text}

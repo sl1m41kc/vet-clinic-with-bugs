@@ -1,0 +1,8 @@
+.slider {
+    width: 100%;
+    margin-top: 60px;
+}
+
+.swiper_slide {
+    width: auto !important;
+  }

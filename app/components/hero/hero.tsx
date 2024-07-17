@@ -9,7 +9,7 @@ import styles from "./hero.module.css";
 
 const Hero = () => {
   return (
-    <div className={`container`}>
+    <div className='container'>
       <div className={styles.hero}>
         <div className={styles.blackout} />
         <Image
@@ -28,7 +28,7 @@ const Hero = () => {
               от&nbsp;клеща
             </p>
           </div>
-          <ArrowButton text={"Подробнее"} arrowChange={false} />
+          <ArrowButton text="Подробнее" isFill={false} />
         </div>
       </div>
     </div>

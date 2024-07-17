@@ -9,7 +9,7 @@ import PhoneSVG from "/public/phone_iphone.svg";
 
 import styles from "./contacts.module.css";
 
-const Info = () => {
+const Contacts = () => {
   const { width } = useResize();
 
   return (
@@ -36,4 +36,4 @@ const Info = () => {
   );
 };
 
-export default Info;
+export default Contacts;

@@ -1,4 +1,5 @@
 import React from "react";
+import clsx from "clsx";
 import Image, { StaticImageData } from "next/image";
 
 import CircleButton from "@/app/UI/СircleButton/CircleButton";
@@ -10,26 +11,12 @@ interface IProps {
   description: string;
   image: StaticImageData;
   reverse: boolean;
+  alt: string
 }
 
-const PetCard = ({ title, description, image, reverse }: IProps) => {
-  if (reverse)
-    return (
-      <div className={`${styles.card} ${styles.reverse_card}`}>
-        <div className={styles.reverse_image}>
-          <Image loading="lazy" draggable={false} src={image} alt="" />
-        </div>
-        <div className={styles.button}>
-          <CircleButton image="arrow" />
-        </div>
-        <div className={styles.text}>
-          <h1 className={styles.title}>{title}</h1>
-          <p className={styles.description}>{description}</p>
-        </div>
-      </div>
-    );
+const PetCard = ({ title, description, image, reverse, alt }: IProps) => {
   return (
-    <div className={styles.card}>
+    <div className={clsx(styles.card, reverse && styles.reverse_card)}>
       <div className={styles.button}>
         <CircleButton image="arrow" />
       </div>
@@ -37,8 +24,8 @@ const PetCard = ({ title, description, image, reverse }: IProps) => {
         <h1 className={styles.title}>{title}</h1>
         <p className={styles.description}>{description}</p>
       </div>
-      <div className={styles.image}>
-        <Image loading="lazy" draggable={false} src={image} alt='' />
+      <div className={reverse ? styles.reverse_image : styles.image}>
+        <Image loading="lazy" draggable={false} src={image} alt={alt} />
       </div>
     </div>
   );

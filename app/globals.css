@@ -19,7 +19,7 @@ body {
 .container {
     width: min(1400px, 100%);
     margin-inline: auto;
-    margin-bottom: 20px;
+    margin-top: 20px;
     padding-inline: 20px;
 }
 
@@ -36,7 +36,7 @@ body {
 @media (max-width: 768px) {
     .container {
         padding-inline: 10px;
-        margin-bottom: 10px;
+        margin-top: 10px;
     }
 
     .slider {

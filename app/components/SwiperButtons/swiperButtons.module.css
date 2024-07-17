@@ -1,16 +1,13 @@
 .buttons {
     display: flex;
-    align-items: center;
     justify-content: flex-end;
-    gap: 20px;
 
-    color: var(--clr1);
+    gap: 20px;
+    
 }
 
 .button {
     padding: 10px;
-
-    font-size: 1.5em;
 
     border: 1px solid var(--clr4);
     border-radius: 50%;

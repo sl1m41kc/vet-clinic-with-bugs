@@ -14,7 +14,7 @@ import classes from "./medicalDirections.module.css";
 const MedicialDirections = () => {
   const { width } = useResize()
 
-  if (width <= 850) return <div><MedicalDirectionsSwiper/></div>
+  if (width <= 850) return <MedicalDirectionsSwiper/>
 
   return (
     <div className={clsx(classes.directions, "container")}>
