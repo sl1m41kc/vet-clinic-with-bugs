@@ -1,0 +1,63 @@
+.card {
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 20px;
+
+    padding: 30px;
+    width: calc(100% / 3);
+    max-width: 450px;
+
+
+    border-radius: 30px;
+
+    color: var(--clr1);
+    background-color: var(--clr6);
+
+    overflow: hidden;
+}
+
+.service {
+    display: flex;
+    align-items: baseline;
+    
+    gap: 10px;
+
+    height: auto;
+
+    fill: var(--clr1);
+
+    z-index: 1;
+}   
+
+.title {
+    font-size: 2em;
+    font-weight: 500;
+    
+    width: auto;
+}
+
+.text {
+    font-size: 1.125em;
+    text-decoration: none;
+
+    width: auto;
+}
+
+.text.link {
+    border-bottom: 1px solid var(--clr4);
+    width: auto;
+}
+
+.svg {
+    position: absolute;
+
+    bottom: 0;
+    right: 0;
+
+    fill: var(--clr3);
+
+    z-index: 0;
+}
