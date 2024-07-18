@@ -21,16 +21,16 @@ const ServiceCard = ({ title, services, hasSVG, src }: IServiceCard) => {
         <CircleButton image="arrow" />
       </div>
 
-      <h1 className={classes.title}>{title.toUpperCase()}</h1>
+      <h1 className={classes.title}>{title}</h1>
       {services.map((service, index) =>
         !service.isLink ? (
           <div key={index} className={classes.service}>
-            <PawSVG />
+            <PawSVG className={classes.paw_svg} />
             <p className={classes.text}>{service.text}</p>
           </div>
         ) : (
           <div key={index} className={classes.service}>
-            <PawSVG />
+            <PawSVG className={classes.paw_svg} />
             <Link href="/">
               <p className={clsx(classes.text, classes.link)}>{service.text}</p>
             </Link>

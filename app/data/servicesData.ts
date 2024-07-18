@@ -30,71 +30,6 @@ export const servicesData: IServiceCard[] = [
     },
 
     {
-        title: "Госпитализация",
-        services: [
-            {
-                text: "дневной стационар",
-                isLink: true
-            },
-
-            {
-                text: "интенсивная терапия",
-                isLink: true
-            },
-
-            {
-                text: "инфекционный стационар",
-                isLink: false
-            },
-
-            {
-                text: "круглосуточный стационар",
-                isLink: true
-            },
-
-        ],
-        hasSVG: false,
-        src: ""
-    },
-
-    {
-        title: "Зоотовары",
-        services: [
-            {
-                text: "аксессуары",
-                isLink: true
-            },
-
-            {
-                text: "игрушки",
-                isLink: true
-            },
-
-            {
-                text: "корма",
-                isLink: false
-            },
-
-            {
-                text: "переноски, лежанки",
-                isLink: true
-            },
-
-            {
-                text: "средства гигиены",
-                isLink: true
-            },
-
-            {
-                text: "средства груминга",
-                isLink: false
-            },
-        ],
-        hasSVG: false,
-        src: ""
-    },
-
-    {
         title: 'Хирургия',
         services: [
             {
@@ -142,28 +77,6 @@ export const servicesData: IServiceCard[] = [
     },
 
     {
-        title: "Диагностика",
-        services: [
-            {
-                text: "диагностика инфекционных и инвазионных заболеваний",
-                isLink: false
-            },
-
-            {
-                text: "рентген",
-                isLink: true
-            },
-
-            {
-                text: "узи",
-                isLink: false
-            },
-        ],
-        hasSVG: false,
-        src: ""
-    },
-
-    {
         title: "Лаборатория",
         services: [
             {
@@ -193,6 +106,56 @@ export const servicesData: IServiceCard[] = [
         ],
         hasSVG: true,
         src: "flask"
+    },
+
+    {
+        title: "Госпитализация",
+        services: [
+            {
+                text: "дневной стационар",
+                isLink: true
+            },
+
+            {
+                text: "интенсивная терапия",
+                isLink: true
+            },
+
+            {
+                text: "инфекционный стационар",
+                isLink: false
+            },
+
+            {
+                text: "круглосуточный стационар",
+                isLink: true
+            },
+
+        ],
+        hasSVG: false,
+        src: ""
+    },
+
+    {
+        title: "Диагностика",
+        services: [
+            {
+                text: "диагностика инфекционных и инвазионных заболеваний",
+                isLink: false
+            },
+
+            {
+                text: "рентген",
+                isLink: true
+            },
+
+            {
+                text: "узи",
+                isLink: false
+            },
+        ],
+        hasSVG: false,
+        src: ""
     },
 
     {
@@ -237,5 +200,40 @@ export const servicesData: IServiceCard[] = [
         src: "bowl"
     },
 
+    {
+        title: "Зоотовары",
+        services: [
+            {
+                text: "аксессуары",
+                isLink: true
+            },
 
+            {
+                text: "игрушки",
+                isLink: true
+            },
+
+            {
+                text: "корма",
+                isLink: false
+            },
+
+            {
+                text: "переноски, лежанки",
+                isLink: true
+            },
+
+            {
+                text: "средства гигиены",
+                isLink: true
+            },
+
+            {
+                text: "средства груминга",
+                isLink: false
+            },
+        ],
+        hasSVG: false,
+        src: ""
+    }
 ]
