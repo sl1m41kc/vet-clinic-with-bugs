@@ -13,9 +13,6 @@ interface IProps {
 }
 
 const SwiperButtons = ({buttons}: IProps) => {
-  if (!buttons) {
-    return ''; 
-  }
   return (
     <div className="container">
       <div className={classes.buttons}>

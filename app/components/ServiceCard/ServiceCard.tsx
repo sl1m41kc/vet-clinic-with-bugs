@@ -22,21 +22,18 @@ const ServiceCard = ({ title, services, hasSVG, src }: IServiceCard) => {
       </div>
 
       <h1 className={classes.title}>{title}</h1>
-      {services.map((service, index) =>
-        !service.isLink ? (
-          <div key={index} className={classes.service}>
-            <PawSVG className={classes.paw_svg} />
-            <p className={classes.text}>{service.text}</p>
-          </div>
-        ) : (
-          <div key={index} className={classes.service}>
-            <PawSVG className={classes.paw_svg} />
+      {services.map((service, index) => (
+        <div key={index} className={classes.service}>
+          <PawSVG className={classes.paw_svg} />
+          {service.isLink ? (
             <Link href="/">
               <p className={clsx(classes.text, classes.link)}>{service.text}</p>
             </Link>
-          </div>
-        )
-      )}
+          ) : (
+            <p className={classes.text}>{service.text}</p>
+          )}
+        </div>
+      ))}
 
       {hasSVG && src == "heart" ? <HeartSVG className={classes.svg} /> : ""}
       {hasSVG && src == "flask" ? <FlaskSVG className={classes.svg} /> : ""}

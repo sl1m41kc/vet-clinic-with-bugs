@@ -168,7 +168,7 @@ export const servicesData: IServiceCard[] = [
 
             {
                 text: "витамины",
-                isLink: false
+                isLink: true
             },
 
             {

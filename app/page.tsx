@@ -1,5 +1,5 @@
 import Header from "@/app/components/Header/Header";
-import Hero from "@/app/components/hero/hero";
+import Hero from "@/app/components/Hero/Hero";
 import GridAdvantages from "./components/GridAdvantages/GridAdvantages";
 import Advantages from "@/app/components/Advantages/Advantages";
 import Title from "@/app/components/Title/Title";
