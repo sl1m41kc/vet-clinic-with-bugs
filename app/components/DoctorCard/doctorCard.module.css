@@ -73,7 +73,7 @@
 }
 
 .line {
-    height: 2px;
+    height: 1px;
     width: 105%;
 
     background-color: var(--clr4);
