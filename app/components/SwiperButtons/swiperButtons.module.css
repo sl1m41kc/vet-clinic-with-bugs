@@ -27,3 +27,9 @@
 .prev {
     rotate: 180deg;
 }
+
+@media (max-width: 1024px) {
+    .button {
+        display: none;
+    }
+}
