@@ -1,7 +1,7 @@
 import React from "react";
 import Link from "next/link";
 
-import VK_Logo from "/public/VK_logo.svg";
+import VK_Logo from "/public/Svg/VK_logo.svg";
 
 import classes from "./footer.module.css";
 

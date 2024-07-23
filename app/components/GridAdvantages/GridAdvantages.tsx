@@ -1,10 +1,10 @@
 import React from "react";
 
 import PetCard from "@/app/components/PetCard/PetCard";
-import RecordCard from "@/app/components/ActionCard/ActionCard";
+import ActionCard from "@/app/components/ActionCard/ActionCard";
 
-import dogPNG from "/public/Corgi_dog.png";
-import catPNG from "/public/Cat.png";
+import dogPNG from "/public/Images/Corgi_dog.png";
+import catPNG from "/public/Images/Cat.png";
 
 import styles from "./gridAdvantages.module.css";
 
@@ -31,7 +31,7 @@ const GridAdvantages = () => {
           />
         </div>
         <div className={styles.block}>
-          <RecordCard
+          <ActionCard
             title="Записаться на&nbsp;приём"
             description="Наши специалисты ответят на&nbsp;все ваши вопросы"
             buttonText="Записаться"
@@ -39,7 +39,7 @@ const GridAdvantages = () => {
           />
         </div>
         <div className={styles.block}>
-          <RecordCard
+          <ActionCard
             title="Онлайн-консультация"
             description="Наши специалисты ответят на&nbsp;все ваши вопросы"
             buttonText="Перейти в&nbsp;VK"

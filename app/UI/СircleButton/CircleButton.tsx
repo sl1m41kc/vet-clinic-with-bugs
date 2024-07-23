@@ -1,8 +1,8 @@
 import React from "react";
 import clsx from "clsx";
 
-import ArrowSVG from '/public/arrow_forward_blue.svg'
-import CrossSVG from '/public/close.svg'
+import ArrowSVG from '/public/Svg/arrow_forward_blue.svg'
+import CrossSVG from '/public/Svg/close.svg'
 
 import styles from "./circleButton.module.css";
 

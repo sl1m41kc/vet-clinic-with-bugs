@@ -3,13 +3,14 @@ import clsx from "clsx";
 import Link from "next/link";
 
 import { IServiceCard } from "@/app/types/IServiceCard";
+import { SVG_PATH } from "@/app/Сonstants/pathsConsts";
 
 import CircleButton from "@/app/UI/СircleButton/CircleButton";
 
-import PawSVG from "/public/Paw.svg";
-import HeartSVG from "/public/Heart.svg";
-import FlaskSVG from "/public/Flask.svg";
-import MedBowlSVG from "/public/Med_bowl.svg";
+import PawSVG from '/public/Svg/Paw.svg';
+import HeartSVG from '/public/Svg/Heart.svg';
+import FlaskSVG from '/public/Svg/Flask.svg';
+import MedBowlSVG from '/public/Svg/Med_bowl.svg';
 
 import style from "@/app/components/PetCard/petCard.module.css";
 import classes from "./serviceCard.module.css";
@@ -23,7 +24,7 @@ const ServiceCard = ({ title, services, hasSVG, src }: IServiceCard) => {
 
       <h1 className={classes.title}>{title}</h1>
       {services.map((service, index) => (
-        <div key={index} className={classes.service}>
+        <div key={clsx(index, service.text)} className={classes.service}>
           <PawSVG className={classes.paw_svg} />
           {service.isLink ? (
             <Link href="/">

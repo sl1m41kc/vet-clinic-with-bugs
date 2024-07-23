@@ -7,7 +7,7 @@ import { menuNavData } from "@/app/data/menuNavData";
 import Contacts from "../Contacts/Contacts";
 import CircleButton from "@/app/UI/СircleButton/CircleButton";
 
-import LogoSVG from "/public/logo_vetlekar_horizontal.svg";
+import LogoSVG from "/public/Svg/logo_vetlekar_horizontal.svg";
 
 import classes from "./menuInterface.module.css";
 import style from "@/app/components/PetCard/petCard.module.css";
@@ -19,8 +19,16 @@ const MenuInterface = ({
   isOpen: boolean;
   setIsOpen: any;
 }) => {
+  const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
+  
   useEffect(() => {
-    document.body.classList.toggle("no-scroll", isOpen);
+    if (isOpen) {
+      document.body.style.overflow = "hidden";
+      document.body.style.paddingRight = `${scrollbarWidth}px`;
+    } else {
+      document.body.style.overflow = "auto";
+      document.body.style.paddingRight = "0px";
+    }
   }, [isOpen]);
   return (
     <>

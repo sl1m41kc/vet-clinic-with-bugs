@@ -12,15 +12,14 @@ import styles from "./header.module.css";
 
 const Header = () => {
   const { width } = useResize();
-  
+
   const { isScrolled } = useScroll();
 
-
   return (
-    <header className={clsx(styles.header, isScrolled && styles.scrolled )}>
+    <header className={clsx(styles.header, isScrolled && styles.scrolled)}>
       <div className={styles.logoMenu}>
         <BurgerMenu />
-        <Logo scrolled={isScrolled}/>
+        <Logo scrolled={isScrolled} />
       </div>
       {width > 650 && <Contacts />}
     </header>

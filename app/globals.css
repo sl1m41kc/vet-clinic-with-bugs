@@ -16,15 +16,9 @@ body {
     font-size: 16px;
 }
 
-body.no-scroll {
-    overflow: hidden;
-    padding-right: 16px;
-}
-
 .container {
     width: min(1400px, 100%);
     margin-inline: auto;
-    margin-top: 20px;
     padding-inline: 20px;
 }
 

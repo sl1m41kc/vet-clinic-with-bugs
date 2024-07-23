@@ -2,7 +2,7 @@ import React from "react";
 import Link from "next/link";
 import clsx from "clsx";
 
-import LogoSVG from "/public/logo_vetlekar_horizontal.svg";
+import LogoSVG from "/public/Svg/logo_vetlekar_horizontal.svg";
 
 import styles from './logo.module.css'
 

@@ -9,7 +9,7 @@ export const advantagesData: IAdvantagesCard[] = [
 
     {
         title: "24/7",
-        description: "Мы рады вам в любое время",
+        description: "мы рады вам в любое время",
         changeColor: true
     },
 

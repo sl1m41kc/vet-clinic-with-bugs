@@ -35,14 +35,14 @@ const DoctorCard = ({
           />
         </div>
         <div className={classes.text}>
-          <h1 className={classes.fullName}>{fullName.toUpperCase()}</h1>
+          <h1 className={classes.fullName}>{fullName}</h1>
           <p className={classes.professions}>{professions}</p>
         </div>
       </div>
       <div className={classes.experience}>
         <hr className={classes.line} />
         <p>
-          Стаж: <span className={classes.experience_number}>{experience} </span>лет
+          Стаж:<span className={classes.experience_number}> {experience}</span> лет
         </p>
       </div>
     </div>

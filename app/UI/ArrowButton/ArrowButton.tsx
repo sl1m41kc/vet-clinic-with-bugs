@@ -1,7 +1,7 @@
 import React from "react";
 import clsx from "clsx";
 
-import ArrowSVG from "/public/arrow_forward_blue.svg";
+import ArrowSVG from "/public/Svg/arrow_forward_blue.svg";
 
 
 import styles from "./arrowButton.module.css";

@@ -2,7 +2,7 @@ import React from "react";
 
 import ArrowButton from "@/app/UI/ArrowButton/ArrowButton";
 
-import VKLogoSVG from "/public/VK_logo.svg";
+import VKLogoSVG from "/public/Svg/VK_logo.svg";
 
 import styles from "./ActionCard.module.css";
 

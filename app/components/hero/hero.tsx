@@ -3,7 +3,7 @@ import Image from "next/image";
 
 import ArrowButton from "@/app/UI/ArrowButton/ArrowButton";
 
-import hero from "/public/hero.png";
+import hero from "/public/Images/hero.png";
 
 import styles from "./hero.module.css";
 

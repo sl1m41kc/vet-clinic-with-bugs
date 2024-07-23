@@ -1,7 +1,7 @@
 import React from "react";
 import clsx from "clsx";
 
-import SwiperArrowSVG from "/public/swiper_arrow.svg";
+import SwiperArrowSVG from "/public/Svg/swiper_arrow.svg";
 
 import classes from "./swiperButtons.module.css";
 

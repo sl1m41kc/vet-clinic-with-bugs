@@ -20,10 +20,6 @@
   gap: 20px; 
 }
 
-.column {
-  max-width: 450px;
-}
-
 @media (max-width: 768px) {
   .grid {
     margin-top: 30px;

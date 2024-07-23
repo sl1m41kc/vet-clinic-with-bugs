@@ -1,5 +1,6 @@
 "use client"
 import React from "react";
+import clsx from "clsx";
 import Masonry from "react-masonry-css";
 
 import { servicesData } from "@/app/data/servicesData";
@@ -18,11 +19,10 @@ const Services = () => {
           768: 1 
         }}
         className={classes.grid}
-        columnClassName={classes.column}
       >
         {servicesData.map((service, index) => (
           <ServiceCard
-            key={index}
+            key={clsx(index, service.title)}
             title={service.title}
             services={service.services}
             hasSVG={service.hasSVG}
