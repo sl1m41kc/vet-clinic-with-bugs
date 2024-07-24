@@ -32,7 +32,7 @@ const ServiceCard = ({ title, services, SVG }: IServiceCard) => {
         </div>
       ))}
 
-      {SVG && <div className={classes.svg} >{SVG}</div>}
+      {SVG && <div className={classes.svg}>{SVG}</div>}
     </div>
   );
 };

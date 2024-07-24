@@ -1,5 +1,4 @@
 import React from "react";
-import clsx from "clsx";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 import { medicialDirectionsData } from "@/app/data/medicialDirectionsData";
@@ -11,7 +10,7 @@ import classes from './medicalDirectionsSwiper.module.css'
 
 const MedicialDirectionsSwiper = () => {
   return (
-    <div className={clsx("slider", classes.swiper)}>
+    <div className={classes.swiper}>
       <Swiper
         breakpoints={{
           300: {

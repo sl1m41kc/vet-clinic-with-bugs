@@ -7,6 +7,7 @@ import CircleButton from "@/app/UI/СircleButton/CircleButton";
 
 import style from "@/app/components/PetCard/petCard.module.css";
 import classes from "./doctorCard.module.css";
+import { DOCTORS_PATH } from "@/app/Сonstants/pathsConsts";
 
 const DoctorCard = ({
   image,
@@ -15,7 +16,6 @@ const DoctorCard = ({
   startWork,
   alt
 }: IDoctorCard) => {
-  const path = "/Doctors/";
 
   let currentYear = new Date().getFullYear();
 
@@ -30,7 +30,7 @@ const DoctorCard = ({
           <Image
             className={classes.img}
             fill
-            src={`${path}${image}.png`}
+            src={`${DOCTORS_PATH}${image}.png`}
             alt={alt}
           />
         </div>

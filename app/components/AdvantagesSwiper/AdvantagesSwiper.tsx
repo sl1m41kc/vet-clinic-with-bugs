@@ -11,7 +11,7 @@ import classes from './advantagesSwiper.module.css'
 
 const AdvantagesSwiper = () => {
   return (
-    <div className={clsx("slider", classes.slider)}>
+    <div className={classes.slider}>
       <Swiper
         breakpoints={{
           300: {

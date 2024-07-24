@@ -66,9 +66,9 @@
     }
 }
 
-@media (max-width: 430px) {
+@media (max-width: 768px) {
     .hero {
-        margin-top: 80px;
+        margin-top: 110px;
     }
 
     .discount {

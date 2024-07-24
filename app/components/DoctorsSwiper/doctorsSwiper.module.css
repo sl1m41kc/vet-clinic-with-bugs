@@ -5,7 +5,7 @@
 
 .swiper_slide {
     width: auto !important;
-  }
+}
 
 @media (max-width: 768px) {
     .slider {

@@ -10,14 +10,14 @@ import { doctorsData } from "@/app/data/doctorsData";
 import DoctorCard from "../DoctorCard/DoctorCard";
 import SwiperButtons from "../SwiperButtons/SwiperButtons";
 
-import 'swiper/css';
-import classes from './doctorsSwiper.module.css'
+import "swiper/css";
+import classes from "./doctorsSwiper.module.css";
 
 const DoctorsSwiper = () => {
   return (
-    <div className={clsx('slider', classes.slider)}>
+    <div className={classes.slider}>
       <Swiper
-        slidesPerView='auto'
+        slidesPerView="auto"
         spaceBetween={20}
         modules={[Navigation]}
         navigation={{
@@ -26,29 +26,31 @@ const DoctorsSwiper = () => {
         }}
         breakpoints={{
           300: {
-            spaceBetween: 10
+            spaceBetween: 10,
           },
           768: {
-            spaceBetween: 20
-          }
+            spaceBetween: 20,
+          },
         }}
       >
         {doctorsData.map((doctor) => (
           <SwiperSlide key={doctor.fullName} className={classes.swiper_slide}>
-            <DoctorCard
-              image={doctor.image}
-              fullName={doctor.fullName}
-              professions={doctor.professions}
-              startWork={doctor.startWork}
-              alt={doctor.alt}
-            />
+              <DoctorCard
+                image={doctor.image}
+                fullName={doctor.fullName}
+                professions={doctor.professions}
+                startWork={doctor.startWork}
+                alt={doctor.alt}
+              />
           </SwiperSlide>
         ))}
       </Swiper>
-      <SwiperButtons buttons={{
-        prev: 'doctorSwiper-btn-prev',
-        next: 'doctorSwiper-btn-next'
-      }}/>
+      <SwiperButtons
+        buttons={{
+          prev: "doctorSwiper-btn-prev",
+          next: "doctorSwiper-btn-next",
+        }}
+      />
     </div>
   );
 };

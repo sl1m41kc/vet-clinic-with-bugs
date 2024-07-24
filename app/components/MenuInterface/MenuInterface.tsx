@@ -22,9 +22,18 @@ const MenuInterface = ({
   const [scrollbarWidth, setScrollbarWidth] = useState(0);
   
   useEffect(() => {
-    setScrollbarWidth(window.innerWidth - document.body.offsetWidth);
+    setScrollbarWidth(window.innerWidth - document.documentElement.clientWidth);
+    const handleResize = () => {
+      setScrollbarWidth(window.innerWidth - document.documentElement.clientWidth);
+    };
+    
+    window.addEventListener("resize", handleResize);
+    
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
   }, []);
-  
+
   useEffect(() => {
     if (isOpen) {
       document.body.style.overflow = "hidden";
