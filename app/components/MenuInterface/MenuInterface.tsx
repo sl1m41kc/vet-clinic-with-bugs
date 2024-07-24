@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import clsx from "clsx";
 import Link from "next/link";
 
@@ -19,7 +19,11 @@ const MenuInterface = ({
   isOpen: boolean;
   setIsOpen: any;
 }) => {
-  const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
+  const [scrollbarWidth, setScrollbarWidth] = useState(0);
+  
+  useEffect(() => {
+    setScrollbarWidth(window.innerWidth - document.body.offsetWidth);
+  }, []);
   
   useEffect(() => {
     if (isOpen) {

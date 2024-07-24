@@ -3,11 +3,10 @@ import React from "react";
 import clsx from "clsx";
 import Masonry from "react-masonry-css";
 
-import { servicesData } from "@/app/data/servicesData";
-
 import ServiceCard from "@/app/components/ServiceCard/ServiceCard";
 
 import classes from "./services.module.css";
+import { servicesData } from "@/app/data/servicesData";
 
 const Services = () => {
   return (
@@ -25,8 +24,7 @@ const Services = () => {
             key={clsx(index, service.title)}
             title={service.title}
             services={service.services}
-            hasSVG={service.hasSVG}
-            src={service.src}
+            SVG={service.SVG}
           />
         ))}
       </Masonry>

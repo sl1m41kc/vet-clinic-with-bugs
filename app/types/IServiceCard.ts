@@ -1,9 +1,10 @@
+import React from "react"
+
 export interface IServiceCard {
     title: string,
     services: {
         text: string,
         isLink: boolean
     }[],
-    hasSVG: boolean,
-    src: string
+    SVG?: React.ReactElement
 }

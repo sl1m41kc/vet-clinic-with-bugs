@@ -3,19 +3,15 @@ import clsx from "clsx";
 import Link from "next/link";
 
 import { IServiceCard } from "@/app/types/IServiceCard";
-import { SVG_PATH } from "@/app/Сonstants/pathsConsts";
 
 import CircleButton from "@/app/UI/СircleButton/CircleButton";
 
 import PawSVG from '/public/Svg/Paw.svg';
-import HeartSVG from '/public/Svg/Heart.svg';
-import FlaskSVG from '/public/Svg/Flask.svg';
-import MedBowlSVG from '/public/Svg/Med_bowl.svg';
 
 import style from "@/app/components/PetCard/petCard.module.css";
 import classes from "./serviceCard.module.css";
 
-const ServiceCard = ({ title, services, hasSVG, src }: IServiceCard) => {
+const ServiceCard = ({ title, services, SVG }: IServiceCard) => {
   return (
     <div className={classes.card}>
       <div className={style.button}>
@@ -36,9 +32,7 @@ const ServiceCard = ({ title, services, hasSVG, src }: IServiceCard) => {
         </div>
       ))}
 
-      {hasSVG && src == "heart" ? <HeartSVG className={classes.svg} /> : ""}
-      {hasSVG && src == "flask" ? <FlaskSVG className={classes.svg} /> : ""}
-      {hasSVG && src == "bowl" ? <MedBowlSVG className={classes.svg} /> : ""}
+      {SVG && <div className={classes.svg} >{SVG}</div>}
     </div>
   );
 };

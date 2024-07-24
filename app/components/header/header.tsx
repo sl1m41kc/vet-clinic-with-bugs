@@ -1,4 +1,4 @@
-"use client";
+'use client'
 import React from "react";
 import clsx from "clsx";
 import useResize from "@/app/hooks/useResize";
@@ -12,7 +12,6 @@ import styles from "./header.module.css";
 
 const Header = () => {
   const { width } = useResize();
-
   const { isScrolled } = useScroll();
 
   return (

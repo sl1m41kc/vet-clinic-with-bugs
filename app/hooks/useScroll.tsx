@@ -1,9 +1,9 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect, useLayoutEffect } from "react";
 
 const useScroll = () => {
   const [isScrolled, setScrolled] = useState(false);
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > 0) {
         setScrolled(true);

@@ -3,25 +3,25 @@ import { IAdvantagesCard } from "@/app/types/IAdvantagesCard";
 export const advantagesData: IAdvantagesCard[] = [
     {
         title: "12",
-        description: "лет наша клиника работает для вас",
+        description: "Лет наша клиника работает для вас",
         changeColor: false
     }, 
 
     {
         title: "24/7",
-        description: "мы рады вам в любое время",
+        description: "Мы рады вам в любое время",
         changeColor: true
     },
 
     {
         title: "1000+",
-        description: "довольных пациентов",
+        description: "Довольных пациентов",
         changeColor: false
     },
 
     {
         title: "36",
-        description: "высококвалифицированных специалистов",
+        description: "Высококвалифицированных специалистов",
         changeColor: false
     }
 ]
