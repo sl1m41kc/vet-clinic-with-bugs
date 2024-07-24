@@ -1,0 +1,71 @@
+.address {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.address.menu {
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.info {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+}
+
+.info.menu {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 30px;
+}
+
+.text {
+    color: var(--clr1);
+    font-size: 0.875rem;
+}
+
+.phone {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+
+    padding: 10px 20px;
+
+    background-color: var(--clr1);
+    color: var(--clr2);
+    border-radius: 30px;
+
+    transition: background-color 0.3s, color 0.3s, transform 0.3s;
+}
+
+.icon {
+    fill: var(--clr2);
+
+    transition: fill 0.3s;
+}
+
+.phone:hover {
+    background-color: var(--clr3);
+    color: var(--clr1);
+    transform: scale(1.05);
+}
+
+.phone:hover .icon{
+    fill: var(--clr1);
+}
+
+.phone:active {
+    transform: scale(0.99);
+}
+
+@media (max-width: 1230px) {
+    .info {
+        gap: 20px;
+    }
+
+    .address {
+        gap: 10px;
+    }
+}

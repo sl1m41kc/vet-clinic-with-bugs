@@ -1,0 +1,92 @@
+.card {
+  position: relative;
+  overflow: hidden;
+
+  display: flex;
+  flex-direction: column;
+
+  background-color: var(--clr6);
+
+  height: 100%;
+
+  padding: 30px 0 0 30px;
+
+  border-radius: 30px;
+}
+
+.text {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  max-width: 415px;
+  width: 100%;
+
+  color: var(--clr1);
+}
+
+.title {
+  font-size: 2em;
+  font-weight: 500;
+}
+
+.description {
+  font-size: 1.125em;
+}
+
+.button {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+
+  z-index: 1;
+}
+
+.image {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+.reverse_image {
+  position: absolute;
+  top: 0;
+  right: 70px;
+}
+
+.reverse_card {
+  justify-content: flex-end;
+
+  padding: 0 0 30px 30px;
+}
+
+@media (max-width: 1024px) {
+  .text {
+    max-width: 350px;
+  }
+
+}
+
+@media (max-width: 768px) {
+  .card {
+    padding: 20px 0 0 20px;
+  }
+
+  .reverse_card {
+    padding: 0 0 20px 20px;
+  }
+}
+
+@media (max-width: 450px) {
+  .text {
+    max-width: 250px;
+  }
+
+  .title {
+    font-size: 1.625em;
+  }
+
+  .description {
+    font-size: 1em;
+  }
+}

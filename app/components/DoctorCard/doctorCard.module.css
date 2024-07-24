@@ -1,0 +1,85 @@
+.card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    padding: 30px;
+
+    max-width: 400px;
+    height: 600px;
+
+    border-radius: 30px;
+
+    color: var(--clr1);
+
+    background-color: var(--clr6);
+}
+
+.profile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    gap: 20px;
+}
+
+.avatar {
+    position: relative;
+    
+    width: 100%;
+    max-width: 300px;
+    max-height: 300px;
+
+    aspect-ratio: 1/1;
+
+    border-radius: 50%;
+    overflow: hidden;
+
+    background-color: var(--clr2);
+}
+
+.img {
+    object-fit: cover;
+}
+
+.text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    gap: 10px;
+
+    text-align: center;
+}
+
+.fullName {
+    font-size: 1.5em;
+    font-weight: 500;
+}
+
+.professions {
+    font-size: 1.125em;
+}
+
+.experience {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    gap: 10px;
+    width: 100%;
+
+    text-align: center;
+}
+
+.line {
+    height: 1px;
+    width: 105%;
+
+    background-color: var(--clr4);
+}
+
+.experience_number {
+    font-size: 2em;
+    font-weight: 500;
+}

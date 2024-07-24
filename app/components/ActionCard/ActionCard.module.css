@@ -1,0 +1,51 @@
+.card {
+    position: relative;
+    overflow: hidden;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-around;
+    gap: 5px;
+
+    padding: 30px;
+    height: 100%;
+
+    background-color: var(--clr6);
+
+    border-radius: 30px;
+
+    z-index: 0;
+}
+
+.text {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+
+
+    color: var(--clr1);
+}
+
+.title {
+    font-size: 1.375em;
+    font-weight: 500;
+}
+
+.description {
+    font-size: 1.125em;
+}
+
+.svg {
+    position: absolute;
+    
+    bottom: 0;
+    right: 0;
+    
+    width: 148px;
+    height: 94px;
+
+    fill: var(--clr3);
+
+    z-index: -1;
+}

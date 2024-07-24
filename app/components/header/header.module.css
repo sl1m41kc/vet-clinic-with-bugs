@@ -1,0 +1,57 @@
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+
+    padding: 20px;
+    padding-right: 30px;
+
+    transition: height 0.3s;
+    background-color: var(--clr2);
+
+    z-index: 9999;
+}
+
+.logoMenu {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 50px;
+
+    transition: gap 0.3s;
+}
+
+.scrolled {
+    padding: 10px 20px;
+}
+
+.header.scrolled .logoMenu {
+    gap: 0;
+}
+
+@media (max-width: 1230px) {
+    .logoMenu {
+        gap: 20px;
+    }
+}
+
+@media (max-width: 800px) {
+    .header {
+        padding: 10px;
+    }
+    .scrolled {
+        padding: 5px 10px;
+    }
+}
+
+@media (max-width: 400px) {
+    .logoMenu {
+        gap: 0;
+    }
+}

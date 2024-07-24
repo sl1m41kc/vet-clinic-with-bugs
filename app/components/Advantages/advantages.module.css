@@ -1,0 +1,16 @@
+.advantages {
+    display: grid;
+    grid-template-columns: repeat(4, 24fr);
+
+    gap: 20px;
+
+    margin-top: 20px;
+    width: 100%;
+}
+
+@media (max-width: 1280px) {
+    .advantages {
+        grid-template-columns: repeat(2, 24fr);
+        margin-top: 10px;
+    }
+}
