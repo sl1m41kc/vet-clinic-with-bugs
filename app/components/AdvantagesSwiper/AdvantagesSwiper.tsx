@@ -1,5 +1,4 @@
 import React from "react";
-import clsx from "clsx";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 import { advantagesData } from "@/app/data/advantagesData";
