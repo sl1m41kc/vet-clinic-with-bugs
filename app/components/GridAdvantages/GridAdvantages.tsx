@@ -10,7 +10,7 @@ import styles from "./gridAdvantages.module.css";
 
 const GridAdvantages = () => {
   return (
-    <div className='container'>
+    <section className='container'>
       <div className={styles.grid}>
         <div className={styles.gridCard}>
           <PetCard
@@ -47,7 +47,7 @@ const GridAdvantages = () => {
           />
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 
