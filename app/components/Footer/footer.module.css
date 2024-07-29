@@ -51,10 +51,14 @@
   color: var(--clr7);
 }
 
+@media (max-width: 768px) {
+    .footer {
+        margin-top: 60px;
+    }
+}
 
 @media (max-width: 580px) {
     .footer {
-        margin-top: 60px;
         gap: 30px;
     }
 
