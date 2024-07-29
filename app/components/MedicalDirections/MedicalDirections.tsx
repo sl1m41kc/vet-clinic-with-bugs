@@ -17,7 +17,7 @@ const MedicialDirections = () => {
   if (width <= 850) return <MedicalDirectionsSwiper/>
 
   return (
-    <section className={clsx(classes.directions, "container")}>
+    <div className={clsx(classes.directions, "container")}>
       {medicialDirectionsData.map((direction) => (
         <MedicialDirection
           key={direction.title}
@@ -25,7 +25,7 @@ const MedicialDirections = () => {
           description={direction.description}
         />
       ))}
-    </section>
+    </div>
   );
 };
 

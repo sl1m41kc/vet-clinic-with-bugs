@@ -10,7 +10,7 @@ import { servicesData } from "@/app/data/servicesData";
 
 const Services = () => {
   return (
-    <section className="container">
+    <div className="container">
       <Masonry
         breakpointCols={{
           default: 3,
@@ -28,7 +28,7 @@ const Services = () => {
           />
         ))}
       </Masonry>
-    </section>
+    </div>
   );
 };
 

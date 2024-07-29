@@ -15,7 +15,7 @@ import classes from "./doctorsSwiper.module.css";
 
 const DoctorsSwiper = () => {
   return (
-    <section className={classes.slider}>
+    <div className={classes.slider}>
       <Swiper
         slidesPerView="auto"
         spaceBetween={20}
@@ -51,7 +51,7 @@ const DoctorsSwiper = () => {
           next: "doctorSwiper-btn-next",
         }}
       />
-    </section>
+    </div>
   );
 };
 

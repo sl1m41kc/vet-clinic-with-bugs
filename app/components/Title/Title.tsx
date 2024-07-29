@@ -4,7 +4,7 @@ import styles from "./title.module.css";
 
 const Title = () => {
   return (
-    <section className="container">
+    <div className="container">
       <div className={styles.text}>
         <p className={styles.moved}>
           Наша цель&nbsp;&mdash; обеспечить{" "}
@@ -14,7 +14,7 @@ const Title = () => {
         необходимое внимание с&nbsp;учетом его возраста и&nbsp;состояния
         здоровья.
       </div>
-    </section>
+    </div>
   );
 };
 
