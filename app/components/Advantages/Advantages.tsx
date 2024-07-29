@@ -14,7 +14,7 @@ const Advantages = () => {
 
   if (width <= 1024) return <AdvantagesSwiper />;
   return (
-    <div className={`container`}>
+    <section className={`container`}>
       <div className={styles.advantages}>
         {advantagesData.map((card) => (
           <AdvantagesCard
@@ -25,7 +25,7 @@ const Advantages = () => {
           />
         ))}
       </div>
-    </div>
+    </section>
   );
 };
 
