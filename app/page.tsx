@@ -1,3 +1,4 @@
+import Header from "@/app/components/Header/Header";
 import Hero from "@/app/components/Hero/hero";
 import GridAdvantages from "./components/GridAdvantages/GridAdvantages";
 import Advantages from "@/app/components/Advantages/Advantages";
