@@ -28,6 +28,7 @@
 
 .scrolled {
     padding: 10px 20px;
+    padding-right: 30px;
 }
 
 .header.scrolled .logoMenu {
@@ -43,9 +44,11 @@
 @media (max-width: 800px) {
     .header {
         padding: 10px;
+        padding-right: 25px;
     }
     .scrolled {
         padding: 5px 10px;
+        padding-right: 25px;
     }
 }
 
