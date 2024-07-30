@@ -1,0 +1,145 @@
+.service {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 75px;
+
+    padding: 30px;
+
+    border: 1px solid var(--clr4);
+    border-radius: 30px;
+    background-color: var(--clr2);
+
+    cursor: pointer;
+
+    transition: background-color 0.5s, border 0.5s, border-radius 0.9s;
+}
+
+.service.active {
+    border: 1px solid var(--clr9);
+    background-color: var(--clr9);
+
+    border-radius: 30px 30px 0 0;
+}
+
+.button {
+    padding: 10px;
+
+    border: 1px solid var(--clr4);
+    border-radius: 50%;
+
+    cursor: pointer;
+    
+    transition: transform 0.3s;
+}
+
+.svg {
+    fill: var(--clr1);  
+
+    transform: rotate(90deg);
+
+    transition: transform 0.5s;
+}
+
+.svg.active {
+    transform: rotate(270deg);
+}
+
+.button:hover {
+    border: 1px solid var(--clr3);
+    background-color: var(--clr3);
+
+    transform: scale(1.05);
+}
+
+.button:active {
+    transform: scale(0.99);
+}
+
+.service_item {
+    align-items: flex-start;
+
+    padding: 20px 0;
+
+    border-radius: 0;
+    border: none;
+    border-bottom: 1px solid var(--clr4);
+    background-color: var(--clr6);
+
+    cursor: auto;
+}
+
+.text {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.title {
+    font-size: 1.5em;
+    font-weight: 500;
+}
+
+.service_title {
+    font-size: 1.125em;
+}
+
+.price {
+    font-size: 1.125em;
+    font-weight: 500;
+
+    white-space: nowrap;
+}
+
+.rub {
+    color: var(--clr8);
+}
+
+.inner {
+    position: relative;
+    display: grid;
+    grid-template-rows: 0fr;
+
+    padding-inline: 30px;
+    padding-top: 30px;
+    margin-top: -30px;
+
+    border-radius: 0 0 30px 30px;
+
+    background-color: var(--clr6) ;
+
+    transition: grid-template-rows 1s;
+
+    z-index: -1;
+}
+
+.inner.active {
+    grid-template-rows: 1fr;
+}
+
+.inner_content {
+    overflow: hidden;
+}
+
+
+.sub_service {
+    padding-left: 30px;
+}
+
+.note {
+    width: 100%;
+    padding: 30px;
+
+    text-align: center;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@media (max-width: 768px) {
+    .service {
+        gap: 20px;
+    }
+}

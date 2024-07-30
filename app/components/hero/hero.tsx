@@ -9,7 +9,7 @@ import styles from "./hero.module.css";
 
 const Hero = () => {
   return (
-    <section className='container'>
+    <section className="container">
       <div className={styles.hero}>
         <div className={styles.blackout} />
         <Image

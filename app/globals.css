@@ -10,10 +10,16 @@
     --clr5: black;
     --clr6: #F3F5FB;
     --clr7: #7D8FA9;
+    --clr8: rgba(18, 50, 95, 0.4);
+    --clr9: #E8EBF4;
 }
 
 body {
     font-size: 16px;
+}
+
+ul {
+    list-style: none;
 }
 
 .container {
@@ -39,6 +45,5 @@ body {
 @media (max-width: 768px) {
     .container {
         padding-inline: 10px;
-        margin-top: 10px;
     }
 }

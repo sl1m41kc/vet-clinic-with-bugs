@@ -1,0 +1,31 @@
+.content {
+    margin-top: 60px;
+    padding-inline: 20px;
+
+    color: var(--clr1);
+    font-size: 2.5em;
+    line-height: 130%;
+}
+
+.moved {
+    text-align: center;
+}
+
+@media (max-width: 1210px) {
+    .moved {
+        text-align: left;
+    }
+}
+
+@media (max-width: 1100px) {
+    .content {
+        font-size: 2em;
+    }
+}
+
+@media (max-width: 768px) {
+    .content {
+        font-size: 1.75em;
+        margin-top: 30px;
+    }
+}
