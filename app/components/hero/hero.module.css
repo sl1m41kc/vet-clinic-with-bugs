@@ -59,7 +59,7 @@
     font-weight: 500;
 }
 
-@media (orientation: portrait) {
+@media (max-width: 600px) {
     .hero {
         align-items: flex-end;
         justify-content: center;
