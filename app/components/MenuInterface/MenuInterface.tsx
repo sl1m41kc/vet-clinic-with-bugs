@@ -55,7 +55,7 @@ const MenuInterface = ({
         </div>
         <div className={classes.content} onClick={(e) => e.stopPropagation()}>
           <div className={classes.contacts}>
-            <Link className={classes.logo} href="/">
+            <Link className={classes.logo} href="/" onClick={() => setIsOpen(false)}>
               <LogoSVG />
             </Link>
             <Contacts style="menu" />
@@ -63,7 +63,7 @@ const MenuInterface = ({
 
           <ul className={classes.list}>
             {menuNavData.map((item, index) => (
-              <Link key={index} className={classes.item} href={item.href}>
+              <Link key={index} className={classes.item} href={item.href} onClick={() => setIsOpen(false)}>
                 {item.title}
               </Link>
             ))}
