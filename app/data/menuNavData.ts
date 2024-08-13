@@ -5,7 +5,7 @@ export const menuNavData: { title: string; href: string }[] = [
     },
     {
         title: "Специалисты",
-        href: "/",
+        href: "/specialists",
     },
     {
         title: "О клинике",
