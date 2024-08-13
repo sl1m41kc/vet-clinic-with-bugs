@@ -39,12 +39,12 @@ const DoctorCard = ({
           <p className={classes.professions}>{professions}</p>
         </div>
       </div>
-      <div className={classes.experience}>
+      {experience >= 2 && <div className={classes.experience}>
         <hr className={classes.line} />
         <p>
           Стаж:<span className={classes.experience_number}> {experience}</span> лет
         </p>
-      </div>
+      </div>}
     </div>
   );
 };
