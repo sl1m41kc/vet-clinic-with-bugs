@@ -34,6 +34,10 @@
     gap: 0;
 }
 
+.phantom {
+    height: 140px;
+}
+
 @media (max-width: 1230px) {
     .logoMenu {
         gap: 20px;
@@ -46,6 +50,15 @@
     }
     .scrolled {
         padding: 5px 10px;
+    }
+    .phantom {
+        height: 100px;
+    }
+}
+
+@media (max-width: 430px) {
+    .phantom {
+        height: 80px;
     }
 }
 
