@@ -2,10 +2,14 @@ import React from "react";
 
 import styles from "./title.module.css";
 
-const Title = () => {
+interface IProps {
+  marginTop: number;
+}
+
+const Title = ({ marginTop }: IProps) => {
   return (
     <section className="container">
-      <div className={styles.text}>
+      <div className={styles.text} style={{ marginTop: marginTop }}>
         <p className={styles.moved}>
           Наша цель&nbsp;&mdash; обеспечить{" "}
           <span className={styles.colored}>индивидуальный уход,</span>

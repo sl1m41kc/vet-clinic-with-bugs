@@ -12,10 +12,10 @@ export default function Home() {
       <Hero />
       <GridAdvantages />
       <Advantages />
-      <Title />
+      <Title marginTop={150}/>
       <MedicialDirections />
       <DoctorsSwiper/>
-      <Title/>
+      <Title marginTop={150}/>
       <Services/>
     </>
   );
