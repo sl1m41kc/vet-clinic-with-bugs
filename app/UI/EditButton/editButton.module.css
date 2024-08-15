@@ -1,0 +1,21 @@
+.button {
+    padding: 10px;
+
+    border: 1px solid var(--clr4);
+    border-radius: 30px;
+
+    transition: background-color 0.3s , transform 0.3s;
+}
+
+.button:hover {
+    background-color: var(--clr3);
+    transform: scale(1.05);
+}
+
+.button:active {
+    transform: scale(0.99);
+}
+
+.svg {
+    fill: var(--clr1);
+}

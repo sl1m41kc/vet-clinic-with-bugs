@@ -1,0 +1,94 @@
+.service {
+    position: relative;
+
+    padding: 30px;
+    overflow: hidden;
+
+    background-color: var(--clr6);
+    border-radius: 10px;
+
+    color: var(--clr1);
+}
+
+.listenerContainer {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+}
+
+.content {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.inner {
+    width: 100%;
+    background-color: var(--clr9);
+}
+
+.inputs {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+
+    gap: 20px;
+    width: 100%;  
+}
+
+.text {
+    display: flex;
+    flex-direction: column;
+
+    gap: 10px;
+    width: 100%;
+}
+
+.title {
+    font-weight: 500;
+    font-size: 1.125em;
+}
+
+.input {
+    padding: 5px 0;
+
+    background-color: var(--clr6);
+    border: none;
+    border-bottom: 1px solid var(--clr4);
+}
+
+.input::placeholder {
+    color: var(--clr8);
+}
+
+.inner .input {
+    background-color: var(--clr9);
+}
+
+.input:focus {
+    outline: none;
+}
+
+.price {
+    position: relative;
+}
+
+.currency {
+    position: absolute;
+    top: 5px;
+    right: 0;
+
+    color: var(--clr8);
+
+    pointer-events: none;
+}
+
+.button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+}

@@ -5,6 +5,7 @@ import Header from "@/app/components/Header/Header";
 import Footer from "@/app/components/Footer/Footer";
 
 import "./globals.css";
+import { AdminHeader } from "./components/AdminHeader/AdminHeader";
 
 const montserrat = Montserrat({ subsets: ["latin"] });
 
@@ -18,15 +19,17 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const isAdmin = false;
+
   return (
     <html lang="en">
       <head>
         <link rel="icon" href="/favicon.ico" />
       </head>
       <body className={montserrat.className}>
-        <Header/>
+        {isAdmin ? <AdminHeader /> : <Header />}
         <main>{children}</main>
-        <Footer/>
+        {!isAdmin && <Footer />}
       </body>
     </html>
   );

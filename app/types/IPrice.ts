@@ -1,13 +1,14 @@
-interface IPrice {
-    title: string,
-    description?: string,
-    price?: string,
-    services?: IPrice[]
+export interface IPriceSection {
+  title: string;
+  services: IPrice[];
+  description?: string;
+  note?: string;
 }
 
-export interface IService {
-    title: string,
-    description?: string,
-    services: IPrice[],
-    note: string
+export interface IPrice {
+  id: string;
+  title: string;
+  price?: number;
+  description?: string;
+  services?: IPrice[];
 }

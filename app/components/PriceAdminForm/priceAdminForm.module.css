@@ -1,0 +1,56 @@
+.main {
+    display: flex;
+    flex-direction: column;
+
+    gap: 20px;
+
+    margin-top: 30px;
+    margin-inline: auto;
+    margin-bottom: 60px;
+    padding: 30px;
+    width: min(1000px, 100%);
+
+    border-radius: 30px;
+    border: 1px solid var(--clr4);
+
+    color: var(--clr1);
+}
+
+.inputs {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.listServices {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.input {
+    padding: 5px 0;
+    width: 100%;
+
+    border: none;
+    border-bottom: 1px solid var(--clr4);
+}
+
+.input::placeholder {
+    color: var(--clr8);
+}
+
+.input:focus {
+    outline: none;
+}
+
+.title {
+    font-weight: 500;
+    font-size: 1.5em;
+}
+
+.button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

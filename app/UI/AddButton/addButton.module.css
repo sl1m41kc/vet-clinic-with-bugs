@@ -1,0 +1,53 @@
+.button {
+    padding: 10px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 5px;
+
+    color: var(--clr1);
+    border: 1px solid var(--clr4);
+    border-radius: 30px;
+
+    transition: transform 0.3s;
+}
+
+.button:hover {
+    transform: scale(1.05);
+}
+
+.button:active {
+    transform: scale(0.99);
+}
+
+.button.animated {
+    gap: 0;
+}
+
+.button.animated:hover {
+    gap: 5px;
+}
+
+.svg {
+    fill: var(--clr1);
+
+    transform: rotate(45deg);
+}
+
+.inner {
+    display: grid;
+    grid-template-columns: 0fr;
+
+    transition: grid-template-columns 0.5s;
+}
+
+.button:hover .inner {
+    grid-template-columns: 1fr;
+    padding-right: 10px;
+}
+
+.text {
+    overflow: hidden;
+    white-space: nowrap;
+}
