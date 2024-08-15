@@ -1,5 +1,6 @@
 "use client";
 import React from "react";
+import clsx from "clsx";
 import Link from "next/link";
 
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -35,8 +36,8 @@ const DoctorsSwiper = () => {
           },
         }}
       >
-        {topDoctors.map((doctor) => (
-          <SwiperSlide key={doctor.fullName} className={classes.swiper_slide}>
+        {topDoctors.map((doctor, index) => (
+          <SwiperSlide key={clsx(index, doctor.fullName)} className={classes.swiper_slide}>
             <DoctorCard
               image={doctor.image}
               fullName={doctor.fullName}
