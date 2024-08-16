@@ -39,12 +39,12 @@ const DoctorsSwiper = () => {
         {topDoctors.map((doctor, index) => (
           <SwiperSlide key={clsx(index, doctor.fullName)} className={classes.swiper_slide}>
             <DoctorCard
+              id={doctor.id}
               image={doctor.image}
               fullName={doctor.fullName}
               professions={doctor.professions}
               startWork={doctor.startWork}
-              alt={doctor.alt}
-            />
+              alt={doctor.alt} details={[]}            />
           </SwiperSlide>
         ))}
 

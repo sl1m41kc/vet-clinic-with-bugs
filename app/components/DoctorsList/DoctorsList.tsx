@@ -16,8 +16,7 @@ export const DoctorsList = () => {
           fullName={doctor.fullName}
           professions={doctor.professions}
           startWork={doctor.startWork}
-          alt={doctor.alt}
-        />
+          alt={doctor.alt} id={doctor.id} details={[]}        />
       ))}
     </section>
   );
