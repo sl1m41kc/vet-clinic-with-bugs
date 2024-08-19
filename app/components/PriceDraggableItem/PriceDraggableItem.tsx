@@ -1,3 +1,4 @@
+"use client";
 import clsx from "clsx";
 
 import { AddButton } from "@/app/UI/AddButton/AddButton";
@@ -9,26 +10,28 @@ import {
   restrictToParentElement,
   restrictToVerticalAxis,
 } from "@dnd-kit/modifiers";
-import { SortableContext, useSortable } from "@dnd-kit/sortable";
+import { arrayMove, SortableContext, useSortable } from "@dnd-kit/sortable";
+import { Controller, useFieldArray } from "react-hook-form";
+import { CSS } from "@dnd-kit/utilities";
 import { IPrice } from "@/app/types/IPrice";
 
 interface IProps {
+  control: any;
+  pathToService: string;
   id: string;
-  title: string;
-  description?: string;
-  items?: IPrice[];
-  price?: number;
-  isInner?: boolean;
+  reset?: any;
+  getValues?: any;
+  remove: any;
   isDragOverlay?: boolean;
 }
 
 export const PriceDraggableItem = ({
+  control,
   id,
-  title,
-  description,
-  price,
-  items,
-  isInner,
+  reset,
+  getValues,
+  pathToService,
+  remove,
   isDragOverlay,
 }: IProps) => {
   const {
@@ -40,77 +43,145 @@ export const PriceDraggableItem = ({
     isDragging,
   } = useSortable({
     id,
+    data: {
+      pathToService,
+    }
   });
 
   const style = {
     opacity: isDragging ? 0.3 : 1,
-    transform: `translate3d(${transform?.x ?? 0}px, ${transform?.y ?? 0}px, 0)`,
+    transform: CSS.Transform.toString(transform),
     transition,
   };
 
+  const isTopLevelService = pathToService.split(".").length === 2;
+  const indexInGroup = Number(pathToService.split(".").pop());
+
+  const {
+    fields,
+    append: appendNestedService,
+    remove: removeNestedService,
+  } = useFieldArray({
+    control,
+    name: `${pathToService}.services`,
+  });
+
+  const isGroup = fields.length > 0;
+
+  const handleDragEnd = ({ active, over }: any) => {
+    if (active.id !== over?.id) {
+      const activeIndex = Number(
+        String(active.data.current?.pathToService).split(".").pop()
+      );
+      const overIndex = Number(
+        String(over?.data.current?.pathToService).split(".").pop()
+      );
+
+      if (activeIndex >= 0 && overIndex >= 0) {
+        const newServices = arrayMove(
+          getValues().services[indexInGroup].services,
+          activeIndex,
+          overIndex
+        );
+        reset({
+          ...getValues(),
+          services: getValues().services.map((service: IPrice, index: number) =>
+            index === indexInGroup
+              ? { ...service, services: newServices }
+              : service
+          ),
+        });
+      }
+    }
+  }
+
   return (
     <div
-      className={clsx(classes.service, isInner && classes.inner)}
+      className={clsx(classes.service, !isTopLevelService && classes.inner)}
       style={style}
       ref={setNodeRef}
       {...attributes}
     >
       <div className={classes.listenerContainer} {...listeners} />
       <div className={classes.content}>
-        <DeleteButton onClick={() => {}} />
+        <DeleteButton onClick={() => remove(indexInGroup)} />
 
         <div className={classes.inputs}>
           <div className={classes.text}>
-            <input
-              type="text"
-              placeholder={clsx(items ? "Заголовок группы" : "Услуга")}
-              className={clsx(classes.input, classes.title)}
-              defaultValue={title}
-            />
-            <input
-              type="text"
-              placeholder={clsx(
-                items ? "Примечание для группы" : "Примечание для цены"
+            <Controller
+              name={pathToService + ".title"}
+              control={control}
+              defaultValue=""
+              render={({ field }) => (
+                <input
+                  type="text"
+                  placeholder="Название услуги"
+                  {...field}
+                  className={classes.input}
+                />
               )}
-              className={classes.input}
-              defaultValue={description}
+            />
+            <Controller
+              name={pathToService + ".description"}
+              control={control}
+              defaultValue=""
+              render={({ field }) => (
+                <input
+                  type="text"
+                  placeholder="Описание услуги"
+                  {...field}
+                  className={classes.input}
+                />
+              )}
             />
           </div>
 
-          {!items && !isDragging && (
+          {!isGroup && !isDragging && (
             <div className={classes.price}>
-              <input
-                type="text"
-                placeholder="0"
-                className={classes.input}
-                defaultValue={price}
+              <Controller
+                name={pathToService + ".price"}
+                defaultValue={0}
+                control={control}
+                render={({ field }) => (
+                  <input
+                    type="number"
+                    placeholder="Цена"
+                    {...field}
+                    className={classes.input}
+                  />
+                )}
               />
               <span className={classes.currency}>₽</span>
             </div>
           )}
         </div>
 
-        {items && !isDragOverlay && !isDragging && (
+        {isGroup && !isDragOverlay && !isDragging && (
           <DndContext
-            id={`DndContextAdminFormPriceGroup${id}`}
+            id={"DndContextPriceDraggableItem" + pathToService}
+            onDragEnd={handleDragEnd}
             modifiers={[restrictToVerticalAxis, restrictToParentElement]}
           >
-            <SortableContext items={items}>
-              {items.map((price, index) => (
-                <PriceDraggableItem
-                  key={clsx(index, price.id, price.title)}
-                  {...price}
-                  isInner
-                />
-              ))}
+            <SortableContext items={fields}>
+              {fields.map((price, index: number) => {
+                return (
+                  <PriceDraggableItem
+                    id={price.id}
+                    key={clsx(index, price.id, "nestedPrice")}
+                    control={control}
+                    pathToService={`${pathToService}.services.${index}`}
+                    remove={removeNestedService}
+                  />
+                );
+              })}
             </SortableContext>
           </DndContext>
         )}
 
-        {!isDragOverlay && !isDragging && (
+        {isTopLevelService && !isDragging && (
           <div className={classes.button}>
             <AddButton
-              onClick={() => {}}
+              onClick={() => appendNestedService({})}
               text="Добавить услугу"
               animated={true}
             />

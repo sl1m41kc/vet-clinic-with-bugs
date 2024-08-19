@@ -12,7 +12,7 @@ interface IProps {
 
 export const AddButton = ({ text, onClick, animated }: IProps) => {
   return (
-    <button className={clsx(classes.button, animated && classes.animated) } onClick={onClick} >
+    <button type="button" className={clsx(classes.button, animated && classes.animated) } onClick={onClick} >
       <PlusSVG className={classes.svg} />
       {animated ? (
         <div className={classes.inner}>

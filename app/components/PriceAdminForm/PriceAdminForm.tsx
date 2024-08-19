@@ -11,8 +11,7 @@ import {
   DragOverlay,
   DragStartEvent,
 } from "@dnd-kit/core";
-import { useEffect, useState } from "react";
-import { IPrice, IPriceSection } from "@/app/types/IPrice";
+import { IPriceSection } from "@/app/types/IPrice";
 import {
   restrictToParentElement,
   restrictToVerticalAxis,
@@ -22,125 +21,147 @@ import {
   SortableContext,
   verticalListSortingStrategy,
 } from "@dnd-kit/sortable";
-import { PRICE_DATA } from "@/app/data/priceData";
+import { DEFAULT_PRICE_DATA, PRICE_DATA } from "@/app/data/priceData";
 import { PriceDraggableItem } from "../PriceDraggableItem/PriceDraggableItem";
+import { Controller, useFieldArray, useForm } from "react-hook-form";
+import { useState } from "react";
+import { PriceDragOverlayItem } from "../PriceDragOverlayItem/PriceDragOverlayItem";
 
 interface IProps {
+  formRef: React.RefObject<HTMLFormElement>;
   idPrice?: number;
 }
 
-export const PriceAdminForm = ({ idPrice }: IProps) => {
-  const [priceSection, setPriceSection] = useState<IPriceSection>();
-  const [activeItem, setActiveItem] = useState<IPrice>();
+export const PriceAdminForm = ({ idPrice, formRef }: IProps) => {
+  const [draggingItemIndex, setDraggingItemIndex] = useState<number>();
 
-  useEffect(() => {
-    if (idPrice) setPriceSection(PRICE_DATA[idPrice]);
-  }, [idPrice]);
+  const { control, handleSubmit, reset, getValues } = useForm<IPriceSection>({
+    defaultValues: idPrice ? PRICE_DATA[idPrice] : DEFAULT_PRICE_DATA,
+  });
 
-  // УДАЛЕНИЕ
-  const requestDeletePriceSection = (idPrice: number) => {
-    setPriceSection(undefined);
-  };
-  const handleDeletePriceSection = () => {
-    if (idPrice) requestDeletePriceSection(idPrice);
-    else setPriceSection(undefined);
-  };
+  const {
+    fields,
+    append: appendService,
+    remove: removeService,
+  } = useFieldArray({
+    control,
+    name: "services",
+  });
 
-  // ДОБАВЛЕНИЕ
-  const handleAddServiceToPriceSection = () => {
-    if (priceSection) {
-      const newPriceSection: IPriceSection = {
-        ...priceSection,
-        services: [...priceSection.services, { id: String(Date.now()), title: ""}],
-      }
-      setPriceSection(newPriceSection);
-    }
-  };
-  const handleAddServiceToServiceGroup = () => {
-    
-  }
+  const isServices = fields.length > 0;
 
-  const handleDragEndPriceSection = ({ active, over }: DragEndEvent) => {
-    setActiveItem(undefined);
-    if (over && active.id !== over.id) {
-      setPriceSection((prevPriceSection) => {
-        if (prevPriceSection) {
-          const prevServices = prevPriceSection.services;
-          const activeIndex = prevServices.findIndex(
-            (service) => service.id === active.id
-          );
-          const overIndex = prevServices.findIndex(
-            (service) => service.id === over.id
-          );
-          const newServices = arrayMove(prevServices, activeIndex, overIndex);
-          const newPriceSection = {
-            ...prevPriceSection,
-            services: newServices,
-          };
-          return newPriceSection;
-        }
-      });
-    }
+  const onSubmit = (data: IPriceSection) => {
+    console.log(data);
   };
 
-  const handleDragStartPriceSection = ({ active }: DragStartEvent) => {
-    if (priceSection) {
-      const activeItemId = priceSection.services.findIndex(
-        (service) => service.id === active.id
+  const handleDragStart = ({ active }: DragStartEvent) => {
+    const draggingItemIndex = Number(
+      String(active.data.current?.pathToService).split(".").pop()
+    );
+    setDraggingItemIndex(draggingItemIndex);
+  };
+
+  const handleDragEnd = ({ active, over }: DragEndEvent) => {
+    setDraggingItemIndex(undefined);
+
+    if (active.id !== over?.id) {
+      const activeIndex = Number(
+        String(active.data.current?.pathToService).split(".").pop()
       );
-      const newActiveItem = priceSection.services[activeItemId];
-      setActiveItem(newActiveItem);
+      const overIndex = Number(
+        String(over?.data.current?.pathToService).split(".").pop()
+      );
+
+      if (activeIndex >= 0 && overIndex >= 0) {
+        const newServices = arrayMove(
+          getValues().services,
+          activeIndex,
+          overIndex
+        );
+        reset({
+          ...getValues(),
+          services: newServices,
+        });
+      }
     }
   };
 
   return (
     <section className="container">
-      <div className={classes.main}>
-        <DeleteButton onClick={handleDeletePriceSection} />
+      <form ref={formRef} onSubmit={handleSubmit(onSubmit)} className={classes.main}>
+        <DeleteButton onClick={() => reset(DEFAULT_PRICE_DATA)} />
+
         <div className={classes.inputs}>
-          <input
-            type="text"
-            placeholder="Заголовок раздела"
-            defaultValue={priceSection?.title}
-            className={clsx(classes.input, classes.title)}
+          <Controller
+            name="title"
+            control={control}
+            defaultValue=""
+            render={({ field }) => (
+              <input
+                type="text"
+                placeholder="Название раздела"
+                {...field}
+                className={classes.input}
+              />
+            )}
           />
-          <input
-            type="text"
-            placeholder="Примечания для раздела"
-            defaultValue={priceSection?.description}
-            className={classes.input}
+          <Controller
+            name="description"
+            control={control}
+            defaultValue=""
+            render={({ field }) => (
+              <input
+                type="text"
+                placeholder="Описание раздела"
+                {...field}
+                className={classes.input}
+              />
+            )}
           />
         </div>
 
-        {priceSection && (
+        {isServices && (
           <div className={classes.listServices}>
             <DndContext
               id="DndContextPriceAdminForm"
-              onDragStart={handleDragStartPriceSection}
-              onDragEnd={handleDragEndPriceSection}
+              onDragStart={handleDragStart}
+              onDragEnd={handleDragEnd}
               modifiers={[restrictToVerticalAxis, restrictToParentElement]}
             >
-              {priceSection.services && (
-                <SortableContext
-                  items={priceSection.services}
-                  strategy={verticalListSortingStrategy}
-                >
-                  {priceSection &&
-                    priceSection.services.map((price, index) => (
-                      <PriceDraggableItem
-                        key={clsx(index, price.id, price.title)}
-                        {...price}
-                        items={price.services}
-                      />
-                    ))}
-                </SortableContext>
-              )}
+              <SortableContext
+                items={fields}
+                strategy={verticalListSortingStrategy}
+              >
+                {draggingItemIndex === undefined && (
+                  fields.map((service, index) => (
+                    <PriceDraggableItem
+                      id={service.id}
+                      key={clsx(index, service.id, service.title + "item")}
+                      control={control}
+                      reset={reset}
+                      getValues={getValues}
+                      pathToService={`services.${index}`}
+                      remove={removeService}
+                    />
+                  ))
+                )}
+                {draggingItemIndex !== undefined && (
+                  fields.map((service, index) => (
+                    <PriceDragOverlayItem 
+                      key={clsx(index, service.id, service.title + "item")}
+                      data={service}
+                      pathToService={`services.${index}`}
+                      isTopLevelService
+                    />
+                  ))
+                )}
+              </SortableContext>
+
               <DragOverlay>
-                {activeItem && (
-                  <PriceDraggableItem
-                    {...activeItem}
-                    items={activeItem.services}
-                    isDragOverlay
+                {typeof draggingItemIndex === "number" && (
+                  <PriceDragOverlayItem
+                    data={fields[draggingItemIndex]}
+                    isTopLevelService
                   />
                 )}
               </DragOverlay>
@@ -150,19 +171,26 @@ export const PriceAdminForm = ({ idPrice }: IProps) => {
 
         <div className={classes.button}>
           <AddButton
-            onClick={handleAddServiceToPriceSection}
+            onClick={() => appendService({ id: String(Date.now()), title: "" })}
             text="Добавить услугу"
             animated={true}
           />
         </div>
 
-        <input
-          type="text"
-          placeholder="Примечание для раздела"
-          defaultValue={priceSection?.note}
-          className={classes.input}
+        <Controller
+          name="note"
+          defaultValue=""
+          control={control}
+          render={({ field }) => (
+            <input
+              type="text"
+              placeholder="Примечание для раздела"
+              {...field}
+              className={classes.input}
+            />
+          )}
         />
-      </div>
+      </form>
     </section>
   );
 };

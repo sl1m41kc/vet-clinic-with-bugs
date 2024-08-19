@@ -45,7 +45,7 @@ export const PRICE_DATA: IPriceSection[] = [
         services: [
           {
             id: "0",
-            title: "Контрастная внутривенная урография",
+            title: "Вакцинация от клещей",
             description:
               "(включает в себя стоимость контраста, не менее 3 снимков, расходные материалы)",
             price: 25000,
@@ -54,7 +54,7 @@ export const PRICE_DATA: IPriceSection[] = [
           {
             id: "1",
             title:
-              "Полная хирургическая обработка ран проникающих брюшной стенки с повреждением органов брюшной полости",
+              "Чиста полости рта",
             description:
               "(включает в себя стоимость контраста, не менее 3 снимков, расходные материалы)",
             price: 35000,
@@ -64,7 +64,7 @@ export const PRICE_DATA: IPriceSection[] = [
 
       {
         id: "3",
-        title: "Контрастная внутривенная урография",
+        title: "Чистка лапок животного",
         description:
           "(включает в себя стоимость контраста, не менее 3 снимков, расходные материалы)",
         price: 1500,
@@ -73,3 +73,10 @@ export const PRICE_DATA: IPriceSection[] = [
     note: "Стоимость указана без учета расходных материалов и препаратов",
   },
 ];
+
+export const DEFAULT_PRICE_DATA: IPriceSection = {
+  title: "",
+  description: "",
+  services: [],
+  note: "",
+}
