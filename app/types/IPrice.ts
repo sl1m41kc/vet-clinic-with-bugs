@@ -1,4 +1,5 @@
 export interface IPriceSection {
+  id: string;
   title: string;
   services: IPrice[];
   description?: string;

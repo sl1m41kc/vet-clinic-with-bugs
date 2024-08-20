@@ -2,6 +2,7 @@ import { IPriceSection } from "@/app/types/IPrice";
 
 export const PRICE_DATA: IPriceSection[] = [
   {
+    id: "0",
     title: "Консультации",
     services: [
       {
@@ -18,6 +19,7 @@ export const PRICE_DATA: IPriceSection[] = [
     ]
   },
   {
+    id: "1",
     title: "Лабораторные методы исследования",
     description:
       "Все исследования проводятся в лаборатории клиники в течении 15 минут",
@@ -75,6 +77,7 @@ export const PRICE_DATA: IPriceSection[] = [
 ];
 
 export const DEFAULT_PRICE_DATA: IPriceSection = {
+  id: "",
   title: "",
   description: "",
   services: [],

@@ -3,7 +3,7 @@ import EditSVG from "/public/Svg/edit.svg";
 import classes from "./EditButton.module.css";
 
 interface IProps {
-  onClick: () => void;
+  onClick?: () => void;
 }
 
 export const EditButton = ({ onClick }: IProps) => {

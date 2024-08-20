@@ -1,8 +1,15 @@
-import { AdminHeader } from "@/app/components/AdminHeader/AdminHeader";
+"use client";
 import { AdminPanelActions } from "@/app/components/AdminPanelActions/AdminPanelActions";
 import { AdminListPrice } from "@/app/components/AdminListPrice/AdminListPrice";
+import { useRef } from "react";
 
 export default function Home() {
+  const formRef = useRef<HTMLFormElement>(null);
+
+  const handleSubmit = () => {
+    formRef.current?.requestSubmit();
+  };
+
   return (
     <>
       <AdminPanelActions
@@ -11,9 +18,11 @@ export default function Home() {
           text: "Добавить раздел",
           link: "price/form",
         }}
-        saveBtn={{}}
+        saveBtn={{
+          func: handleSubmit,
+        }}
       />
-      <AdminListPrice />
+      <AdminListPrice formRef={formRef} />
     </>
   );
 }
