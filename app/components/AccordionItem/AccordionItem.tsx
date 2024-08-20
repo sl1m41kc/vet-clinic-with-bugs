@@ -2,13 +2,13 @@
 import React, { useState } from "react";
 import clsx from "clsx";
 
-import { IService } from "@/app/types/IPrice";
+import { IPriceSection } from "@/app/types/IPrice";
 
 import ArrowSVG from "/public/Svg/swiper_arrow.svg";
 
 import classes from "./accordionItem.module.css";
 
-const AccordionItem = ({ title, description, services, note }: IService) => {
+const AccordionItem = ({ title, description, services, note }: IPriceSection) => {
   const [active, setActive] = useState(false);
 
   const toggle = () => {

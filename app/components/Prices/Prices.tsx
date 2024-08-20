@@ -1,7 +1,7 @@
 import React from "react";
 import clsx from "clsx";
 
-import { priceData } from "@/app/data/pricesData";
+import { PRICE_DATA } from "@/app/data/priceData";
 
 import AccordionItem from "@/app/components/AccordionItem/AccordionItem";
 
@@ -11,14 +11,13 @@ const Prices = () => {
   return (
     <section className="container">
       <ul className={classes.accordion}>
-        {priceData.map((price, index) => (
+        {PRICE_DATA.map((price, index) => (
           <li key={clsx(index, price.title)}>
             <AccordionItem
               title={price.title}
               description={price.description}
               services={price.services}
-              note={price.note}
-            />
+              note={price.note} id=""            />
           </li>
         ))}
       </ul>
