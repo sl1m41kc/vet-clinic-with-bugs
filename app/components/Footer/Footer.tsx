@@ -23,8 +23,11 @@ const Footer = () => {
               Политика конфиденциальности
             </Link>
           </div>
-          <Link href='/'>
+          <Link href="/">
             <VK_Logo className={classes.svg} />
+          </Link>
+          <Link href="https://t.me/axonix_info?text=Здравствуйте! Интересует разработка сайта." target="_blank" className={classes.link}>
+            Разработка сайта
           </Link>
         </div>
         <p className={classes.copyright}>© {currentYear}, Ветлекарь</p>

@@ -14,7 +14,7 @@
 
 .info {
   display: flex;
-  align-items: top;
+  align-items: flex-start;
   justify-content: space-between;
 
   gap: 5px;
@@ -57,7 +57,7 @@
   }
 }
 
-@media (max-width: 580px) {
+@media (max-width: 730px) {
     .footer {
         gap: 30px;
     }
