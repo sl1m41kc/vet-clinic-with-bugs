@@ -1,0 +1,43 @@
+.content {
+    display: flex;
+
+    gap: 20px;
+
+    color: var(--clr1);
+}
+
+.image {
+    position: sticky;
+    top: 80px;
+
+    max-width: 500px;
+    
+    border-radius: 30px;
+
+    object-fit: cover;
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+}
+
+@media (max-width: 930px) {
+    .image {
+        max-width: 375px;
+    }
+}
+
+@media (max-width: 768px) {
+    .content {
+        flex-direction: column;
+        align-items: center;
+
+        gap: 10px;
+
+        margin-top: 10px;
+    }
+}
+
+@media (max-width: 415px) {
+    .image {
+        max-width: 300px;
+    }
+}
