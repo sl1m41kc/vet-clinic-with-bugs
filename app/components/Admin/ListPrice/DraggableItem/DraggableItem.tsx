@@ -1,6 +1,6 @@
 "use client";
 import { useSortable } from "@dnd-kit/sortable";
-import classes from "./AdminListPriceDraggableItem.module.css";
+import classes from "./DraggableItem.module.css";
 import { CSS } from "@dnd-kit/utilities";
 import Link from "next/link";
 import { EditButton } from "@/app/UI/EditButton/EditButton";
@@ -11,10 +11,10 @@ interface IProps {
   price: IPrice;
 }
 
-export const AdminListPriceDraggableItem = ({ price }: IProps) => {
+export const DraggableItem = ({ price }: IProps) => {
   const { id, title, description } = price;
   const index = PRICE_DATA.findIndex((price) => price.id === id);
-  
+
   const {
     attributes,
     listeners,
@@ -24,9 +24,6 @@ export const AdminListPriceDraggableItem = ({ price }: IProps) => {
     isDragging,
   } = useSortable({
     id,
-    data: {
-      indexSection: index,
-    },
   });
 
   const style = {

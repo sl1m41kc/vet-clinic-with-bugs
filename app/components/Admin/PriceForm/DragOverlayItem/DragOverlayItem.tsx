@@ -2,7 +2,7 @@ import clsx from "clsx";
 
 import { DeleteButton } from "@/app/UI/DeleteButton/DeleteButton";
 
-import classes from "./PriceDragOverlayItem.module.css";
+import classes from "./DragOverlayItem.module.css";
 import { IPrice } from "@/app/types/IPrice";
 import { useSortable } from "@dnd-kit/sortable";
 
@@ -12,7 +12,7 @@ interface IProps {
   pathToService?: string;
 }
 
-export const PriceDragOverlayItem = ({
+export const DragOverlayItem = ({
   data,
   isTopLevelService,
   pathToService,

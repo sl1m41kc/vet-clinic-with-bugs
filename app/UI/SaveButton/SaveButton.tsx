@@ -6,7 +6,7 @@ import CheckSVG from "/public/Svg/check.svg";
 import classes from "./saveButton.module.css";
 
 interface IProps {
-  onClick: () => void;
+  onClick?: () => void;
 }
 
 export const SaveButton = ({ onClick }: IProps) => {
@@ -17,7 +17,7 @@ export const SaveButton = ({ onClick }: IProps) => {
       onClick={async () => {
         setChecked(true);
         setTimeout(() => setChecked(false), 2000);
-        onClick();
+        onClick && onClick();
       }}
     >
       {checked ? (

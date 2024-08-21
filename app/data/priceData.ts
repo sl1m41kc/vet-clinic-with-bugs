@@ -2,7 +2,7 @@ import { IPriceSection } from "@/app/types/IPrice";
 
 export const PRICE_DATA: IPriceSection[] = [
   {
-    id: "0",
+    id: "0-section",
     title: "Консультации",
     services: [
       {
@@ -15,11 +15,11 @@ export const PRICE_DATA: IPriceSection[] = [
         id: "1",
         title: "Консультация врача",
         price: 1500,
-      }
-    ]
+      },
+    ],
   },
   {
-    id: "1",
+    id: "1-section",
     title: "Лабораторные методы исследования",
     description:
       "Все исследования проводятся в лаборатории клиники в течении 15 минут",
@@ -55,8 +55,7 @@ export const PRICE_DATA: IPriceSection[] = [
 
           {
             id: "1",
-            title:
-              "Чиста полости рта",
+            title: "Чиста полости рта",
             description:
               "(включает в себя стоимость контраста, не менее 3 снимков, расходные материалы)",
             price: 35000,
@@ -76,10 +75,12 @@ export const PRICE_DATA: IPriceSection[] = [
   },
 ];
 
-export const DEFAULT_PRICE_DATA: IPriceSection = {
+export const DEFAULT_PRICE_DATA: IPriceSection[] = [];
+
+export const DEFAULT_PRICE_SECTION_DATA: IPriceSection = {
   id: "",
   title: "",
   description: "",
   services: [],
   note: "",
-}
+};

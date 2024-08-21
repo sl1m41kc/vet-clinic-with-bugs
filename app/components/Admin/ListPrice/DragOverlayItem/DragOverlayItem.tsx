@@ -1,8 +1,5 @@
 "use client";
-import { useSortable } from "@dnd-kit/sortable";
-import classes from "./AdminListPriceDragOverlayItem.module.css";
-import { CSS } from "@dnd-kit/utilities";
-import Link from "next/link";
+import classes from "./DragOverlayItem.module.css";
 import { EditButton } from "@/app/UI/EditButton/EditButton";
 import { IPrice } from "@/app/types/IPrice";
 
@@ -10,7 +7,7 @@ interface IProps {
   price: IPrice;
 }
 
-export const AdminListPriceDragOverlayItem = ({ price }: IProps) => {
+export const DragOverlayItem = ({ price }: IProps) => {
   const { title, description } = price;
 
   return (

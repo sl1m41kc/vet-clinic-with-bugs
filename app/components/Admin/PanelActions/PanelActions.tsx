@@ -1,11 +1,8 @@
 "use client";
 import Link from "next/link";
-
 import { AddButton } from "@/app/UI/AddButton/AddButton";
 import { SaveButton } from "@/app/UI/SaveButton/SaveButton";
-
-import classes from "./adminPanelActions.module.css";
-import { add } from "@dnd-kit/utilities";
+import classes from "./PanelActions.module.css";
 
 interface IProps {
   title: string;
@@ -14,14 +11,12 @@ interface IProps {
     func?: () => void;
     link: string;
   };
-  saveBtn: {
+  saveBtn?: {
     func?: () => void;
   };
 }
 
-export const AdminPanelActions = ({ title, addBtn, saveBtn }: IProps) => {
-  if (saveBtn.func === undefined) saveBtn.func = () => {};
-  
+export const PanelActions = ({ title, addBtn, saveBtn }: IProps) => {
   return (
     <section className="container">
       <div className={classes.prices}>
@@ -31,7 +26,7 @@ export const AdminPanelActions = ({ title, addBtn, saveBtn }: IProps) => {
             <AddButton onClick={addBtn.func} text={addBtn.text} />
           </Link>
         )}
-        <SaveButton onClick={saveBtn.func} />
+        <SaveButton onClick={saveBtn?.func} />
       </div>
     </section>
   );

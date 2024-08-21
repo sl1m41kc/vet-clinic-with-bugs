@@ -30,6 +30,8 @@
 }
 
 .svg {
+    width: 24px;
+    height: 24px;
     fill: var(--clr1);
 
     transform: rotate(45deg);

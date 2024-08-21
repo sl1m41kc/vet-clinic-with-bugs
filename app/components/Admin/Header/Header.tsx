@@ -3,9 +3,9 @@ import { ExitButton } from "@/app/UI/ExitButton/ExitButton";
 
 import LogoSVG from "/public/Svg/logo_vetlekar_horizontal.svg";
 
-import classes from "./adminHeader.module.css";
+import classes from "./Header.module.css";
 
-export const AdminHeader = () => {
+export const Header = () => {
   return (
     <header className={classes.header}>
       <div className={classes.logoMenu}>

@@ -1,11 +1,11 @@
 'use client'
-import { AdminPanelActions } from "@/app/components/AdminPanelActions/AdminPanelActions";
-import { PriceAdminForm } from "@/app/components/PriceAdminForm/PriceAdminForm";
+import { PanelActions } from "@/app/components/Admin/PanelActions/PanelActions";
+import { PriceForm } from "@/app/components/Admin/PriceForm/PriceForm";
 import { useRef } from "react";
 
 interface IProps {
   searchParams: {
-    idPrice?: number;
+    idPrice?: string;
   };
 }
 
@@ -18,13 +18,13 @@ export default function Home({ searchParams: { idPrice } }: IProps) {
 
   return (
     <>
-      <AdminPanelActions
+      <PanelActions
         title="Цены"
         saveBtn={{
           func: handleSubmit,
         }}
       />
-      <PriceAdminForm formRef={formRef} idPrice={idPrice} />
+      <PriceForm formRef={formRef} idPrice={idPrice} />
     </>
   );
 }

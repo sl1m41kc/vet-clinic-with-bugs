@@ -1,11 +1,11 @@
+import "./globals.css";
 import type { Metadata } from "next";
 import { Montserrat } from "next/font/google";
 
-import Header from "@/app/components/Header/Header";
+import { SetupMocks } from "./utils/setupMocks";
+import { Header as AdminHeader } from "./components/Admin/Header/Header";
+import Header from "./components/header/header";
 import Footer from "@/app/components/Footer/Footer";
-
-import "./globals.css";
-import { AdminHeader } from "./components/AdminHeader/AdminHeader";
 
 const montserrat = Montserrat({ subsets: ["latin"] });
 
@@ -30,6 +30,7 @@ export default function RootLayout({
         {isAdmin ? <AdminHeader /> : <Header />}
         <main>{children}</main>
         {!isAdmin && <Footer />}
+        <SetupMocks />
       </body>
     </html>
   );

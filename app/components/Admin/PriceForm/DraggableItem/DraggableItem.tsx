@@ -4,7 +4,7 @@ import clsx from "clsx";
 import { AddButton } from "@/app/UI/AddButton/AddButton";
 import { DeleteButton } from "@/app/UI/DeleteButton/DeleteButton";
 
-import classes from "./PriceDraggableItem.module.css";
+import classes from "./DraggableItem.module.css";
 import { DndContext } from "@dnd-kit/core";
 import {
   restrictToParentElement,
@@ -25,7 +25,7 @@ interface IProps {
   isDragOverlay?: boolean;
 }
 
-export const PriceDraggableItem = ({
+export const DraggableItem = ({
   control,
   id,
   reset,
@@ -165,7 +165,7 @@ export const PriceDraggableItem = ({
             <SortableContext items={fields}>
               {fields.map((price, index: number) => {
                 return (
-                  <PriceDraggableItem
+                  <DraggableItem
                     id={price.id}
                     key={clsx(index, price.id, "nestedPrice")}
                     control={control}

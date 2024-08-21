@@ -49,8 +49,34 @@
     font-size: 1.5em;
 }
 
-.button {
+.buttonWrapper {
     display: flex;
     align-items: center;
+    justify-content: center;
+}
+
+.buttonDelete {
+    padding: 10px 20px;
+    height: 45px;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    border: 1px solid var(--clr10);
+    border-radius: 30px;
+
+    transition: background-color 0.3s, border 0.3s, transform 0.3s;
+}
+
+.buttonDelete:hover {
+    background-color: var(--clr12);
+    border: 1px solid var(--clr13);
+}
+
+.modal {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
     justify-content: center;
 }

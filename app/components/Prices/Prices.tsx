@@ -1,11 +1,10 @@
 import React from "react";
 import clsx from "clsx";
 
-import { PRICE_DATA } from "@/app/data/priceData";
-
 import AccordionItem from "@/app/components/AccordionItem/AccordionItem";
 
 import classes from "./prices.module.css";
+import { PRICE_DATA } from "@/app/data/priceData";
 
 const Prices = () => {
   return (
