@@ -5,10 +5,10 @@ import useResize from "@/app/hooks/useResize";
 import useScroll from "@/app/hooks/useScroll";
 
 import BurgerMenu from "@/app/components/BurgerMenu/BurgerMenu";
-import Logo from "@/app/components/Logo/Logo";
 import Contacts from "@/app/components/Contacts/Contacts";
 
 import styles from "./header.module.css";
+import Logo from "../logo/logo";
 
 const Header = () => {
   const { width } = useResize();
