@@ -1,4 +1,4 @@
-.service {
+.accordion_item {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -11,16 +11,25 @@
     border-radius: 30px;
     background-color: var(--clr2);
 
-    cursor: pointer;
-
     transition: background-color 0.5s, border 0.5s, border-radius 0.9s;
 }
 
-.service.active {
+.accordion_item.active {
     border: 1px solid var(--clr9);
     background-color: var(--clr9);
 
     border-radius: 30px 30px 0 0;
+}
+
+.text {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.title {
+    font-size: 1.5em;
+    font-weight: 500;
 }
 
 .button {
@@ -57,45 +66,6 @@
     transform: scale(0.99);
 }
 
-.service_item {
-    align-items: flex-start;
-
-    padding: 20px 0;
-
-    border-radius: 0;
-    border: none;
-    border-bottom: 1px solid var(--clr4);
-    background-color: var(--clr6);
-
-    cursor: auto;
-}
-
-.text {
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-}
-
-.title {
-    font-size: 1.5em;
-    font-weight: 500;
-}
-
-.service_title {
-    font-size: 1.125em;
-}
-
-.price {
-    font-size: 1.125em;
-    font-weight: 500;
-
-    white-space: nowrap;
-}
-
-.rub {
-    color: var(--clr8);
-}
-
 .inner {
     position: relative;
     display: grid;
@@ -122,24 +92,8 @@
     overflow: hidden;
 }
 
-
-.sub_service {
-    padding-left: 30px;
-}
-
-.note {
-    width: 100%;
-    padding: 30px;
-
-    text-align: center;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
 @media (max-width: 768px) {
-    .service {
+    .accordion_item {
         gap: 20px;
 
         padding-inline: 20px;

@@ -2,13 +2,18 @@
 import React, { useState } from "react";
 import clsx from "clsx";
 
-import { IPriceSection } from "@/app/types/IPrice";
-
 import ArrowSVG from "/public/Svg/swiper_arrow.svg";
 
 import classes from "./accordionItem.module.css";
 
-const AccordionItem = ({ title, description, services, note }: IPriceSection) => {
+interface IProps {
+  title: string;
+  description?: string;
+  isAccordion?: boolean;
+  children: React.ReactNode;
+}
+
+const AccordionItem = ({ title, description, isAccordion, children }: IProps) => {
   const [active, setActive] = useState(false);
 
   const toggle = () => {
@@ -17,62 +22,23 @@ const AccordionItem = ({ title, description, services, note }: IPriceSection) =>
   return (
     <>
       <div
-        className={clsx(classes.service, active && classes.active)}
+        className={clsx(classes.accordion_item, active && classes.active)}
         onClick={() => {
-          toggle();
+          isAccordion && toggle();
         }}
+        style={{ cursor: isAccordion ? "pointer" : "default" }}
       >
         <div className={classes.text}>
           <h1 className={classes.title}>{title}</h1>
-          <p>{description}</p>
+          {description && <p>{description}</p>}
         </div>
-        <button className={classes.button}>
+        {isAccordion && <button className={classes.button}>
           <ArrowSVG className={clsx(classes.svg, active && classes.active)} />
-        </button>
+        </button>}
       </div>
       <div className={clsx(classes.inner, active && classes.active)}>
         <div className={classes.inner_content}>
-          {services.map((service, index) => (
-            <div key={clsx(index, service.title)}>
-              <div className={clsx(classes.service, classes.service_item)}>
-                <div className={classes.text}>
-                  <h1 className={clsx(classes.title, classes.service_title)}>
-                    {service.title}
-                  </h1>
-                  <p>{service.description}</p>
-                </div>
-                {service.price && (
-                  <p className={classes.price}>
-                    {service.price} <span className={classes.rub}> ₽</span>
-                  </p>
-                )}
-              </div>
-              {service.services &&
-                service.services.map((service, index) => (
-                  <div
-                    key={clsx(index, service.title)}
-                    className={clsx(
-                      classes.service,
-                      classes.service_item,
-                      classes.sub_service
-                    )}
-                  >
-                    <div className={classes.text}>
-                      <h1
-                        className={clsx(classes.title, classes.service_title)}
-                      >
-                        {service.title}
-                      </h1>
-                      <p>{service.description}</p>
-                    </div>
-                    <p className={classes.price}>
-                      {service.price} <span className={classes.rub}> ₽</span>
-                    </p>
-                  </div>
-                ))}
-            </div>
-          ))}
-          <p className={classes.note}>{note}</p>
+          {children}
         </div>
       </div>
     </>

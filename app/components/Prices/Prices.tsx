@@ -2,6 +2,7 @@ import React from "react";
 import clsx from "clsx";
 
 import AccordionItem from "@/app/components/AccordionItem/AccordionItem";
+import { Item } from "./Item/Item";
 
 import classes from "./prices.module.css";
 import { PRICE_DATA } from "@/app/data/priceData";
@@ -15,8 +16,10 @@ const Prices = () => {
             <AccordionItem
               title={price.title}
               description={price.description}
-              services={price.services}
-              note={price.note} id=""            />
+              isAccordion
+            >
+              <Item services={price.services} note={price.note} id={""} title={""} />
+            </AccordionItem>
           </li>
         ))}
       </ul>

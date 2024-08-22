@@ -15,4 +15,14 @@
 
         gap: 10px;
     }
+
+    .service {
+        gap: 20px;
+
+        padding-inline: 20px;
+    }
+
+    .sub_service {
+        padding-left: 30px;
+    }
 }
