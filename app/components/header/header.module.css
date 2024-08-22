@@ -26,12 +26,22 @@
     transition: gap 0.3s;
 }
 
+.logo {
+    width: 400px;
+
+    transition: width 0.3s;
+}
+
+.logo.scroll {
+    width: 300px;
+}
+
 .scrolled {
     padding: 10px 20px;
 }
 
 .header.scrolled .logoMenu {
-    gap: 0;
+    gap: 20px;
 }
 
 .phantom {
@@ -52,11 +62,39 @@
         padding: 5px 10px;
     }
     .phantom {
+        height: 110px;
+    }
+    .logo {
+        width: 350px;
+    }
+    .logo.scroll {
+        width: 250px;
+    }
+}
+
+@media (max-width: 500px) {
+    .logo {
+        width: 300px;
+    }
+
+    .logo.scroll {
+        width: 250px;
+    }
+
+    .phantom {
         height: 100px;
     }
 }
 
 @media (max-width: 430px) {
+    .logo {
+        width: 250px;
+    }
+
+    .logo.scroll {
+        width: 200px;
+    }
+
     .phantom {
         height: 80px;
     }
@@ -64,6 +102,6 @@
 
 @media (max-width: 400px) {
     .logoMenu {
-        gap: 0;
+        gap: 10px;
     }
 }

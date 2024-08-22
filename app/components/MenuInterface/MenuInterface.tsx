@@ -7,7 +7,7 @@ import { menuNavData } from "@/app/data/menuNavData";
 import Contacts from "../Contacts/Contacts";
 import CircleButton from "@/app/UI/СircleButton/CircleButton";
 
-import LogoSVG from "/public/Svg/logo_vetlekar_horizontal.svg";
+import LogoSVG from "/public/Svg/logo.svg";
 
 import classes from "./menuInterface.module.css";
 import style from "@/app/components/PetCard/petCard.module.css";

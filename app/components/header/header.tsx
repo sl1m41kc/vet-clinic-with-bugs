@@ -19,7 +19,9 @@ const Header = () => {
       <header className={clsx(styles.header, isScrolled && styles.scrolled)}>
         <div className={styles.logoMenu}>
           <BurgerMenu />
-          <Logo scrolled={isScrolled} />
+          <div className={clsx(styles.logo, isScrolled && styles.scroll)}>
+            <Logo />
+          </div>
         </div>
         {width > 650 && <Contacts />}
       </header>

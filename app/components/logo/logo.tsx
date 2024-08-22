@@ -1,18 +1,14 @@
-'use client'
+"use client";
 import React from "react";
-import clsx from "clsx";
 
-import LogoSVG from "/public/Svg/logo_vetlekar_horizontal.svg";
+import LogoSVG from "/public/Svg/logo.svg";
 
 import styles from './logo.module.css'
 
-interface IProps {
-  scrolled: boolean
-}
 
-const Logo = ({ scrolled }: IProps) => {
+const Logo = () => {
   return (
-      <LogoSVG className={clsx(styles.logo, { [styles.scrolled] : scrolled } )} onClick={() => window.location.href = "/"}/>
+      <LogoSVG className={styles.logo} onClick={() => window.location.href = "/"}/>
   );
 };
 

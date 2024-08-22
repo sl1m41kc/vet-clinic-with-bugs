@@ -2,7 +2,7 @@ import clsx from "clsx";
 
 import Link from "next/link";
 
-import LogoSVG from "/public/Svg/logo_vetlekar_horizontal.svg";
+import LogoSVG from "/public/Svg/logo.svg";
 
 import classes from "./notFound.module.css";
 
