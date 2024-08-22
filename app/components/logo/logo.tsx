@@ -1,5 +1,5 @@
+'use client'
 import React from "react";
-import Link from "next/link";
 import clsx from "clsx";
 
 import LogoSVG from "/public/Svg/logo_vetlekar_horizontal.svg";
@@ -12,9 +12,7 @@ interface IProps {
 
 const Logo = ({ scrolled }: IProps) => {
   return (
-    <Link href="/">
-      <LogoSVG className={clsx(styles.logo, { [styles.scrolled] : scrolled } )}/>
-    </Link>
+      <LogoSVG className={clsx(styles.logo, { [styles.scrolled] : scrolled } )} onClick={() => window.location.href = "/"}/>
   );
 };
 

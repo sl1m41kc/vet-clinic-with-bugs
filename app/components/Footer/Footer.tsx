@@ -19,7 +19,7 @@ const Footer = () => {
             <Link className={classes.link} href="/">
               Лицензии
             </Link>
-            <Link className={classes.link} href="/">
+            <Link className={classes.link} href="/privacy">
               Политика конфиденциальности
             </Link>
           </div>
