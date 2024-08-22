@@ -18,7 +18,7 @@ const CircleButton = ({ image }: IProps) => {
         [styles.cross]: image === 'cross'
       })}
     >
-      {image === 'arrow' ? <ArrowSVG className={styles.arrow_icon}/> : <CrossSVG/>}
+      {image === 'arrow' ? <ArrowSVG className={styles.arrow_icon}/> : <CrossSVG className={styles.cross_icon}/>}
     </button>
   );
 };
