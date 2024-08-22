@@ -35,7 +35,7 @@ const Contacts = ({ style }: IProps) => {
   }
   return (
     <div className={styles.info}>
-      {width > 1024 && (
+      {width > 1130 && (
         <div className={styles.address}>
           <LocationSVG />
           <p className={styles.text}>
