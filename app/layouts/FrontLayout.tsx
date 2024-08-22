@@ -1,5 +1,5 @@
-import Footer from "../components/Footer/Footer";
-import Header from "../components/header/header";
+import Footer from "@/app/components/Footer/Footer";
+import Header from "@/app/components/Header/Header";
 
 export const FrontLayout = ({ children }: { children: React.ReactNode }) => {
   return (

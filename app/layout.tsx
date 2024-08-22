@@ -11,6 +11,7 @@ import { headers } from "next/headers";
 import { AdminLayout } from "./layouts/AdminLayout";
 import { FrontLayout } from "./layouts/FrontLayout";
 import { SessionContext } from "next-auth/react";
+import { LoginLayout } from "./layouts/LoginLayout";
 
 const montserrat = Montserrat({ subsets: ["latin"] });
 
@@ -31,6 +32,9 @@ export default async function RootLayout({
   switch (layout) {
     case "admin":
       LayoutComponent = AdminLayout;
+      break;
+    case "login":
+      LayoutComponent = LoginLayout;
       break;
     default:
       LayoutComponent = FrontLayout;
