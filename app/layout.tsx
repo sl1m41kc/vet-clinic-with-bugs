@@ -1,16 +1,11 @@
 import "./globals.css";
 import type { Metadata } from "next";
-import { Alegreya, Montserrat } from "next/font/google";
+import { Montserrat } from "next/font/google";
 
 import { SetupMocks } from "./utils/setupMocks";
-import Header from "./components/header/header";
-import Footer from "@/app/components/Footer/Footer";
-import { getServerSession } from "next-auth";
-import { authOptions } from "./api/auth/[...nextauth]/route";
 import { headers } from "next/headers";
 import { AdminLayout } from "./layouts/AdminLayout";
 import { FrontLayout } from "./layouts/FrontLayout";
-import { SessionContext } from "next-auth/react";
 import { LoginLayout } from "./layouts/LoginLayout";
 
 const montserrat = Montserrat({ subsets: ["latin"] });
