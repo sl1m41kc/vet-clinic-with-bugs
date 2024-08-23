@@ -8,7 +8,7 @@
 
 .image {
     position: sticky;
-    top: 80px;
+    top: 95px;
 
     max-width: 500px;
     
@@ -17,6 +17,15 @@
     object-fit: cover;
     aspect-ratio: 1 / 1;
     overflow: hidden;
+}
+
+.sceleton {
+    width: 500px;
+    height: 500px;
+
+    border-radius: 30px;
+
+    background-color: var(--clr6);
 }
 
 @media (max-width: 930px) {

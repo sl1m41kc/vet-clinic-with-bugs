@@ -11,7 +11,7 @@ interface IProps {
 export const PageTemplate = ({ image, children }: IProps) => {
   return (
     <section className={clsx("container", classes.content)}>
-      <div>
+      <div className={classes.sceleton}>
         <Image
           src={image}
           alt={image}
