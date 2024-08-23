@@ -11,6 +11,14 @@ interface IProps {
 }
 
 export const Modal = ({ children, isOpen, setIsOpen }: IProps) => {
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+  });
+
   if (!isOpen || typeof window === "undefined") return null;
 
   const handleCLose = () => {
@@ -18,9 +26,6 @@ export const Modal = ({ children, isOpen, setIsOpen }: IProps) => {
     document.body.style.overflow = "";
   };
 
-  useEffect(() => {
-    document.body.style.overflow = "hidden";
-  }, []);
 
   return createPortal(
     <>

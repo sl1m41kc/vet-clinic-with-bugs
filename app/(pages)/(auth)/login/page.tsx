@@ -6,7 +6,7 @@ import LoginSVG from "@/public/Svg/login.svg";
 import classes from "./page.module.css";
 import clsx from "clsx";
 
-export default function page() {
+export default function Page() {
   const {control, handleSubmit} = useForm<IUser>()
 
   const onSubmit = async (data: IUser) => {

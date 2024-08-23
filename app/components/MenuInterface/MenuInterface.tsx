@@ -22,7 +22,6 @@ const MenuInterface = ({
   const [scrollbarWidth, setScrollbarWidth] = useState(0);
   
   useEffect(() => {
-    setScrollbarWidth(window.innerWidth - document.documentElement.clientWidth);
     const handleResize = () => {
       setScrollbarWidth(window.innerWidth - document.documentElement.clientWidth);
     };
@@ -42,7 +41,8 @@ const MenuInterface = ({
       document.body.style.overflow = "auto";
       document.body.style.paddingRight = "0px";
     }
-  }, [isOpen]);
+  }, [isOpen, scrollbarWidth]);
+  
   return (
     <>
       <div

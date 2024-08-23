@@ -1,4 +1,4 @@
-import Logo from "@/app/components/Logo/Logo";
+import Logo from "@/app/components/Logo/logo";
 
 export const LoginLayout = ({ children }: { children: React.ReactNode }) => {
   return (

@@ -17,6 +17,7 @@ const DoctorCard = ({
   professions,
   startWork,
   alt,
+  details,
 }: IDoctorCard) => {
 
   let currentYear = new Date().getFullYear();

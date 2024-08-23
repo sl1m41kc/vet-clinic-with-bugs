@@ -16,7 +16,8 @@ import "swiper/css";
 import classes from "./doctorsSwiper.module.css";
 
 const DoctorsSwiper = () => {
-  const topDoctors = doctorsData.length > 8 ? doctorsData.slice(0, 8): doctorsData;
+  const topDoctors =
+    doctorsData.length > 8 ? doctorsData.slice(0, 8) : doctorsData;
   return (
     <section className={classes.slider}>
       <Swiper
@@ -37,23 +38,29 @@ const DoctorsSwiper = () => {
         }}
       >
         {topDoctors.map((doctor, index) => (
-          <SwiperSlide key={clsx(index, doctor.fullName)} className={classes.swiper_slide}>
+          <SwiperSlide
+            key={clsx(index, doctor.fullName)}
+            className={classes.swiper_slide}
+          >
             <DoctorCard
               id={doctor.id}
               image={doctor.image}
               fullName={doctor.fullName}
               professions={doctor.professions}
               startWork={doctor.startWork}
-              alt={doctor.alt} details={[]}            />
+              alt={doctor.alt}
+              details={{ workDescription: '', outWorkDescription: '', doctorAnimalsDescription: '' }}
+            />
           </SwiperSlide>
         ))}
 
-        {doctorsData.length > 8 && <SwiperSlide className={classes.swiper_slide}>
-          <Link href="/specialists" className={classes.linkCard}>
-            <ArrowButton text="Все врачи" isFill={true} />
-          </Link>
-        </SwiperSlide>}
-        
+        {doctorsData.length > 8 && (
+          <SwiperSlide className={classes.swiper_slide}>
+            <Link href="/specialists" className={classes.linkCard}>
+              <ArrowButton text="Все врачи" isFill={true} />
+            </Link>
+          </SwiperSlide>
+        )}
       </Swiper>
       <SwiperButtons
         buttons={{

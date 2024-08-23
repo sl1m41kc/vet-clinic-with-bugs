@@ -3,12 +3,10 @@ import React from "react";
 import clsx from "clsx";
 import useResize from "@/app/hooks/useResize";
 import useScroll from "@/app/hooks/useScroll";
-
 import BurgerMenu from "@/app/components/BurgerMenu/BurgerMenu";
 import Contacts from "@/app/components/Contacts/Contacts";
-
 import styles from "./header.module.css";
-import Logo from "@/app/components/Logo/Logo";
+import Logo from "@/app/components/Logo/logo";
 
 const Header = () => {
   const { width } = useResize();

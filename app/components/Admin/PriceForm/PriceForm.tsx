@@ -54,7 +54,7 @@ export const PriceForm = ({ idPrice, formRef }: IProps) => {
     PRICE_API.GET_BY_ID(idPrice).then((data) => {
       reset(data);
     });
-  }, [idPrice]);
+  }, [idPrice, reset]);
 
   // Инициализация динамических полей формы (списка services в IPriceService)
   const {

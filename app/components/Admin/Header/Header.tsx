@@ -1,8 +1,6 @@
 import { ExitButton } from "@/app/UI/ExitButton/ExitButton";
-
-import Logo from '@/app/components/Logo/Logo';
-
 import classes from "./Header.module.css";
+import Logo from "@/app/components/Logo/logo";
 
 export const Header = () => {
   return (
@@ -13,7 +11,9 @@ export const Header = () => {
           <span className={classes.line}></span>
           <span className={classes.line}></span>
         </div>
-        <div className={classes.logo}><Logo /></div>
+        <div className={classes.logo}>
+          <Logo />
+        </div>
       </div>
       <ExitButton />
     </header>
