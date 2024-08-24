@@ -13,7 +13,7 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-// Схема для услуги (сервиса)
+// Схема для коллекции PriceList
 model PriceList {
   id               String    @id @default(auto()) @map("_id") @db.ObjectId
   groupTitle       String
