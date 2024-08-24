@@ -12,3 +12,25 @@ datasource db {
   provider = "mongodb"
   url      = env("DATABASE_URL")
 }
+
+// Схема для услуги (сервиса)
+model PriceList {
+  id               String    @id @default(auto()) @map("_id") @db.ObjectId
+  groupTitle       String
+  groupDescription String?
+  groupNote        String?
+  services         Service[]
+}
+
+type Service {
+  serviceTitle       String
+  serviceDescription String?
+  servicePrice       Float?
+  priceOptions       PriceOption[]
+}
+
+type PriceOption {
+  optionTitle       String
+  optionDescription String?
+  optionPrice       Float
+}
