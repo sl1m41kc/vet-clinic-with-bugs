@@ -1,6 +1,6 @@
 import { ExitButton } from "@/app/UI/ExitButton/ExitButton";
 import classes from "./Header.module.css";
-import Logo from "@/app/components/Logo/logo";
+import Logo from "@/app/components/Logo/Logo";
 
 export const Header = () => {
   return (
