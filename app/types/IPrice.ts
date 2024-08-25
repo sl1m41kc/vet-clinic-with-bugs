@@ -51,24 +51,3 @@ export const GroupPriceSchema = BaseGroupPriceSchema.extend({
 export type IGroupPrice = z.infer<typeof GroupPriceSchema>;
 export type IService = z.infer<typeof ServiceSchema>;
 export type IPriceOption = z.infer<typeof PriceOptionSchema>;
-
-// export interface IGroupPrice {
-//   id: string;
-//   groupTitle: string;
-//   groupDescription: string | null;
-//   groupNote: string | null;
-//   services: IService[];
-// }
-
-// export interface IService {
-//   serviceTitle: string;
-//   serviceDescription: string | null;
-//   servicePrice: number | null;
-//   priceOptions: IPriceOption[];
-// }
-
-// export interface IPriceOption {
-//   optionTitle: string;
-//   optionDescription: string | null;
-//   optionPrice: number;
-// }
