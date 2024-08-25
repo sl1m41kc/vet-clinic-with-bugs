@@ -8,7 +8,7 @@ import classes from "./accordionItem.module.css";
 
 interface IProps {
   title: string;
-  description: string | null;
+  description?: string | null;
   isAccordion?: boolean;
   children: React.ReactNode;
 }

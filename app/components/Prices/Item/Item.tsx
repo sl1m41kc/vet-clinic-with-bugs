@@ -6,7 +6,7 @@ import classes from "./item.module.css";
 
 interface IProps {
   services: IService[];
-  groupNote: string | null;
+  groupNote?: string | null;
 }
 
 export const Item = ({ services, groupNote }: IProps) => {

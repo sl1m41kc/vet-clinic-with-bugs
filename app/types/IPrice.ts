@@ -35,14 +35,14 @@ export const ServiceSchema = z.object({
 });
 
 // Тип для создания группы цен
-export const CreateGroupPriceSchema = z.object({
+export const BaseGroupPriceSchema = z.object({
   groupTitle: z.string(),
   groupDescription: z.string().nullable().optional(),
   groupNote: z.string().nullable().optional(),
   services: z.array(ServiceSchema),
 });
 
-export const GroupPriceSchema = CreateGroupPriceSchema.extend({
+export const GroupPriceSchema = BaseGroupPriceSchema.extend({
   id: z.string()
 });
 
