@@ -1,6 +1,12 @@
 import axios from "axios";
 import { IPriceSection } from "../types/IPrice";
 
+import { BASE_URL } from "../Сonstants/pathsConsts";
+import { REVALIDATE_TIME } from "../Сonstants/Constants";
+
+import type { IGroupPrice } from "../types/IPrice";
+import type { IError } from "../types/IError";
+
 class PRICE_API_CLASS {
     path = "/api/price";
 
@@ -33,3 +39,21 @@ class PRICE_API_CLASS {
 }
 
 export const PRICE_API = new PRICE_API_CLASS()
+
+
+// Получение прайс-листа на сервере
+export async function fetchPrices(): Promise<IGroupPrice[] | IError> {
+  try {
+    const response = await fetch(`${BASE_URL}/api/prices`, { next: { revalidate: REVALIDATE_TIME } });
+    if (!response.ok) {
+      // Обработка ошибок HTTP
+      const error = await response.json();
+      return { error: error.error || "Не удалось получить данные о ценах." };
+    }
+    // Успешный ответ
+    return await response.json();
+  } catch (error) {
+    // Обработка сетевых ошибок
+    return { error: "Не удалось подключиться к серверу." };
+  }
+}
