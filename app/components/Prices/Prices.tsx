@@ -1,24 +1,25 @@
 import React from "react";
-import clsx from "clsx";
+import prisma from "@/prisma/client";
 
 import AccordionItem from "@/app/components/AccordionItem/AccordionItem";
 import { Item } from "./Item/Item";
 
 import classes from "./prices.module.css";
-import { PRICE_DATA } from "@/app/data/priceData";
+import type { IGroupPrice } from "@/app/types/IPrice";
 
-const Prices = () => {
+const Prices = async () => {
+  const prices: IGroupPrice[] = await prisma.priceList.findMany();
   return (
     <section className="container">
       <ul className={classes.accordion}>
-        {PRICE_DATA.map((price, index) => (
-          <li key={clsx(index, price.title)}>
+        {prices.map((price) => (
+          <li key={price.id}>
             <AccordionItem
-              title={price.title}
-              description={price.description}
+              title={price.groupTitle}
+              description={price.groupDescription}
               isAccordion
             >
-              <Item services={price.services} note={price.note} id={""} title={""} />
+              <Item services={price.services} groupNote={price.groupNote} />
             </AccordionItem>
           </li>
         ))}

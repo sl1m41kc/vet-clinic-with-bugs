@@ -21,20 +21,20 @@ export interface IPrice {
 export interface IGroupPrice {
   id: string;
   groupTitle: string;
-  groupDescription?: string | null;
-  groupNote?: string | null;
+  groupDescription: string | null;
+  groupNote: string | null;
   services: IService[];
 }
 
 export interface IService {
   serviceTitle: string;
-  serviceDescription?: string | null;
-  servicePrice?: number | null;
+  serviceDescription: string | null;
+  servicePrice: number | null;
   priceOptions: IPriceOption[];
 }
 
 export interface IPriceOption {
   optionTitle: string;
-  optionDescription?: string | null;
+  optionDescription: string | null;
   optionPrice: number;
 }
