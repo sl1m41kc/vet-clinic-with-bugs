@@ -9,7 +9,7 @@ export const menuNavData: { title: string; href: string }[] = [
     },
     {
         title: "О клинике",
-        href: "/",
+        href: "/about",
     },
     {
         title: "Контакты",
