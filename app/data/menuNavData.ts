@@ -13,6 +13,6 @@ export const menuNavData: { title: string; href: string }[] = [
     },
     {
         title: "Контакты",
-        href: "/",
+        href: "/contacts",
     },
 ]

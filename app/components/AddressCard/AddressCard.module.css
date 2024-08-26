@@ -1,0 +1,54 @@
+.card {
+    position: relative;
+    padding: 30px;
+    border: 1px solid var(--clr4);
+    border-radius: 30px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+}
+
+.text {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.description, .subtext {
+    font-size: 1rem;
+    line-height: 1.250;
+    font-weight: 400;
+    color: var(--clr1);
+}
+
+.subtext {
+    color: var(--clr7);
+}
+
+.title {
+    font-size: 1.375rem;
+    line-height: 1.091;
+    font-weight: 500;
+    color: var(--clr1);
+}
+
+.buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.actions {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+}
+
+.backgroundSVG {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    z-index: -1;
+}

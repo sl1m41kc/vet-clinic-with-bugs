@@ -5,6 +5,7 @@ import ActionCard from "@/app/components/ActionCard/ActionCard";
 
 import dogPNG from "/public/Images/Corgi_dog.png";
 import catPNG from "/public/Images/Cat.png";
+import VKLogoSVG from "/public/Svg/VK_logo.svg";
 
 import styles from "./gridAdvantages.module.css";
 
@@ -34,16 +35,21 @@ const GridAdvantages = () => {
           <ActionCard
             title="Записаться на&nbsp;приём"
             description="Наши специалисты ответят на&nbsp;все ваши вопросы"
-            buttonText="Записаться"
-            haveSVG={false}
+            button={{
+              text: "Записаться",
+              link: "/",
+            }}
           />
         </div>
         <div className={styles.block}>
           <ActionCard
             title="Онлайн-консультация"
             description="Наши специалисты ответят на&nbsp;все ваши вопросы"
-            buttonText="Перейти в&nbsp;VK"
-            haveSVG={true}
+            button={{
+              text: "Перейти в VK",
+              link: "/",
+            }}
+            SVG={<VKLogoSVG width={147} height={94} />}
           />
         </div>
       </div>

@@ -1,27 +1,31 @@
-import React from "react";
-
 import ArrowButton from "@/app/UI/ArrowButton/ArrowButton";
-
-import VKLogoSVG from "/public/Svg/VK_logo.svg";
-
-import styles from "./ActionCard.module.css";
+import Link from "next/link";
+import classes from "./ActionCard.module.css";
 
 interface IProps {
   title: string;
-  description: string;
-  haveSVG: boolean;
-  buttonText: string;
+  description?: string;
+  button?: {
+    text: string;
+    link: string;
+  },
+  phone?: {
+    phone: string
+    link: string
+  }
+  SVG?: JSX.Element
 }
 
-const ActionCard = ({ title, description, haveSVG, buttonText }: IProps) => {
+const ActionCard = ({ title, description, button, phone, SVG }: IProps) => {
   return (
-    <div className={styles.card}>
-      <div className={styles.text}>
-        <h1 className={styles.title}>{title}</h1>
-        <p className={styles.description}>{description}</p>
+    <div className={classes.card}>
+      <div className={classes.text}>
+        <h1 className={classes.title}>{title}</h1>
+        {description && <p className={classes.description}>{description}</p>}
       </div>
-      <ArrowButton text={buttonText} isFill={true} />
-      {haveSVG && <VKLogoSVG className={styles.svg} />}
+      {button && button.text && button.link && <Link href={button.link}><ArrowButton text={button.text} isFill={true} /></Link>}
+      {phone && <Link href={phone.link}><p className={classes.phone}>{phone.phone}</p></Link>}
+      {SVG && <div className={classes.svgWrapper}>{SVG}</div>}
     </div>
   );
 };
