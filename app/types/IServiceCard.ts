@@ -1,10 +1,15 @@
-import React from "react"
+import { ReactElement } from "react"
 
 export interface IServiceCard {
     title: string,
+    image: string,
+    pathName: string,
     services: {
+        id: number,
         text: string,
-        isLink: boolean
+        isLink: boolean,
+        description?: ReactElement[]
+        notes?: string[]
     }[],
-    SVG?: React.ReactElement
+    SVG?: ReactElement
 }

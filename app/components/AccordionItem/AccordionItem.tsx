@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import clsx from "clsx";
 
 import ArrowSVG from "/public/Svg/swiper_arrow.svg";
@@ -10,15 +10,26 @@ interface IProps {
   title: string;
   description?: string | null;
   isAccordion?: boolean;
+  actived?: boolean;
   children: React.ReactNode;
 }
 
-const AccordionItem = ({ title, description, isAccordion, children }: IProps) => {
+const AccordionItem = ({
+  title,
+  description,
+  isAccordion,
+  children,
+  actived,
+}: IProps) => {
   const [active, setActive] = useState(false);
 
   const toggle = () => {
     setActive(!active);
   };
+
+  useEffect(() => {
+    if (actived) toggle()
+  }, [actived]);
   return (
     <>
       <div
@@ -32,14 +43,14 @@ const AccordionItem = ({ title, description, isAccordion, children }: IProps) =>
           <h1 className={classes.title}>{title}</h1>
           {description && <p>{description}</p>}
         </div>
-        {isAccordion && <button className={classes.button}>
-          <ArrowSVG className={clsx(classes.svg, active && classes.active)} />
-        </button>}
+        {isAccordion && (
+          <button className={classes.button}>
+            <ArrowSVG className={clsx(classes.svg, active && classes.active)} />
+          </button>
+        )}
       </div>
       <div className={clsx(classes.inner, active && classes.active)}>
-        <div className={classes.inner_content}>
-          {children}
-        </div>
+        <div className={classes.inner_content}>{children}</div>
       </div>
     </>
   );

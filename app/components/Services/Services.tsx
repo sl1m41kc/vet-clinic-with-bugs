@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import React from "react";
 import clsx from "clsx";
 import Masonry from "react-masonry-css";
@@ -15,7 +15,7 @@ const Services = () => {
         breakpointCols={{
           default: 3,
           1230: 2,
-          768: 1 
+          768: 1,
         }}
         className={classes.grid}
       >
@@ -25,6 +25,8 @@ const Services = () => {
             title={service.title}
             services={service.services}
             SVG={service.SVG}
+            image={""}
+            pathName={service.pathName}
           />
         ))}
       </Masonry>

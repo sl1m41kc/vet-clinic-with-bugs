@@ -1,6 +1,6 @@
 import EditSVG from "/public/Svg/edit.svg";
 
-import classes from "./editButton.module.css";
+import classes from "./EditButton.module.css";
 
 interface IProps {
   onClick?: () => void;
