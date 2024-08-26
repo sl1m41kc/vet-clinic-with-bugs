@@ -1,10 +1,10 @@
-import { IServiceCard } from "../types/IServiceCard";
 
 import HeartSVG from "@/public/Svg/Heart.svg";
 import FlaskSVG from "@/public/Svg/Flask.svg";
 import MedBowlSVG from "@/public/Svg/Med_bowl.svg";
+import { IServiceGroup } from "../types/IServiceGroup";
 
-export const servicesData: IServiceCard[] = [
+export const servicesData: IServiceGroup[] = [
   {
     title: "Поликлиника",
     services: [

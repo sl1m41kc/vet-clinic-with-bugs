@@ -2,16 +2,15 @@ import React from "react";
 import clsx from "clsx";
 import Link from "next/link";
 
-import { IServiceCard } from "@/app/types/IServiceCard";
-
 import CircleButton from "@/app/UI/СircleButton/CircleButton";
 
 import PawSVG from "/public/Svg/Paw.svg";
 
 import style from "@/app/components/PetCard/petCard.module.css";
 import classes from "./serviceCard.module.css";
+import { IServiceGroup } from "@/app/types/IServiceGroup";
 
-const ServiceCard = ({ title, services, SVG, pathName }: IServiceCard) => {
+const ServiceCard = ({ title, services, SVG, pathName }: IServiceGroup) => {
   return (
     <div className={classes.card}>
       <Link href={`/services/${pathName}`} className={style.button}>
