@@ -1,7 +1,7 @@
 'use client'
 import LogOutSVG from '/public/Svg/logout.svg'
 
-import classes from './ExitButton.module.css'
+import classes from './exitButton.module.css'
 import { signOut } from 'next-auth/react';
 
 export const ExitButton = () => {

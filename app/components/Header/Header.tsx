@@ -6,7 +6,7 @@ import useScroll from "@/app/hooks/useScroll";
 import BurgerMenu from "@/app/components/BurgerMenu/BurgerMenu";
 import Contacts from "@/app/components/Contacts/Contacts";
 import styles from "./header.module.css";
-import Logo from "@/app/components/Logo/logo";
+import Logo from "@/app/components/Logo/Logo";
 
 const Header = () => {
   const { width } = useResize();
