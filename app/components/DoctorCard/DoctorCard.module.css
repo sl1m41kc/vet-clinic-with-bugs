@@ -84,3 +84,9 @@
     font-size: 2em;
     font-weight: 500;
 }
+
+.button {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}

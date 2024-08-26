@@ -1,13 +1,9 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-
 import { IDoctorCard } from "@/app/types/IDoctorCard";
-
 import CircleButton from "@/app/UI/СircleButton/CircleButton";
-
-import style from "@/app/components/PetCard/petCard.module.css";
-import classes from "./doctorCard.module.css";
+import classes from "./DoctorCard.module.css";
 import { DOCTORS_PATH } from "@/app/Сonstants/pathsConsts";
 
 const DoctorCard = ({
@@ -17,17 +13,16 @@ const DoctorCard = ({
   professions,
   startWork,
   alt,
-  details,
 }: IDoctorCard) => {
 
   let currentYear = new Date().getFullYear();
 
   let experience = currentYear - startWork;
   return (
-    <div className={classes.card}>
-      <Link href={`specialists/${id}`} className={style.button}>
+    <Link href={`specialists/${id}`} className={classes.card}>
+      <div className={classes.button}>
         <CircleButton image="arrow" />
-      </Link>
+      </div>
       <div className={classes.profile}>
         <div className={classes.avatar}>
           <Image
@@ -48,7 +43,7 @@ const DoctorCard = ({
           Стаж:<span className={classes.experience_number}> {experience}</span> лет
         </p>
       </div>}
-    </div>
+    </Link>
   );
 };
 

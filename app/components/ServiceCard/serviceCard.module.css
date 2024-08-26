@@ -1,37 +1,40 @@
 .card {
     position: relative;
-
     display: flex;
     flex-direction: column;
-
     gap: 20px;
-
     padding: 30px;
     margin-top: 20px;
-
     border-radius: 30px;
-
     color: var(--clr1);
     background-color: var(--clr6);
-
     overflow: hidden;
+}
+
+.headerPanel {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.button {
+    position: relative;
+    top: -10px;
+    right: -10px;
 }
 
 .service {
     display: flex;
     align-items: baseline;
-    
     gap: 10px;
-
     fill: var(--clr1);
-
     z-index: 1;
-}   
+}
 
 .title {
     font-size: 2em;
+    line-height: 1.15;
     font-weight: 500;
-    
     width: auto;
 }
 
@@ -46,12 +49,9 @@
 
 .svg {
     position: absolute;
-
     bottom: 0;
     right: 0;
-
     fill: var(--clr3);
-
     z-index: 0;
 }
 

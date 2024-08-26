@@ -1,23 +1,19 @@
 import React from "react";
 import clsx from "clsx";
 import Link from "next/link";
-
 import CircleButton from "@/app/UI/СircleButton/CircleButton";
-
 import PawSVG from "/public/Svg/Paw.svg";
-
-import style from "@/app/components/PetCard/petCard.module.css";
 import classes from "./serviceCard.module.css";
 import { IServiceGroup } from "@/app/types/IServiceGroup";
 
 const ServiceCard = ({ title, services, SVG, pathName }: IServiceGroup) => {
   return (
     <div className={classes.card}>
-      <Link href={`/services/${pathName}`} className={style.button}>
-        <CircleButton image="arrow" />
+      <Link href={`/services/${pathName}`} className={classes.headerPanel}>
+        <h1 className={classes.title}>{title}</h1>
+        <div className={classes.button}><CircleButton image="arrow" /></div>
       </Link>
 
-      <h1 className={classes.title}>{title}</h1>
       {services.map((service, index) => (
         <div key={clsx(index, service.text)} className={classes.service}>
           <PawSVG className={classes.paw_svg} />
