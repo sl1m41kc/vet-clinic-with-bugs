@@ -1,14 +1,11 @@
 import "./globals.css";
 import type { Metadata } from "next";
-import { Montserrat } from "next/font/google";
 
 import { SetupMocks } from "./utils/setupMocks";
 import { headers } from "next/headers";
 import { AdminLayout } from "./layouts/AdminLayout";
 import { FrontLayout } from "./layouts/FrontLayout";
 import { LoginLayout } from "./layouts/LoginLayout";
-
-const montserrat = Montserrat({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Ветлекарь",
@@ -40,7 +37,7 @@ export default async function RootLayout({
       <head>
         <link rel="icon" href="/favicon.ico" />
       </head>
-      <body className={montserrat.className}>
+      <body>
         <LayoutComponent>{children}</LayoutComponent>
       </body>
       <SetupMocks />
