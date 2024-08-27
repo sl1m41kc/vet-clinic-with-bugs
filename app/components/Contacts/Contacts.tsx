@@ -22,10 +22,10 @@ const Contacts = ({ style }: IProps) => {
       <div className={clsx(styles.info, styles.menu)}>
         <div className={clsx(styles.address, styles.menu)}>
           <LocationSVG />
-          <p className={styles.text}>
-            Красный проспект, 169/1 <br /> Кропоткина, 132 <br /> Зорге, 77а{" "}
-            <br /> Большевистская, 132
-          </p>
+          <div className={styles.text}>
+            <p>Красный проспект, 169/1</p> <p>Кропоткина, 132</p>{" "}
+            <p>Зорге, 77а</p> <p>Большевистская, 132</p>
+          </div>
         </div>
         <Link className={styles.phone} href="tel:+73832850204">
           <PhoneSVG className={styles.icon} /> +7 (383) 285-02-04

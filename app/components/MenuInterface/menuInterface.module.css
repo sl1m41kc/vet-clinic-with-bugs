@@ -92,3 +92,19 @@
 .item:hover {
     background-color: var(--clr6);
 }
+
+@media (max-width: 768px) {
+    .menu {
+        max-width: 100%;
+    }
+
+    .contacts {
+        align-items: center;
+    }
+}
+
+@media (max-width: 520px) { 
+    .contacts {
+        align-items: flex-start;
+    }
+}
