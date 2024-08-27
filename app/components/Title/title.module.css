@@ -3,28 +3,20 @@
 
     font-size: 2.5em;
     line-height: 130%;
+    text-indent: 20%;
     
     color: var(--clr7);
 }
 
-.colored {
+.text span {
     color: var(--clr1);
     font-weight: 500;
-}
-
-.moved {
-    text-align: right;
-}
-
-@media (max-width: 1210px) {
-    .moved {
-        text-align: left;
-    }
 }
 
 @media (max-width: 1100px) {
     .text {
         font-size: 2em;
+        text-indent: 0%;
     }
 }
 

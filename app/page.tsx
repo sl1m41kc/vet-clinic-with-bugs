@@ -12,11 +12,19 @@ export default function Home() {
       <Hero />
       <GridAdvantages />
       <Advantages />
-      <Title marginTop={150} marginTopMobile={60}/>
+      <Title marginTop={150} marginTopMobile={60}>
+        Наша цель&nbsp;&mdash; обеспечить{" "}
+        <span>индивидуальный уход, гарантируя каждому питомцу</span> необходимое
+        внимание с&nbsp;учетом его возраста и&nbsp;состояния здоровья.
+      </Title>
       <MedicialDirections />
-      <DoctorsSwiper/>
-      <Title marginTop={150} marginTopMobile={60}/>
-      <Services/>
+      <DoctorsSwiper />
+      <Title marginTop={150} marginTopMobile={60}>
+        Наша цель&nbsp;&mdash; обеспечить{" "}
+        <span>индивидуальный уход, гарантируя каждому питомцу</span> необходимое
+        внимание с&nbsp;учетом его возраста и&nbsp;состояния здоровья.
+      </Title>
+      <Services />
     </>
   );
 }

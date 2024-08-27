@@ -9,8 +9,13 @@ export default function Home() {
   return (
     <>
       <Hero />
-      <PriceTitle />
-      <Suspense fallback={<Loading/>}>
+      <PriceTitle>
+        Ветеринарная клиника &laquo;Ветлекарь&raquo; предоставляет широкий
+        спектр услуг. В&nbsp;данном разделе вы можете ознакомиться с&nbsp;нашими
+        расценками и&nbsp;узнать стоимость консультаций у&nbsp;наших
+        специалистов.
+      </PriceTitle>
+      <Suspense fallback={<Loading />}>
         <Prices />
       </Suspense>
       <Vaccines />
