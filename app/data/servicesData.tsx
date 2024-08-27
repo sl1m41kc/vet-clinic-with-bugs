@@ -167,7 +167,7 @@ export const servicesData: IServiceGroup[] = [
             хирургического вмешательства. Мы&nbsp;предлагаем следующие передовые
             методы лечения:
           </>,
-          <ul>
+          <ul key="service-ul-1">
             <li>
               <b>Артропластика:</b> эндоскопическое лечение и&nbsp;диагностика
               суставов через небольшой прокол.
@@ -258,7 +258,7 @@ export const servicesData: IServiceGroup[] = [
             в&nbsp;разрезе. Также мы&nbsp;используем эндоскопию для глубокой
             диагностики и&nbsp;лечения заболеваний:
           </>,
-          <ul>
+          <ul key='service-ul-2'>
             <li>
               <b>Гастроскопия</b>&nbsp;&mdash; для обследования желудка;
             </li>
@@ -290,7 +290,7 @@ export const servicesData: IServiceGroup[] = [
             образованиями, так и&nbsp;с&nbsp;более сложными случаями, такими
             как:
           </>,
-          <ul>
+          <ul key='service-ul-3'>
             <li>
               <b>Удаление новообразований костей;</b>
             </li>
@@ -321,7 +321,7 @@ export const servicesData: IServiceGroup[] = [
             но&nbsp;только жизненно необходимые. К&nbsp;таким операциям
             относятся:
           </>,
-          <ul>
+          <ul key='service-ul-4'>
             <li>
               <b>Пластика носа</b> у&nbsp;брахиоцефалов, чтобы позволить
               им&nbsp;полноценно дышать;
@@ -367,7 +367,7 @@ export const servicesData: IServiceGroup[] = [
             мы&nbsp;рекомендуем хорошо к&nbsp;ней подготовиться и&nbsp;снизить
             все риски:
           </>,
-          <ul>
+          <ul key='service-ul-5'>
             <li>
               <b>Вакцинировать животное до&nbsp;операции;</b>
             </li>
@@ -399,7 +399,7 @@ export const servicesData: IServiceGroup[] = [
             Самые популярны мифы, с&nbsp;которыми нам приходятся сталкиваться
             в&nbsp;разговорах с&nbsp;владельцами:
           </>,
-          <ul>
+          <ul key='service-ul-6'>
             <li>
               <i>Животное должно хоть раз родить для здоровья.</i>
               <br /> Это <b>неправда,</b> роды ни&nbsp;одному виду
@@ -696,7 +696,7 @@ export const servicesData: IServiceGroup[] = [
           <>
             Мы&nbsp;проводим различные рентгенологические исследования, включая:
           </>,
-          <ul>
+          <ul key='service-ul-7'>
             <li>
               Рентген <b>головы;</b>
             </li>
@@ -741,7 +741,7 @@ export const servicesData: IServiceGroup[] = [
             точные и&nbsp;детализированные результаты.
           </>,
           <>Мы&nbsp;проводим ультразвуковое обследование для:</>,
-          <ul>
+          <ul key='service-ul-8'>
             <li>
               <b>Органов брюшной полости;</b>
             </li>
@@ -797,7 +797,7 @@ export const servicesData: IServiceGroup[] = [
           <>
             <b>Кошки:</b>
           </>,
-          <ul>
+          <ul key='service-ul-9'>
             <li>рэгдоллы</li>
             <li>сфинксы</li>
             <li>мейн-куны</li>
@@ -815,7 +815,7 @@ export const servicesData: IServiceGroup[] = [
           <>
             <b>Собаки:</b>
           </>,
-          <ul>
+          <ul key='service-ul-10'>
             <li>ирландские волкодавы</li>
             <li>боксеры</li>
             <li>доберманы</li>

@@ -1,5 +1,5 @@
 "use client";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import clsx from "clsx";
 
 import ArrowSVG from "/public/Svg/swiper_arrow.svg";
@@ -23,13 +23,14 @@ const AccordionItem = ({
 }: IProps) => {
   const [active, setActive] = useState(false);
 
-  const toggle = () => {
-    setActive(!active);
-  };
-
+  const toggle = useCallback(() => {
+    setActive((prev) => !prev);
+  }, []);
+  
   useEffect(() => {
-    if (actived) toggle()
-  }, [actived]);
+    if (actived) toggle();
+  }, [actived, toggle]);
+
   return (
     <>
       <div
