@@ -16,7 +16,7 @@ const Footer = () => {
             <p>ОГРН 313547627000098</p>
           </div>
           <div className={classes.documents}>
-            <Link className={classes.link} href="/">
+            <Link className={classes.link} href="/license">
               Лицензии
             </Link>
             <Link className={classes.link} href="/privacy">

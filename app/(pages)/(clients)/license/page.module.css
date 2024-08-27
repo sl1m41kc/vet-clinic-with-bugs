@@ -1,0 +1,61 @@
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+    width: 100%;
+}
+
+.title {
+    margin-inline: auto;
+    width: 100%;
+    max-width: min(1000px, 100%);
+    padding: 30px;
+    text-align: center;
+    font-weight: 500;
+    font-size: 2em;
+    line-height: 130%;
+    color: var(--clr1);
+    background-color: var(--clr6);
+    border-radius: 30px;
+}
+
+.licenseList {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 30px;
+}
+
+.license {
+    cursor: pointer;
+    max-width: 300px;
+    aspect-ratio: 75/106;
+    box-shadow: 0px 20px 25px -13px rgba(0, 0, 0, 0.25), 0px 5px 12px -7px rgba(0, 0, 0, 0.25);
+    padding: 10px;
+    border-radius: 4px;
+    background: linear-gradient(180deg, #F0F0F0 0%, #EBEBEB 100%);
+}
+
+.image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    box-shadow: inset 0px 5px 7.6px 6px rgba(0, 0, 0, 0.25);
+}
+
+.license.active {
+    width: 450px;
+    cursor: auto;
+}
+
+@media (max-width: 1280px) {
+    .license {
+        width: 47%;
+    }
+}
+
+@media (max-width: 620px) {
+    .license {
+        width: 100%;
+    }
+}

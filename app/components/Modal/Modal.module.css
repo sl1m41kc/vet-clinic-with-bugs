@@ -13,7 +13,6 @@
 }
 
 .wrapper {
-    max-width: min(865px, 100%);
     position: fixed;
     top: 50%;
     left: 50%;
