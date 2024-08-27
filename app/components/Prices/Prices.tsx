@@ -6,6 +6,7 @@ import { Item } from "./Item/Item";
 import { fetchPrices } from "@/app/utils/API";
 
 import classes from "./prices.module.css";
+import styles from "@/app/UI/PriceLoading/PriceLoading.module.css";
 import type { IGroupPrice } from "@/app/types/IPrice";
 import type { IError } from "@/app/types/IError";
 
@@ -14,8 +15,8 @@ const Prices = async () => {
   if ('error' in prices) {
     return (
       <section className="container">
-        <div className="error-message">
-          {prices.error}
+        <div className={styles.loader}>
+          <p className={styles.text}>{prices.error}</p>
         </div>
       </section>
     );
