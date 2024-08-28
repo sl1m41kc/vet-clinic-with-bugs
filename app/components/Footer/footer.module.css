@@ -1,7 +1,7 @@
 .footer {
   display: flex;
   flex-direction: column;
-  
+
   gap: 60px;
 
   padding: 30px;
@@ -35,10 +35,6 @@
   align-items: flex-start;
 
   gap: 10px;
-}
-
-.link {
-  border-bottom: 1px solid var(--clr4);
 }
 
 .svg {

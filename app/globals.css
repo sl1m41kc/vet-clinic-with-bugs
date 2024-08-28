@@ -28,6 +28,12 @@ body {
     font-size: 16px;
 }
 
+/* Typography */
+a {
+  text-decoration: underline 1px solid var(--clr4);
+  text-underline-offset: .4em;
+}
+
 ul {
     list-style: none;
 }

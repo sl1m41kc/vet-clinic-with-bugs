@@ -26,7 +26,7 @@ const Footer = () => {
           <Link href="/">
             <VK_Logo className={classes.svg} />
           </Link>
-          <Link href="https://t.me/axonix_info?text=Здравствуйте! Интересует разработка сайта." target="_blank" className={classes.link}>
+          <Link href="https://t.me/axonix_info?text=Здравствуйте! Интересует разработка сайта." target="_blank">
             Разработка сайта
           </Link>
         </div>

@@ -15,7 +15,7 @@ const ServiceCard = ({ title, services, SVG, pathName }: IServiceGroup) => {
       </Link>
 
       {services.map((service, index) => (
-        <div key={clsx(index, service.text)} className={classes.service}>
+        <div key={clsx(index, service.text)} className={clsx(classes.service, classes.text)}>
           <PawSVG className={classes.paw_svg} />
           {service.isLink ? (
             <Link
@@ -24,10 +24,10 @@ const ServiceCard = ({ title, services, SVG, pathName }: IServiceGroup) => {
                 query: { serviceActiveId: `${service.id}` },
               }}
             >
-              <p className={clsx(classes.text, classes.link)}>{service.text}</p>
+              {service.text}
             </Link>
           ) : (
-            <p className={classes.text}>{service.text}</p>
+            <p>{service.text}</p>
           )}
         </div>
       ))}

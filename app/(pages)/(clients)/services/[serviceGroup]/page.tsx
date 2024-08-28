@@ -9,6 +9,7 @@ import { servicesData } from "@/app/data/servicesData";
 import { IMAGES_PATH } from "@/app/Сonstants/pathsConsts";
 
 import classes from "./serviceGroup.module.css";
+import React from "react";
 
 interface IProps {
   params: { serviceGroup: string };
@@ -25,12 +26,23 @@ export default function Home({ params, searchParams }: IProps) {
 
   if (!serviceGroupItem) { notFound(); }
 
-  const { title, image, services } = serviceGroupItem;
-  
+  const { title, description, image, services } = serviceGroupItem;
+
   return (
     <PageTemplate image={`${IMAGES_PATH}${image}.png`}>
       <div className={classes.content}>
         <h1 className={classes.title}>{title}</h1>
+        {description && (
+          description.map((descrContent, index) => {
+            // Проверяем, является ли description пустым фрагментом
+            if (React.isValidElement(descrContent) && descrContent.type === React.Fragment) {
+              // Если это пустой фрагмент, выводим <p>
+              return <p key={index}>{descrContent}</p>;
+            }
+            // Иначе, выводим переданный HTML-элемент
+            return <React.Fragment key={index}>{descrContent}</React.Fragment>;
+          })
+        )}
 
         <ul className={classes.services}>
           {services?.map((service, index) => (
@@ -44,9 +56,15 @@ export default function Home({ params, searchParams }: IProps) {
               >
                 <div className={classes.info}>
                   {service.description &&
-                    service.description.map((description, index) => (
-                      <p key={index}>{description}</p>
-                    ))}
+                    service.description.map((description, index) => {
+                      // Проверяем, является ли description пустым фрагментом
+                      if (React.isValidElement(description) && description.type === React.Fragment) {
+                        // Если это пустой фрагмент, выводим <p>
+                        return <p key={index}>{description}</p>;
+                      }
+                      // Иначе, выводим переданный HTML-элемент
+                      return <React.Fragment key={index}>{description}</React.Fragment>;
+                    })}
 
                   {service.notes && (
                     <div className={classes.notes}>

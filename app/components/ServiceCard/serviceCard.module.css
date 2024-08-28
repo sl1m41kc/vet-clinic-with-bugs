@@ -26,6 +26,7 @@
 .service {
     display: flex;
     align-items: baseline;
+
     gap: 10px;
     fill: var(--clr1);
     z-index: 1;
@@ -35,16 +36,13 @@
     font-size: 2em;
     line-height: 1.15;
     font-weight: 500;
+
     width: auto;
 }
 
 .text {
     font-size: 1.125em;
-    text-decoration: none;
-}
-
-.text.link {
-    border-bottom: 1px solid var(--clr4);
+    text-transform: lowercase;
 }
 
 .svg {

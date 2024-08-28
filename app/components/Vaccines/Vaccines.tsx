@@ -15,7 +15,7 @@ const Vaccines = () => {
         2&nbsp;статьи 437&nbsp;ГК РФ. Для получения информации о&nbsp;наличии
         вакцин и&nbsp;их&nbsp;стоимости необходимо связаться с&nbsp;нами
         по&nbsp;телефону&nbsp;
-        <Link className={classes.link} href="tel:+73832850204">
+        <Link href="tel:+73832850204">
           +7 (383) 285-02-04
         </Link>
       </p>
