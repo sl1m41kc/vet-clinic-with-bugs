@@ -94,9 +94,6 @@
 }
 
 @media (max-width: 768px) {
-    .doctor {
-        gap: 10px;
-    }
 
     .info, .details {
         gap: 30px;
@@ -106,10 +103,11 @@
         padding-inline: 10px;
     }
 
+    .detail {
+        gap: 10px;
+    }
+
     .fullName {
         font-size: 1.5em;
-    }
-    .professions, .description, .post {
-        font-size: 1em;
     }
 }
