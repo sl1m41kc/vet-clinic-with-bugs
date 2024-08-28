@@ -3,6 +3,8 @@ import prisma from "@/prisma/client";
 
 import type { IGroupPrice } from "@/app/types/IPrice";
 
+export const dynamic = "force-dynamic";
+
 export async function GET() {
   try {
     // Получение списка групп цен из базы данных
