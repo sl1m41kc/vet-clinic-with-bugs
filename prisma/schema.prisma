@@ -16,6 +16,7 @@ datasource db {
 // Схема для коллекции PriceList
 model PriceList {
   id               String    @id @default(auto()) @map("_id") @db.ObjectId
+  sortOrder        Int       @default(0)
   groupTitle       String
   groupDescription String?
   groupNote        String?
@@ -25,6 +26,7 @@ model PriceList {
 type Service {
   serviceTitle       String
   serviceDescription String?
+  servicePricePrefix String?
   servicePrice       Float?
   priceOptions       PriceOption[]
 }
@@ -32,5 +34,6 @@ type Service {
 type PriceOption {
   optionTitle       String
   optionDescription String?
+  optionPricePrefix String?
   optionPrice       Float
 }
