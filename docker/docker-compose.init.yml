@@ -9,6 +9,7 @@ services:
       - ./nginx/nginx-init.d:/etc/nginx/conf.d
       - ./nginx/etc/letsencrypt:/etc/letsencrypt
       - ./nginx/www:/var/www/html
+    entrypoint: /bin/sh -c "envsubst '$$DOMAIN' < /etc/nginx/nginx.conf.template > /etc/nginx/nginx.conf && exec nginx -g 'daemon off;'"
     restart: always
 
   # certbot запускается для получения сертификатов
@@ -17,13 +18,10 @@ services:
     container_name: certbot
     env_file:
       - .env.production
-    # environment:
-    #   - DOMAIN=vet-lekar.axonix.ru
     depends_on:
       - nginx
     volumes:
       - ./nginx/etc/letsencrypt:/etc/letsencrypt
       - ./nginx/www:/var/www/html
       - ./certbot-entrypoint.sh:/certbot-entrypoint.sh
-    # command: certonly --webroot --webroot-path=/var/www/html --email admin@axonix.ru --agree-tos --no-eff-email -d www.vet-lekar.axonix.ru -d vet-lekar.axonix.ru
     entrypoint: ["/certbot-entrypoint.sh"]
