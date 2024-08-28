@@ -32,17 +32,18 @@ export default function Home({ params, searchParams }: IProps) {
     <PageTemplate image={`${IMAGES_PATH}${image}.png`}>
       <div className={classes.content}>
         <h1 className={classes.title}>{title}</h1>
-        {description && (
-          description.map((descrContent, index) => {
-            // Проверяем, является ли description пустым фрагментом
-            if (React.isValidElement(descrContent) && descrContent.type === React.Fragment) {
-              // Если это пустой фрагмент, выводим <p>
-              return <p key={index}>{descrContent}</p>;
-            }
-            // Иначе, выводим переданный HTML-элемент
-            return <React.Fragment key={index}>{descrContent}</React.Fragment>;
-          })
-        )}
+        {description && 
+          <div className={classes.textBlock}>
+              {description.map((descrContent, index) => {
+                // Проверяем, является ли description пустым фрагментом
+                if (React.isValidElement(descrContent) && descrContent.type === React.Fragment) {
+                  // Если это пустой фрагмент, выводим <p>
+                  return <p key={index}>{descrContent}</p>;
+                }
+                // Иначе, выводим переданный HTML-элемент
+                return <React.Fragment key={index}>{descrContent}</React.Fragment>;
+              })}
+          </div>}
 
         <ul className={classes.services}>
           {services?.map((service, index) => (

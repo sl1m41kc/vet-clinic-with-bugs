@@ -21,6 +21,13 @@
   border-radius: 30px;
 }
 
+.textBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding-inline: 20px;
+}
+
 .services {
   display: flex;
   flex-direction: column;
@@ -96,6 +103,11 @@
 
   .title {
     font-size: 1.5em;
+  }
+
+  .textBlock {
+    gap: 10px;
+    padding-inline: 0;
   }
 
   .services {

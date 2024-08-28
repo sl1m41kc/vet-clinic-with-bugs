@@ -2,8 +2,6 @@ import HeartSVG from "@/public/Svg/Heart.svg";
 import FlaskSVG from "@/public/Svg/Flask.svg";
 import MedBowlSVG from "@/public/Svg/Med_bowl.svg";
 import { IServiceGroup } from "../types/IServiceGroup";
-import Link from "next/link";
-import ArrowButton from "../UI/ArrowButton/ArrowButton";
 
 export const servicesData: IServiceGroup[] = [
   {
