@@ -47,7 +47,7 @@ const GridAdvantages = () => {
             description="Наши специалисты ответят на&nbsp;все ваши вопросы"
             button={{
               text: "Перейти в VK",
-              link: "/",
+              link: "https://vk.com/vetlekar",
             }}
             SVG={<VKLogoSVG width={147} height={94} />}
           />
