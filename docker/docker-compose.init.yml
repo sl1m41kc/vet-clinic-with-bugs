@@ -17,9 +17,11 @@ services:
     container_name: certbot
     env_file:
       - .env.production
+    environment:
+      - DOMAIN=vet-lekar.axonix.ru
     depends_on:
       - nginx
     volumes:
       - ./nginx/etc/letsencrypt:/etc/letsencrypt
       - ./nginx/www:/var/www/html
-    command: certonly --webroot --webroot-path=/var/www/html --email admin@axonix.ru --agree-tos --no-eff-email -d "www.${BASE_DOMAIN}" -d "${BASE_DOMAIN}"
+    command: certonly --webroot --webroot-path=/var/www/html --email admin@axonix.ru --agree-tos --no-eff-email -d "www.${DOMAIN}" -d "${DOMAIN}"
