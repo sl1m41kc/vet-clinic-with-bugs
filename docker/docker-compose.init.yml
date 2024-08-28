@@ -1,0 +1,25 @@
+services:
+  nginx:
+    image: nginx:1.19.8-alpine
+    container_name: nginx
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./nginx/nginx-init.d:/etc/nginx/conf.d
+      - ./nginx/etc/letsencrypt:/etc/letsencrypt
+      - ./nginx/www:/var/www/html
+    restart: always
+
+  # certbot запускается для получения сертификатов
+  certbot:
+    image: certbot/certbot
+    container_name: certbot
+    env_file:
+      - .env.production
+    depends_on:
+      - nginx
+    volumes:
+      - ./nginx/etc/letsencrypt:/etc/letsencrypt
+      - ./nginx/www:/var/www/html
+    command: certonly --webroot --webroot-path=/var/www/html --email admin@axonix.ru --agree-tos --no-eff-email -d www.${DOMAIN} -d ${DOMAIN}

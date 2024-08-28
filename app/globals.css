@@ -30,7 +30,9 @@ body {
 
 /* Typography */
 a {
-  text-decoration: underline 1px solid var(--clr4);
+  text-decoration: underline;
+  text-decoration-style: solid;
+  text-decoration-color: var(--clr4);
   text-underline-offset: .4em;
 }
 

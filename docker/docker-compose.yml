@@ -27,3 +27,27 @@ services:
       - "3000:3000"
     depends_on:
       - mongodb
+
+  nginx:
+    image: nginx:1.19.8-alpine
+    depends_on:
+      - app
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./docker/nginx/nginx-conf.d/:/etc/nginx/conf.d
+      - ./docker/nginx/etc/letsencrypt:/etc/letsencrypt
+      - ./docker/nginx/www:/var/www/html
+    restart: always
+
+  certbot:
+    image: certbot/certbot
+    depends_on:
+      - nginx
+    container_name: certbot
+    volumes:
+      - ./docker/nginx/etc/letsencrypt:/etc/letsencrypt
+      - ./docker/nginx/www:/var/www/html
+    # Чтобы контейнер не выключался после завершения ставим команду sleep
+    entrypoint: /bin/sh -c "sleep infinity"

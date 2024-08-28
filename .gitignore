@@ -38,3 +38,6 @@ next-env.d.ts
 
 # Данные контейнеров
 /docker/mongodb-data/
+
+# SSL-сертификаты
+/docker/ngins/etc/

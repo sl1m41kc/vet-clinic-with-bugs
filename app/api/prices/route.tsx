@@ -3,6 +3,7 @@ import prisma from "@/prisma/client";
 
 import type { IGroupPrice } from "@/app/types/IPrice";
 
+// Делаем данный блок API принудительно динамическим
 export const dynamic = "force-dynamic";
 
 export async function GET() {
