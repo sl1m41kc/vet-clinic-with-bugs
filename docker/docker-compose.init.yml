@@ -24,5 +24,6 @@ services:
     volumes:
       - ./nginx/etc/letsencrypt:/etc/letsencrypt
       - ./nginx/www:/var/www/html
+      - ./certbot-entrypoint.sh:/certbot-entrypoint.sh
     # command: certonly --webroot --webroot-path=/var/www/html --email admin@axonix.ru --agree-tos --no-eff-email -d www.vet-lekar.axonix.ru -d vet-lekar.axonix.ru
-    command: sh -c "certonly --webroot --webroot-path=/var/www/html --email admin@axonix.ru --agree-tos --no-eff-email -d www.${DOMAIN} -d ${DOMAIN}"
+    entrypoint: ["/certbot-entrypoint.sh"]
