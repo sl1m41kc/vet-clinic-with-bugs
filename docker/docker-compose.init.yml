@@ -2,8 +2,6 @@ services:
   nginx:
     image: nginx:1.19.8-alpine
     container_name: nginx
-    env_file:
-      - .env.production
     ports:
       - "80:80"
       - "443:443"
@@ -24,4 +22,4 @@ services:
     volumes:
       - ./nginx/etc/letsencrypt:/etc/letsencrypt
       - ./nginx/www:/var/www/html
-    command: certonly --webroot --webroot-path=/var/www/html --email admin@axonix.ru --agree-tos --no-eff-email -d "www.${DOMAIN}" -d "${DOMAIN}"
+    command: certonly --webroot --webroot-path=/var/www/html --email admin@axonix.ru --agree-tos --no-eff-email -d "www.${BASE_DOMAIN}" -d "${BASE_DOMAIN}"
