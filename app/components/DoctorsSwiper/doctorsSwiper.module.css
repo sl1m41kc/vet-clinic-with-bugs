@@ -16,7 +16,7 @@
     height: 600px;
 
     border-radius: 30px;
-
+    text-decoration: none;
     background-color: var(--clr6);
 }
 

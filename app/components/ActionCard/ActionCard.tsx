@@ -24,8 +24,8 @@ const ActionCard = ({ title, description, button, phone, SVG }: IProps) => {
         <h1 className={classes.title}>{title}</h1>
         {description && <p className={classes.description}>{description}</p>}
       </div>
-      {button && button.text && button.link && <Link href={button.link} target={button.isBlank ? "_blank" : "_self"}><ArrowButton text={button.text} isFill={true} /></Link>}
-      {phone && <Link href={phone.link}><p className={classes.phone}>{phone.phone}</p></Link>}
+      {button && button.text && button.link && <Link className={classes.link} href={button.link} target={button.isBlank ? "_blank" : "_self"}><ArrowButton text={button.text} isFill={true} /></Link>}
+      {phone && <Link className={classes.link} href={phone.link}><p className={classes.phone}>{phone.phone}</p></Link>}
       {SVG && <div className={classes.svgWrapper}>{SVG}</div>}
     </div>
   );

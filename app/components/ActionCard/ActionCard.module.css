@@ -65,6 +65,10 @@
     margin-top: 2px;
 }
 
+.link {
+    text-decoration: none;
+}
+
 @media (max-width: 500px) {
     .phone {
         font-size: 1.7142857142857142rem;
