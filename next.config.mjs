@@ -27,7 +27,8 @@ const nextConfig = {
         fileLoaderRule.exclude = /\.svg$/i
 
         return config
-    }
+    },
+    output: "standalone",
 };
 
 export default nextConfig;
