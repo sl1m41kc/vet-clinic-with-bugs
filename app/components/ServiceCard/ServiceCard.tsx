@@ -9,10 +9,10 @@ import { IServiceGroup } from "@/app/types/IServiceGroup";
 const ServiceCard = ({ title, services, SVG, pathName }: IServiceGroup) => {
   return (
     <div className={classes.card}>
-      <Link href={`/services/${pathName}`} className={classes.headerPanel}>
-        <h1 className={classes.title}>{title}</h1>
-        <div className={classes.button}><CircleButton image="arrow" /></div>
-      </Link>
+      <div className={classes.headerPanel}>
+        <h3 className={classes.title}>{title}</h3>
+        <Link href={`/services/${pathName}`} className={classes.button}><CircleButton image="arrow" /></Link>
+      </div>
 
       {services.map((service, index) => (
         <div key={clsx(index, service.text)} className={clsx(classes.service, classes.text)}>
