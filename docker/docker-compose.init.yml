@@ -17,8 +17,8 @@ services:
     container_name: certbot
     env_file:
       - .env.production
-    environment:
-      - DOMAIN=vet-lekar.axonix.ru
+    # environment:
+    #   - DOMAIN=vet-lekar.axonix.ru
     depends_on:
       - nginx
     volumes:

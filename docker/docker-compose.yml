@@ -30,6 +30,9 @@ services:
 
   nginx:
     image: nginx:1.19.8-alpine
+    container_name: nginx
+    env_file:
+      - .env.production
     depends_on:
       - app
     ports:
