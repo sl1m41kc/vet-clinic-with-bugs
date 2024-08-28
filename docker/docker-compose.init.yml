@@ -25,4 +25,5 @@ services:
       - ./nginx/etc/letsencrypt:/etc/letsencrypt
       - ./nginx/www:/var/www/html
     # command: certonly --webroot --webroot-path=/var/www/html --email admin@axonix.ru --agree-tos --no-eff-email -d "www.${DOMAIN}" -d "${DOMAIN}"
-    entrypoint: /bin/sh -c "sleep infinity"
+    command: sh -c "certonly --webroot --webroot-path=/var/www/html --email admin@axonix.ru --agree-tos --no-eff-email -d www.${DOMAIN} -d ${DOMAIN}"
+
