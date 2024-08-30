@@ -1,15 +1,13 @@
+'use client';
 import clsx from "clsx";
 import { notFound } from "next/navigation";
-
+import { scroller } from 'react-scroll';
 import { PageTemplate } from "@/app/components/PageTemplate/PageTemplate";
 import AccordionItem from "@/app/components/AccordionItem/AccordionItem";
-
 import { servicesData } from "@/app/data/servicesData";
-
 import { IMAGES_PATH } from "@/app/Сonstants/pathsConsts";
-
 import classes from "./serviceGroup.module.css";
-import React from "react";
+import React, { useEffect } from "react";
 
 interface IProps {
   params: { serviceGroup: string };
@@ -28,26 +26,40 @@ export default function Home({ params, searchParams }: IProps) {
 
   const { title, description, image, services } = serviceGroupItem;
 
+  useEffect(() => {
+    if (serviceActiveId) {
+      const element = document.getElementById(`service-${serviceActiveId}`);
+      if (element) {
+        scroller.scrollTo(`service-${serviceActiveId}`, {
+          duration: 800,
+          delay: 0,
+          smooth: true,
+          offset: -100,
+        });
+      }
+    }
+  }, [serviceActiveId]);
+
   return (
     <PageTemplate image={`${IMAGES_PATH}${image}.png`}>
       <div className={classes.content}>
         <h1 className={classes.title}>{title}</h1>
-        {description && 
+        {description &&
           <div className={classes.textBlock}>
-              {description.map((descrContent, index) => {
-                // Проверяем, является ли description пустым фрагментом
-                if (React.isValidElement(descrContent) && descrContent.type === React.Fragment) {
-                  // Если это пустой фрагмент, выводим <p>
-                  return <p key={index}>{descrContent}</p>;
-                }
-                // Иначе, выводим переданный HTML-элемент
-                return <React.Fragment key={index}>{descrContent}</React.Fragment>;
-              })}
+            {description.map((descrContent, index) => {
+              // Проверяем, является ли description пустым фрагментом
+              if (React.isValidElement(descrContent) && descrContent.type === React.Fragment) {
+                // Если это пустой фрагмент, выводим <p>
+                return <p key={index}>{descrContent}</p>;
+              }
+              // Иначе, выводим переданный HTML-элемент
+              return <React.Fragment key={index}>{descrContent}</React.Fragment>;
+            })}
           </div>}
 
         <ul className={classes.services}>
           {services?.map((service, index) => (
-            <li key={clsx(index, service.text)}>
+            <li id={`service-${service.id}`} key={clsx(index, service.text)}>
               <AccordionItem
                 title={
                   service.text.charAt(0).toUpperCase() + service.text.slice(1)
