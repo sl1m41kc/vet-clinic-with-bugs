@@ -8,6 +8,13 @@
     border-radius: 10px;
 
     color: var(--clr1);
+    cursor: default;
+}
+
+.actions {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
 }
 
 .listenerContainer {

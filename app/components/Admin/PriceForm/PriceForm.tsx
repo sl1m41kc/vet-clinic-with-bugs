@@ -149,29 +149,17 @@ export const PriceForm = ({ idPrice, formRef }: IProps) => {
                 // Стратегия сортировки - вертикальная
                 strategy={verticalListSortingStrategy}
               >
-                {fields.map((service, index) => {
-                  if (draggingItemIndex === undefined) {
-                    return (
-                      <DraggableItem
-                        id={service.id}
-                        key={clsx(index, service.id, service.title + "item")}
-                        control={control}
-                        reset={reset}
-                        getValues={getValues}
-                        pathToService={`services.${index}`}
-                        remove={removeService}
-                      />
-                    );
-                  }
-                  return (
-                    <DragOverlayItem
-                      key={clsx(index, service.id, service.title + "item")}
-                      data={service}
-                      pathToService={`services.${index}`}
-                      isTopLevelService
-                    />
-                  );
-                })}
+                {fields.map((service, index) => (
+                  <DraggableItem
+                    id={service.id}
+                    key={clsx(index, service.id, service.title + "item")}
+                    control={control}
+                    reset={reset}
+                    getValues={getValues}
+                    pathToService={`services.${index}`}
+                    remove={removeService}
+                  />
+                ))}
               </SortableContext>
 
               {/* Панель перетаскивания */}

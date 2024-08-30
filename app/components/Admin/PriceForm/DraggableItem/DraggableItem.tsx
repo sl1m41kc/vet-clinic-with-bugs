@@ -1,9 +1,7 @@
 "use client";
 import clsx from "clsx";
-
 import { AddButton } from "@/app/UI/AddButton/AddButton";
 import { DeleteButton } from "@/app/UI/DeleteButton/DeleteButton";
-
 import classes from "./DraggableItem.module.css";
 import { DndContext } from "@dnd-kit/core";
 import {
@@ -14,6 +12,7 @@ import { arrayMove, SortableContext, useSortable } from "@dnd-kit/sortable";
 import { Controller, useFieldArray } from "react-hook-form";
 import { CSS } from "@dnd-kit/utilities";
 import { IPrice } from "@/app/types/IPrice";
+import { MoveButton } from "@/app/UI/MoveButton/MoveButton";
 
 interface IProps {
   control: any;
@@ -102,9 +101,12 @@ export const DraggableItem = ({
       ref={setNodeRef}
       {...attributes}
     >
-      <div className={classes.listenerContainer} {...listeners} />
+      {/* <div className={classes.listenerContainer} {...listeners} /> */}
       <div className={classes.content}>
-        <DeleteButton onClick={() => remove(indexInGroup)} />
+        <div className={classes.actions}>
+          <DeleteButton onClick={() => remove(indexInGroup)} />
+          <MoveButton listeners={listeners} />
+        </div>
 
         <div className={classes.inputs}>
           <div className={classes.text}>

@@ -25,6 +25,8 @@ export default function Home({ searchParams: { idPrice } }: IProps) {
         }}
       />
       <PriceForm formRef={formRef} idPrice={idPrice} />
+      {/* Блок фиксит баг сброса сбитого курсора при dragging (пропадал скролл из-за этого смещался курсор) */}
+      <div className="h-[500px]" />
     </>
   );
 }
