@@ -22,7 +22,7 @@ export const PanelActions = ({ title, addBtn, saveBtn }: IProps) => {
       <div className={classes.prices}>
         <h1 className={classes.title}>{title}</h1>
         {addBtn && (
-          <Link href={addBtn.link} scroll={false}>
+          <Link href={addBtn.link} scroll={false} className={classes.addBtn}>
             <AddButton onClick={addBtn.func} text={addBtn.text} />
           </Link>
         )}

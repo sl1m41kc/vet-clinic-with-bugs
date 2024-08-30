@@ -8,6 +8,10 @@
     margin-top: 160px;
 }
 
+.addBtn {
+    text-decoration: none;
+}
+
 .title {
     color: var(--clr1);
     font-size: 2.5em;
