@@ -39,7 +39,7 @@ export const ListPrice = ({ formRef }: IProps) => {
     PRICE_API.GET().then((data) => {
       reset({ priceSections: data });
     });
-  });
+  }, []);
 
   // Обработчик формы
   const onSubmit = (data: { priceSections: IPriceSection[] }) => {
