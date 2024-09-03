@@ -45,7 +45,7 @@
 }
 
 .phantom {
-    height: 140px;
+    min-height: 140px;
 }
 
 @media (max-width: 1230px) {
@@ -62,7 +62,7 @@
         padding: 5px 10px;
     }
     .phantom {
-        height: 110px;
+        min-height: 110px;
     }
     .logo {
         width: 350px;
@@ -82,7 +82,7 @@
     }
 
     .phantom {
-        height: 100px;
+        min-height: 100px;
     }
 }
 
@@ -96,7 +96,7 @@
     }
 
     .phantom {
-        height: 80px;
+        min-height: 80px;
     }
 }
 
