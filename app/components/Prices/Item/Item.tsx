@@ -19,9 +19,9 @@ export const Item = ({ services, groupNote }: IProps) => {
         >
           <div className={clsx(classes.service, classes.service_item)}>
             <div className={classes.text}>
-              <h1 className={clsx(classes.title, classes.service_title)}>
+              <p className={clsx(classes.title, classes.service_title)}>
                 {service.serviceTitle}
-              </h1>
+              </p>
               {service.serviceDescription && (
                 <p>{service.serviceDescription}</p>
               )}

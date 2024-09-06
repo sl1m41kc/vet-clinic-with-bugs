@@ -1,4 +1,6 @@
 .accordion_item {
+    position: relative;
+    z-index: 1;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -80,8 +82,6 @@
     background-color: var(--clr6) ;
 
     transition: grid-template-rows 1s;
-
-    z-index: -1;
 }
 
 .inner.active {
