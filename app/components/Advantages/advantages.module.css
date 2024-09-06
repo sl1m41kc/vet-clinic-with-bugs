@@ -11,6 +11,5 @@
 @media (max-width: 1280px) {
     .advantages {
         grid-template-columns: repeat(2, 24fr);
-        margin-top: 10px;
     }
 }

@@ -7,7 +7,7 @@ const MedicialDirection = ({title, description}: IMedicialDirection) => {
   return (
     <div className={classes.direction}>
         <h1 className={classes.title}>{title}</h1>
-        <p>{description}</p>
+        <p className={classes.description}>{description}</p>
     </div>
   )
 }

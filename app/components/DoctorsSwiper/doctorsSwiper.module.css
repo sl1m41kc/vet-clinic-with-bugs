@@ -25,3 +25,10 @@
         margin-top: 30px;
     }
 }
+
+@media (max-width: 450px) {
+    .linkCard {
+        width: 340px;
+        height: 550px;
+    }
+}

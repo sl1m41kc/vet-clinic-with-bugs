@@ -19,6 +19,7 @@
 
 .description {
     font-size: 1.125em;
+    line-height: 1.3em;
 }
 
 .changeColor {
@@ -28,10 +29,6 @@
 
 @media (max-width: 768px) {
     .title {
-        font-size: 2.25em;
-    }
-    
-    .description {
-        font-size: 1em;
+        font-size: 2.8em;
     }
 }
