@@ -1,6 +1,7 @@
-import React from 'react';
-import clsx from 'clsx';
-import Image, { StaticImageData } from 'next/image';
+import React from "react";
+import clsx from "clsx";
+import Image, { StaticImageData } from "next/image";
+import Link from "next/link";
 
 import CircleButton from '@/app/UI/СircleButton/CircleButton';
 
@@ -12,14 +13,15 @@ interface IProps {
   image: StaticImageData;
   reverse: boolean;
   alt: string;
+  link: string;
 }
 
-const PetCard = ({ title, description, image, reverse, alt }: IProps) => {
+const PetCard = ({ title, description, image, reverse, alt, link }: IProps) => {
   return (
     <div className={clsx(styles.card, reverse && styles.reverse_card)}>
-      <div className={styles.button}>
+      <Link href={link} className={styles.button}>
         <CircleButton image="arrow" />
-      </div>
+      </Link>
       <div className={styles.text}>
         <h1 className={styles.title}>{title}</h1>
         <p className={styles.description}>{description}</p>

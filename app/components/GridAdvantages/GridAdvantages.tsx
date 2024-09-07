@@ -20,6 +20,7 @@ const GridAdvantages = () => {
             image={dogPNG}
             reverse={false}
             alt="Собака сидит и улыбается"
+            link="/services/surgery"
           />
         </div>
         <div className={styles.gridCard}>
@@ -29,6 +30,7 @@ const GridAdvantages = () => {
             image={catPNG}
             reverse={true}
             alt="Котенок выглядывает"
+            link="/services/laboratory"
           />
         </div>
         <div className={styles.block}>
