@@ -1,4 +1,4 @@
-import classes from "./PriceLoading.module.css";
+import classes from './PriceLoading.module.css';
 
 export const PriceLoading = () => {
   return (

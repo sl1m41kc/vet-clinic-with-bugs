@@ -1,7 +1,7 @@
-"use client";
-import classes from "./DragOverlayItem.module.css";
-import { EditButton } from "@/app/UI/EditButton/EditButton";
-import { IPrice } from "@/app/types/IPrice";
+'use client';
+import classes from './DragOverlayItem.module.css';
+import { EditButton } from '@/app/UI/EditButton/EditButton';
+import { IPrice } from '@/app/types/IPrice';
 
 interface IProps {
   price: IPrice;

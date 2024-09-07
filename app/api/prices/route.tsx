@@ -1,10 +1,10 @@
-import { NextResponse } from "next/server";
-import prisma from "@/prisma/client";
+import { NextResponse } from 'next/server';
+import prisma from '@/prisma/client';
 
-import type { IGroupPrice } from "@/app/types/IPrice";
+import type { IGroupPrice } from '@/app/types/IPrice';
 
 // Делаем данный блок API принудительно динамическим
-export const dynamic = "force-dynamic";
+export const dynamic = 'force-dynamic';
 
 export async function GET() {
   try {
@@ -15,9 +15,9 @@ export async function GET() {
       throw new Error();
     }
     return NextResponse.json(prices, { status: 200 });
-  } catch (error) {
+  } catch {
     return NextResponse.json(
-      { error: "Или цен нет, или произошла ошибка. Попробуйте еще раз" },
+      { error: 'Или цен нет, или произошла ошибка. Попробуйте еще раз' },
       { status: 404 }
     );
   }

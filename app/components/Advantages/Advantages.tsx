@@ -1,13 +1,13 @@
-"use client";
-import React from "react";
-import useResize from "@/app/hooks/useResize";
+'use client';
+import React from 'react';
+import useResize from '@/app/hooks/useResize';
 
-import AdvantagesCard from "@/app/components/AdvantagesCard/AdvantagesCard";
-import AdvantagesSwiper from "@/app/components/AdvantagesSwiper/AdvantagesSwiper";
+import AdvantagesCard from '@/app/components/AdvantagesCard/AdvantagesCard';
+import AdvantagesSwiper from '@/app/components/AdvantagesSwiper/AdvantagesSwiper';
 
-import { advantagesData } from "@/app/data/advantagesData";
+import { advantagesData } from '@/app/data/advantagesData';
 
-import styles from "./advantages.module.css";
+import styles from './advantages.module.css';
 
 const Advantages = () => {
   const { width } = useResize();

@@ -1,28 +1,31 @@
 .button {
-    padding: 10px;
-    width: 45px;
-    height: 45px;
-    
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    
-    border: 1px solid var(--clr10);
-    border-radius: 30px;
+  padding: 10px;
+  width: 45px;
+  height: 45px;
 
-    transition: background-color 0.3s, border 0.3s, transform 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid var(--clr10);
+  border-radius: 30px;
+
+  transition:
+    background-color 0.3s,
+    border 0.3s,
+    transform 0.3s;
 }
 
 .button:hover {
-    background-color: var(--clr12);
-    border: 1px solid var(--clr13);
-    transform: scale(1.05);
+  background-color: var(--clr12);
+  border: 1px solid var(--clr13);
+  transform: scale(1.05);
 }
 
 .button:active {
-    transform: scale(0.99);
+  transform: scale(0.99);
 }
 
 .svg {
-    fill: var(--clr11);
+  fill: var(--clr11);
 }

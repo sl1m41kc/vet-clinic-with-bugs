@@ -1,12 +1,12 @@
-import React from "react";
-import Link from "next/link";
+import React from 'react';
+import Link from 'next/link';
 
-import VK_Logo from "/public/Svg/VK_logo.svg";
+import VK_Logo from '/public/Svg/VK_logo.svg';
 
-import classes from "./footer.module.css";
+import classes from './footer.module.css';
 
 const Footer = () => {
-  let currentYear = new Date().getFullYear();
+  const currentYear = new Date().getFullYear();
   return (
     <footer className="container">
       <div className={classes.footer}>
@@ -26,7 +26,10 @@ const Footer = () => {
           <Link href="https://vk.com/vetlekar">
             <VK_Logo className={classes.svg} />
           </Link>
-          <Link href="https://t.me/axonix_info?text=Здравствуйте! Интересует разработка сайта." target="_blank">
+          <Link
+            href="https://t.me/axonix_info?text=Здравствуйте! Интересует разработка сайта."
+            target="_blank"
+          >
             Разработка сайта
           </Link>
         </div>

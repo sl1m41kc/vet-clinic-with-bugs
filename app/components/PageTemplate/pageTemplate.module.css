@@ -15,21 +15,21 @@
 }
 
 .image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .sceleton {
-    width: 100%;
-    height: 100%;
-    background-color: var(--clr1);
+  width: 100%;
+  height: 100%;
+  background-color: var(--clr1);
 }
 
 @media (max-width: 930px) {
-    .imageWrapper {
-        max-width: 375px;
-    }
+  .imageWrapper {
+    max-width: 375px;
+  }
 }
 
 @media (max-width: 1000px) {
@@ -40,9 +40,9 @@
         margin-top: 10px;
     }
 
-    .imageWrapper {
-        max-width: inherit;
-        position: relative;
-        top: inherit;
-    }
+  .imageWrapper {
+    max-width: inherit;
+    position: relative;
+    top: inherit;
+  }
 }

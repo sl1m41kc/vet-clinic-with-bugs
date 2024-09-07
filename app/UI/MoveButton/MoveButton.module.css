@@ -1,13 +1,13 @@
 .button {
-    padding: 10px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
 }
 
 .svg {
-    width: 24px;
-    height: 24px;
-    fill: var(--clr7);
+  width: 24px;
+  height: 24px;
+  fill: var(--clr7);
 }

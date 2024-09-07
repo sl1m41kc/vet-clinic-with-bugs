@@ -1,9 +1,9 @@
-import { Suspense } from "react";
-import Hero from "@/app/components/Hero/Hero";
-import Prices from "@/app/components/Prices/Prices";
-import PriceTitle from "@/app/components/PriceTitle/PriceTitle";
-import Vaccines from "@/app/components/Vaccines/Vaccines";
-import { PriceLoading } from "@/app/UI/PriceLoading/PriceLoading";
+import { Suspense } from 'react';
+import Hero from '@/app/components/Hero/Hero';
+import Prices from '@/app/components/Prices/Prices';
+import PriceTitle from '@/app/components/PriceTitle/PriceTitle';
+import Vaccines from '@/app/components/Vaccines/Vaccines';
+import { PriceLoading } from '@/app/UI/PriceLoading/PriceLoading';
 
 export default function Home() {
   return (

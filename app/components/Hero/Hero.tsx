@@ -1,11 +1,11 @@
-import React from "react";
-import Image from "next/image";
+import React from 'react';
+import Image from 'next/image';
 
-import ArrowButton from "@/app/UI/ArrowButton/ArrowButton";
+import ArrowButton from '@/app/UI/ArrowButton/ArrowButton';
 
-import hero from "/public/Images/hero.png";
+import hero from '/public/Images/hero.png';
 
-import styles from "./hero.module.css";
+import styles from './hero.module.css';
 
 const Hero = () => {
   return (

@@ -1,34 +1,34 @@
-"use client";
-import clsx from "clsx";
+'use client';
+import clsx from 'clsx';
 
-import { AddButton } from "@/app/UI/AddButton/AddButton";
-import { DeleteButton } from "@/app/UI/DeleteButton/DeleteButton";
+import { AddButton } from '@/app/UI/AddButton/AddButton';
+import { DeleteButton } from '@/app/UI/DeleteButton/DeleteButton';
 
-import classes from "./PriceForm.module.css";
+import classes from './PriceForm.module.css';
 import {
   DndContext,
   DragEndEvent,
   DragOverlay,
   DragStartEvent,
-} from "@dnd-kit/core";
-import { IPriceSection } from "@/app/types/IPrice";
+} from '@dnd-kit/core';
+import { IPriceSection } from '@/app/types/IPrice';
 import {
   restrictToParentElement,
   restrictToVerticalAxis,
-} from "@dnd-kit/modifiers";
+} from '@dnd-kit/modifiers';
 import {
   SortableContext,
   verticalListSortingStrategy,
-} from "@dnd-kit/sortable";
-import { DEFAULT_PRICE_SECTION_DATA } from "@/app/data/priceData";
-import { Controller, useFieldArray, useForm } from "react-hook-form";
-import { useEffect, useState } from "react";
-import { useRouter } from "next/navigation";
-import { PRICE_API } from "@/app/utils/API";
-import { Modal } from "@/app/components/Modal/Modal";
-import { DraggableItem } from "./DraggableItem/DraggableItem";
-import { DragOverlayItem } from "./DragOverlayItem/DragOverlayItem";
-import { handleDelete, handleDragEnd, handleDragStart } from "./handle";
+} from '@dnd-kit/sortable';
+import { DEFAULT_PRICE_SECTION_DATA } from '@/app/data/priceData';
+import { Controller, useFieldArray, useForm } from 'react-hook-form';
+import { useEffect, useState } from 'react';
+import { useRouter } from 'next/navigation';
+import { PRICE_API } from '@/app/utils/API';
+import { Modal } from '@/app/components/Modal/Modal';
+import { DraggableItem } from './DraggableItem/DraggableItem';
+import { DragOverlayItem } from './DragOverlayItem/DragOverlayItem';
+import { handleDelete, handleDragEnd, handleDragStart } from './handle';
 
 interface IProps {
   formRef: React.RefObject<HTMLFormElement>;
@@ -63,7 +63,7 @@ export const PriceForm = ({ idPrice, formRef }: IProps) => {
     remove: removeService,
   } = useFieldArray({
     control,
-    name: "services",
+    name: 'services',
   });
 
   // Обработчик формы
@@ -152,7 +152,7 @@ export const PriceForm = ({ idPrice, formRef }: IProps) => {
                 {fields.map((service, index) => (
                   <DraggableItem
                     id={service.id}
-                    key={clsx(index, service.id, service.title + "item")}
+                    key={clsx(index, service.id, service.title + 'item')}
                     control={control}
                     reset={reset}
                     getValues={getValues}
@@ -164,7 +164,7 @@ export const PriceForm = ({ idPrice, formRef }: IProps) => {
 
               {/* Панель перетаскивания */}
               <DragOverlay>
-                {typeof draggingItemIndex === "number" && (
+                {typeof draggingItemIndex === 'number' && (
                   <DragOverlayItem
                     data={fields[draggingItemIndex]}
                     isTopLevelService
@@ -177,7 +177,7 @@ export const PriceForm = ({ idPrice, formRef }: IProps) => {
 
         <div className={classes.buttonWrapper}>
           <AddButton
-            onClick={() => appendService({ id: String(Date.now()), title: "" })}
+            onClick={() => appendService({ id: String(Date.now()), title: '' })}
             text="Добавить услугу"
             animated={true}
           />

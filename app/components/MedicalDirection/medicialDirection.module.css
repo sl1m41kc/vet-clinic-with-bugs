@@ -1,19 +1,19 @@
 .direction {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
 
-    width: 100%;
-    max-width: 250px;
-    height: 120px;
-    padding: 10px 20px;
+  width: 100%;
+  max-width: 250px;
+  height: 120px;
+  padding: 10px 20px;
 
-    border: 1px solid var(--clr4);
-    border-radius: 30px;
+  border: 1px solid var(--clr4);
+  border-radius: 30px;
 
-    text-align: center;
-    color: var(--clr1);
+  text-align: center;
+  color: var(--clr1);
 }
 
 .title {

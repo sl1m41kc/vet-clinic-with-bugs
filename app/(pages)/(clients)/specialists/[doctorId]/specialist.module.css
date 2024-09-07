@@ -1,113 +1,113 @@
 .info {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 
-    gap: 60px;
+  gap: 60px;
 }
 
 .specialist {
-    position: relative;
+  position: relative;
 
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
-    gap: 20px;
+  gap: 20px;
 
-    padding: 27.5px 30px;
+  padding: 27.5px 30px;
 
-    border-radius: 30px;
+  border-radius: 30px;
 
-    background-color: var(--clr6);
+  background-color: var(--clr6);
 
-    overflow: hidden;
+  overflow: hidden;
 
-    z-index: 1;
+  z-index: 1;
 }
 
 .svg {
-    position: absolute;
-    bottom: 0;
-    right: 0;
+  position: absolute;
+  bottom: 0;
+  right: 0;
 
-    z-index: -1;
+  z-index: -1;
 }
 
 .post {
-    font-size: 1.125em;
-    font-weight: 600;
+  font-size: 1.125em;
+  font-weight: 600;
 
-    text-align: center;
+  text-align: center;
 }
 
 .doctor {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    
-    gap: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  gap: 5px;
 }
 
 .fullName {
-    font-size: 2em;
-    font-weight: 500;
-    line-height: 100%;
+  font-size: 2em;
+  font-weight: 500;
+  line-height: 100%;
 
-    text-align: center;
+  text-align: center;
 }
 
 .professions {
-    font-size: 1.125em;
-    line-height: 100%;
+  font-size: 1.125em;
+  line-height: 100%;
 
-    text-align: center;
+  text-align: center;
 }
 
 .description {
-    font-size: 1.125em;
+  font-size: 1.125em;
 }
 
 .experience {
-    font-weight: 600;
+  font-weight: 600;
 }
 
 .details {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 
-    gap: 60px;
+  gap: 60px;
 
-    padding-inline: 30px;
+  padding-inline: 30px;
 }
 
 .detail {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 
-    gap: 20px;
+  gap: 20px;
 }
 
 .title {
-    font-size: 1.5em;
-    font-weight: 500;
+  font-size: 1.5em;
+  font-weight: 500;
 }
 
 @media (max-width: 768px) {
+  .info,
+  .details {
+    gap: 30px;
+  }
 
-    .info, .details {
-        gap: 30px;
-    }
+  .details {
+    padding-inline: 10px;
+  }
 
-    .details {
-        padding-inline: 10px;
-    }
+  .detail {
+    gap: 10px;
+  }
 
-    .detail {
-        gap: 10px;
-    }
-
-    .fullName {
-        font-size: 1.5em;
-    }
+  .fullName {
+    font-size: 1.5em;
+  }
 }

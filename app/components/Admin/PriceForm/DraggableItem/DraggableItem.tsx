@@ -1,30 +1,40 @@
-"use client";
-import clsx from "clsx";
-import { AddButton } from "@/app/UI/AddButton/AddButton";
-import { DeleteButton } from "@/app/UI/DeleteButton/DeleteButton";
-import classes from "./DraggableItem.module.css";
-import { DndContext } from "@dnd-kit/core";
+import {
+  Control,
+  UseFormReset,
+  UseFormGetValues,
+  UseFieldArrayRemove,
+  FieldValues,
+  useFieldArray,
+  Controller,
+  FieldPath,
+  ArrayPath,
+  Path,
+} from 'react-hook-form';
+import { DndContext, DragEndEvent } from '@dnd-kit/core';
+import { CSS } from '@dnd-kit/utilities';
+import { arrayMove, SortableContext, useSortable } from '@dnd-kit/sortable';
+import { IPrice } from '@/app/types/IPrice';
+import clsx from 'clsx';
+import classes from './DraggableItem.module.css';
+import { DeleteButton } from '@/app/UI/DeleteButton/DeleteButton';
+import { MoveButton } from '@/app/UI/MoveButton/MoveButton';
 import {
   restrictToParentElement,
   restrictToVerticalAxis,
-} from "@dnd-kit/modifiers";
-import { arrayMove, SortableContext, useSortable } from "@dnd-kit/sortable";
-import { Controller, useFieldArray } from "react-hook-form";
-import { CSS } from "@dnd-kit/utilities";
-import { IPrice } from "@/app/types/IPrice";
-import { MoveButton } from "@/app/UI/MoveButton/MoveButton";
+} from '@dnd-kit/modifiers';
+import { AddButton } from '@/app/UI/AddButton/AddButton';
 
-interface IProps {
-  control: any;
-  pathToService: string;
-  id: string;
-  reset?: any;
-  getValues?: any;
-  remove: any;
-  isDragOverlay?: boolean;
+interface IProps<T extends FieldValues> {
+  control: Control<T>; // Тип Control из react-hook-form
+  pathToService: FieldPath<T>; // Путь к сервису, тип FieldPath<T>
+  id: string; // Идентификатор, строка
+  reset?: UseFormReset<T>; // Функция сброса формы из react-hook-form
+  getValues?: UseFormGetValues<T>; // Функция получения значений формы из react-hook-form
+  remove: UseFieldArrayRemove; // Функция удаления элемента из массива
+  isDragOverlay?: boolean; // Флаг, указывающий, является ли элемент поверхностным при перетаскивании
 }
 
-export const DraggableItem = ({
+export const DraggableItem = <T extends FieldValues>({
   control,
   id,
   reset,
@@ -32,7 +42,7 @@ export const DraggableItem = ({
   pathToService,
   remove,
   isDragOverlay,
-}: IProps) => {
+}: IProps<T>) => {
   const {
     attributes,
     listeners,
@@ -44,7 +54,7 @@ export const DraggableItem = ({
     id,
     data: {
       pathToService,
-    }
+    },
   });
 
   const style = {
@@ -53,8 +63,8 @@ export const DraggableItem = ({
     transition,
   };
 
-  const isTopLevelService = pathToService.split(".").length === 2;
-  const indexInGroup = Number(pathToService.split(".").pop());
+  const isTopLevelService = pathToService.split('.').length === 2;
+  const indexInGroup = Number(pathToService.split('.').pop());
 
   const {
     fields,
@@ -62,37 +72,40 @@ export const DraggableItem = ({
     remove: removeNestedService,
   } = useFieldArray({
     control,
-    name: `${pathToService}.services`,
+    name: `${pathToService}.services` as ArrayPath<T>,
   });
 
   const isGroup = fields.length > 0;
 
-  const handleDragEnd = ({ active, over }: any) => {
+  const handleDragEnd = ({ active, over }: DragEndEvent) => {
     if (active.id !== over?.id) {
       const activeIndex = Number(
-        String(active.data.current?.pathToService).split(".").pop()
+        String(active.data.current?.pathToService).split('.').pop()
       );
       const overIndex = Number(
-        String(over?.data.current?.pathToService).split(".").pop()
+        String(over?.data.current?.pathToService).split('.').pop()
       );
 
-      if (activeIndex >= 0 && overIndex >= 0) {
+      if (activeIndex >= 0 && overIndex >= 0 && getValues) {
         const newServices = arrayMove(
           getValues().services[indexInGroup].services,
           activeIndex,
           overIndex
         );
-        reset({
-          ...getValues(),
-          services: getValues().services.map((service: IPrice, index: number) =>
-            index === indexInGroup
-              ? { ...service, services: newServices }
-              : service
-          ),
-        });
+        if (reset) {
+          reset({
+            ...getValues(),
+            services: getValues().services.map(
+              (service: IPrice, index: number) =>
+                index === indexInGroup
+                  ? { ...service, services: newServices }
+                  : service
+            ),
+          });
+        }
       }
     }
-  }
+  };
 
   return (
     <div
@@ -101,7 +114,6 @@ export const DraggableItem = ({
       ref={setNodeRef}
       {...attributes}
     >
-      {/* <div className={classes.listenerContainer} {...listeners} /> */}
       <div className={classes.content}>
         <div className={classes.actions}>
           <DeleteButton onClick={() => remove(indexInGroup)} />
@@ -111,9 +123,8 @@ export const DraggableItem = ({
         <div className={classes.inputs}>
           <div className={classes.text}>
             <Controller
-              name={pathToService + ".title"}
+              name={`${pathToService}.title` as Path<T>}
               control={control}
-              defaultValue=""
               render={({ field }) => (
                 <input
                   type="text"
@@ -124,9 +135,8 @@ export const DraggableItem = ({
               )}
             />
             <Controller
-              name={pathToService + ".description"}
+              name={`${pathToService}.description` as Path<T>}
               control={control}
-              defaultValue=""
               render={({ field }) => (
                 <input
                   type="text"
@@ -141,8 +151,7 @@ export const DraggableItem = ({
           {!isGroup && !isDragging && (
             <div className={classes.price}>
               <Controller
-                name={pathToService + ".price"}
-                defaultValue={0}
+                name={`${pathToService}.price` as Path<T>}
                 control={control}
                 render={({ field }) => (
                   <input
@@ -160,22 +169,22 @@ export const DraggableItem = ({
 
         {isGroup && !isDragOverlay && !isDragging && (
           <DndContext
-            id={"DndContextPriceDraggableItem" + pathToService}
+            id={'DndContextPriceDraggableItem' + pathToService}
             onDragEnd={handleDragEnd}
             modifiers={[restrictToVerticalAxis, restrictToParentElement]}
           >
-            <SortableContext items={fields}>
-              {fields.map((price, index: number) => {
-                return (
-                  <DraggableItem
-                    id={price.id}
-                    key={clsx(index, price.id, "nestedPrice")}
-                    control={control}
-                    pathToService={`${pathToService}.services.${index}`}
-                    remove={removeNestedService}
-                  />
-                );
-              })}
+            <SortableContext items={fields.map((field) => field.id)}>
+              {fields.map((price, index: number) => (
+                <DraggableItem
+                  id={price.id}
+                  key={clsx(index, price.id, 'nestedPrice')}
+                  control={control}
+                  pathToService={
+                    `${pathToService}.services.${index}` as Path<T>
+                  }
+                  remove={removeNestedService}
+                />
+              ))}
             </SortableContext>
           </DndContext>
         )}

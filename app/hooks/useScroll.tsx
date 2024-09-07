@@ -1,4 +1,4 @@
-import { useState, useEffect, useLayoutEffect } from "react";
+import { useState, useLayoutEffect } from 'react';
 
 const useScroll = () => {
   const [isScrolled, setScrolled] = useState(false);
@@ -12,11 +12,11 @@ const useScroll = () => {
       }
     };
 
-    handleScroll()
+    handleScroll();
 
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener('scroll', handleScroll);
 
-    return () => window.removeEventListener("scroll", handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
   }, []);
   return { isScrolled };
 };

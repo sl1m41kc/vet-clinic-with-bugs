@@ -1,8 +1,8 @@
-import { NextRequest, NextResponse } from "next/server";
-import prisma from "@/prisma/client";
+import { NextRequest, NextResponse } from 'next/server';
+import prisma from '@/prisma/client';
 
-import { BaseGroupPriceSchema } from "@/app/types/IPrice";
-import type { IGroupPrice } from "@/app/types/IPrice";
+import { BaseGroupPriceSchema } from '@/app/types/IPrice';
+import type { IGroupPrice } from '@/app/types/IPrice';
 
 interface IProps {
   params: { id: string };
@@ -22,14 +22,17 @@ export async function PUT(request: NextRequest, { params: { id } }: IProps) {
     const priceGroup = await prisma.priceList.findUnique({
       where: {
         id: id,
-      }
-    })
+      },
+    });
     // Если группы цен не существует, выбрасываем ошибку
     if (!priceGroup) {
       throw new Error();
     }
-  } catch (error) {
-    return NextResponse.json({ error: "Такая группа цен не найдена" }, { status: 404 });
+  } catch {
+    return NextResponse.json(
+      { error: 'Такая группа цен не найдена' },
+      { status: 404 }
+    );
   }
 
   // Иначе обновляем группу цен в БД
@@ -39,12 +42,14 @@ export async function PUT(request: NextRequest, { params: { id } }: IProps) {
       where: {
         id: id,
       },
-    })
+    });
 
     // Возвращаем обновленного пользователя.
-    return NextResponse.json({ updatedGroupPrice }, { status: 200});
-  } catch (error) {
-    return NextResponse.json({ error: "Что-то пошло не так. Попробуйте еще раз" }, { status: 500 });
+    return NextResponse.json({ updatedGroupPrice }, { status: 200 });
+  } catch {
+    return NextResponse.json(
+      { error: 'Что-то пошло не так. Попробуйте еще раз' },
+      { status: 500 }
+    );
   }
-
 }

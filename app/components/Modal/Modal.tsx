@@ -1,8 +1,8 @@
-"use client";
-import { useEffect } from "react";
-import classes from "./Modal.module.css";
-import { createPortal } from "react-dom";
-import CloseSVG from "/public/Svg/close.svg";
+'use client';
+import { useEffect } from 'react';
+import classes from './Modal.module.css';
+import { createPortal } from 'react-dom';
+import CloseSVG from '/public/Svg/close.svg';
 
 interface IProps {
   children: React.ReactNode;
@@ -13,19 +13,18 @@ interface IProps {
 export const Modal = ({ children, isOpen, setIsOpen }: IProps) => {
   useEffect(() => {
     if (isOpen) {
-      document.body.style.overflow = "hidden";
+      document.body.style.overflow = 'hidden';
     } else {
-      document.body.style.overflow = "";
+      document.body.style.overflow = '';
     }
   }, []);
 
-  if (!isOpen || typeof window === "undefined") return null;
+  if (!isOpen || typeof window === 'undefined') return null;
 
   const handleCLose = () => {
     setIsOpen(false);
-    document.body.style.overflow = "";
+    document.body.style.overflow = '';
   };
-
 
   return createPortal(
     <>

@@ -1,34 +1,37 @@
 .button {
-    padding: 10px 20px;
+  padding: 10px 20px;
 
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 
-    gap: 5px;
+  gap: 5px;
 
-    color: var(--clr1);
-    border-radius: 30px;
-    border: 1px solid var(--clr4);
+  color: var(--clr1);
+  border-radius: 30px;
+  border: 1px solid var(--clr4);
 
-    transition: background-color 0.3s, color 0.3s, transform 0.3s;
+  transition:
+    background-color 0.3s,
+    color 0.3s,
+    transform 0.3s;
 }
 
 .button:hover {
-    color: var(--clr2);
-    background-color: var(--clr1);
-    transform: scale(1.05);
+  color: var(--clr2);
+  background-color: var(--clr1);
+  transform: scale(1.05);
 }
 
 .button:active {
-    transform: scale(0.99);
+  transform: scale(0.99);
 }
 
 .svg {
-    fill: var(--clr1);
+  fill: var(--clr1);
 
-    transition: fill 0.3s;
+  transition: fill 0.3s;
 }
 
 .button:hover .svg {
-    fill: var(--clr2);
+  fill: var(--clr2);
 }

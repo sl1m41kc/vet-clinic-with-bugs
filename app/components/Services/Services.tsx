@@ -1,12 +1,12 @@
-"use client";
-import React from "react";
-import clsx from "clsx";
-import Masonry from "react-masonry-css";
+'use client';
+import React from 'react';
+import clsx from 'clsx';
+import Masonry from 'react-masonry-css';
 
-import ServiceCard from "@/app/components/ServiceCard/ServiceCard";
+import ServiceCard from '@/app/components/ServiceCard/ServiceCard';
 
-import classes from "./services.module.css";
-import { servicesData } from "@/app/data/servicesData";
+import classes from './services.module.css';
+import { servicesData } from '@/app/data/servicesData';
 
 const Services = () => {
   return (
@@ -25,7 +25,7 @@ const Services = () => {
             title={service.title}
             services={service.services}
             SVG={service.SVG}
-            image={""}
+            image={''}
             pathName={service.pathName}
           />
         ))}

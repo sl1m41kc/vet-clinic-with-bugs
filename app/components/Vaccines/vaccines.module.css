@@ -1,15 +1,15 @@
 .text {
-    margin-top: 60px;
-    padding-inline: 20px;
+  margin-top: 60px;
+  padding-inline: 20px;
 
-    font-size: 1.125em;
-    line-height: 130%;
-    color: var(--clr1);
+  font-size: 1.125em;
+  line-height: 130%;
+  color: var(--clr1);
 }
 
 @media (max-width: 768px) {
-    .text {
-        margin-top: 30px;
-        font-size: 1em;
-    }
+  .text {
+    margin-top: 30px;
+    font-size: 1em;
+  }
 }

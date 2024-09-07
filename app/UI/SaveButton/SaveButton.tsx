@@ -1,9 +1,9 @@
-import { useState } from "react";
+import { useState } from 'react';
 
-import SaveSVG from "/public/Svg/savings.svg";
-import CheckSVG from "/public/Svg/check.svg";
+import SaveSVG from '/public/Svg/savings.svg';
+import CheckSVG from '/public/Svg/check.svg';
 
-import classes from "./saveButton.module.css";
+import classes from './saveButton.module.css';
 
 interface IProps {
   onClick?: () => void;
@@ -17,7 +17,7 @@ export const SaveButton = ({ onClick }: IProps) => {
       onClick={async () => {
         setChecked(true);
         setTimeout(() => setChecked(false), 2000);
-        onClick && onClick();
+        if (onClick) onClick();
       }}
     >
       {checked ? (

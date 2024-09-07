@@ -1,8 +1,8 @@
-import { NextRequest, NextResponse } from "next/server";
-import prisma from "@/prisma/client";
+import { NextRequest, NextResponse } from 'next/server';
+import prisma from '@/prisma/client';
 
-import { BaseGroupPriceSchema } from "@/app/types/IPrice";
-import type { IGroupPrice } from "@/app/types/IPrice";
+import { BaseGroupPriceSchema } from '@/app/types/IPrice';
+import type { IGroupPrice } from '@/app/types/IPrice';
 
 export async function POST(request: NextRequest) {
   const body = await request.json();
@@ -15,12 +15,15 @@ export async function POST(request: NextRequest) {
 
   // Если валидация прошла успешно, создаем группу цен в базе данных
   try {
-  const newGroupPrice: IGroupPrice = await prisma.priceList.create({
-    data: validation.data,
-  });
-  return NextResponse.json(newGroupPrice.id, { status: 201 });
-  } catch (error) {
-    return NextResponse.json({ error: "Что-то пошло не так. Попробуйте еще раз" }, { status: 500 });
+    const newGroupPrice: IGroupPrice = await prisma.priceList.create({
+      data: validation.data,
+    });
+    return NextResponse.json(newGroupPrice.id, { status: 201 });
+  } catch {
+    return NextResponse.json(
+      { error: 'Что-то пошло не так. Попробуйте еще раз' },
+      { status: 500 }
+    );
   }
 
   // Если нужно вернуть весь объект, то можно так

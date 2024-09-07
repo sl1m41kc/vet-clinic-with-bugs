@@ -1,19 +1,19 @@
-"use client";
-import React from "react";
-import clsx from "clsx";
-import Link from "next/link";
+'use client';
+import React from 'react';
+import clsx from 'clsx';
+import Link from 'next/link';
 
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation } from "swiper/modules";
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Navigation } from 'swiper/modules';
 
-import { doctorsData } from "@/app/data/doctorsData";
+import { doctorsData } from '@/app/data/doctorsData';
 
-import DoctorCard from "../DoctorCard/DoctorCard";
-import SwiperButtons from "../SwiperButtons/SwiperButtons";
-import ArrowButton from "@/app/UI/ArrowButton/ArrowButton";
+import DoctorCard from '../DoctorCard/DoctorCard';
+import SwiperButtons from '../SwiperButtons/SwiperButtons';
+import ArrowButton from '@/app/UI/ArrowButton/ArrowButton';
 
-import "swiper/css";
-import classes from "./doctorsSwiper.module.css";
+import 'swiper/css';
+import classes from './doctorsSwiper.module.css';
 
 const DoctorsSwiper = () => {
   const topDoctors =
@@ -25,8 +25,8 @@ const DoctorsSwiper = () => {
         spaceBetween={20}
         modules={[Navigation]}
         navigation={{
-          prevEl: ".doctorSwiper-btn-prev",
-          nextEl: ".doctorSwiper-btn-next",
+          prevEl: '.doctorSwiper-btn-prev',
+          nextEl: '.doctorSwiper-btn-next',
         }}
         breakpoints={{
           300: {
@@ -49,7 +49,11 @@ const DoctorsSwiper = () => {
               professions={doctor.professions}
               startWork={doctor.startWork}
               alt={doctor.alt}
-              details={{ workDescription: '', outWorkDescription: '', doctorAnimalsDescription: '' }}
+              details={{
+                workDescription: '',
+                outWorkDescription: '',
+                doctorAnimalsDescription: '',
+              }}
             />
           </SwiperSlide>
         ))}
@@ -64,8 +68,8 @@ const DoctorsSwiper = () => {
       </Swiper>
       <SwiperButtons
         buttons={{
-          prev: "doctorSwiper-btn-prev",
-          next: "doctorSwiper-btn-next",
+          prev: 'doctorSwiper-btn-prev',
+          next: 'doctorSwiper-btn-next',
         }}
       />
     </section>

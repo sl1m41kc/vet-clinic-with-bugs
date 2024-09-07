@@ -1,8 +1,8 @@
-import clsx from "clsx";
+import clsx from 'clsx';
 
-import PlusSVG from "/public/Svg/close.svg";
+import PlusSVG from '/public/Svg/close.svg';
 
-import classes from "./addButton.module.css";
+import classes from './addButton.module.css';
 
 interface IProps {
   text: string;
@@ -12,7 +12,11 @@ interface IProps {
 
 export const AddButton = ({ text, onClick, animated }: IProps) => {
   return (
-    <button type="button" className={clsx(classes.button, animated && classes.animated) } onClick={onClick} >
+    <button
+      type="button"
+      className={clsx(classes.button, animated && classes.animated)}
+      onClick={onClick}
+    >
       <PlusSVG className={classes.svg} />
       {animated ? (
         <div className={classes.inner}>

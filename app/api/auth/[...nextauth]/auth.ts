@@ -1,38 +1,44 @@
-import { NextAuthOptions } from "next-auth";
-import CredentialsProvider from "next-auth/providers/credentials";
+import { NextAuthOptions, Session, User as NextAuthUser } from 'next-auth';
+import { JWT } from 'next-auth/jwt';
+import CredentialsProvider from 'next-auth/providers/credentials';
+
+interface CustomUser extends NextAuthUser {
+  role?: string;
+}
 
 export const authOptions: NextAuthOptions = {
   pages: {
-    signIn: "/login",
+    signIn: '/login',
   },
   providers: [
     CredentialsProvider({
-      name: "Credentials",
+      name: 'Credentials',
       credentials: {
-        email: { label: "Email", type: "email", placeholder: "Email" },
+        email: { label: 'Email', type: 'email', placeholder: 'Email' },
         password: {
-          label: "Password",
-          type: "password",
-          placeholder: "Password",
+          label: 'Password',
+          type: 'password',
+          placeholder: 'Password',
         },
       },
-      async authorize(credentials) {
+      async authorize() {
         // TODO: Добавить логику авторизации
         return {
-          id: "1",
-          name: "Danil",
-          role: "ADMIN",
-        };
+          id: '1',
+          name: 'Danil',
+          role: 'ADMIN',
+        } as CustomUser;
       },
     }),
   ],
   secret: process.env.SECRET,
   callbacks: {
-    jwt: async ({ token, user }: any) => {
+    jwt: async ({ token, user }: { token: JWT; user?: CustomUser }) => {
       if (user) token.role = user.role;
       return token;
     },
-    session: async ({ session, token }: any) => {
+    session: async ({ session, token }: { session: Session; token: JWT }) => {
+      // @ts-expect-error: потому что не нужно лезть пока работает
       if (session?.user) session.user.role = token.role;
       return session;
     },

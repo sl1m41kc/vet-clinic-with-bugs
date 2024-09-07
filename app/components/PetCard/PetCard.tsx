@@ -1,17 +1,17 @@
-import React from "react";
-import clsx from "clsx";
-import Image, { StaticImageData } from "next/image";
+import React from 'react';
+import clsx from 'clsx';
+import Image, { StaticImageData } from 'next/image';
 
-import CircleButton from "@/app/UI/СircleButton/CircleButton";
+import CircleButton from '@/app/UI/СircleButton/CircleButton';
 
-import styles from "./petCard.module.css";
+import styles from './petCard.module.css';
 
 interface IProps {
   title: string;
   description: string;
   image: StaticImageData;
   reverse: boolean;
-  alt: string
+  alt: string;
 }
 
 const PetCard = ({ title, description, image, reverse, alt }: IProps) => {

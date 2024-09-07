@@ -1,28 +1,28 @@
 .accordion {
-    margin-top: 60px;
+  margin-top: 60px;
 
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 
-    gap: 20px;
+  gap: 20px;
 
-    color: var(--clr1);
+  color: var(--clr1);
 }
 
 @media (max-width: 768px) {
-    .accordion {
-        margin-top: 30px;
+  .accordion {
+    margin-top: 30px;
 
-        gap: 10px;
-    }
+    gap: 10px;
+  }
 
-    .service {
-        gap: 20px;
+  .service {
+    gap: 20px;
 
-        padding-inline: 20px;
-    }
+    padding-inline: 20px;
+  }
 
-    .sub_service {
-        padding-left: 30px;
-    }
+  .sub_service {
+    padding-left: 30px;
+  }
 }

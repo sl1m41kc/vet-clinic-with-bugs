@@ -1,10 +1,9 @@
-import React from "react";
-import clsx from "clsx";
+import React from 'react';
+import clsx from 'clsx';
 
-import ArrowSVG from "/public/Svg/arrow_forward_blue.svg";
+import ArrowSVG from '/public/Svg/arrow_forward_blue.svg';
 
-
-import styles from "./arrowButton.module.css";
+import styles from './arrowButton.module.css';
 
 interface IProps {
   text: string;
@@ -12,15 +11,15 @@ interface IProps {
 }
 
 const ArrowButton = ({ text, isFill }: IProps) => {
-
   return (
     <button
-      className={clsx(styles.arrowButton, 
+      className={clsx(
+        styles.arrowButton,
         isFill ? styles.fill : styles.notFill
       )}
     >
       {text}
-      <ArrowSVG className={styles.icon}/>
+      <ArrowSVG className={styles.icon} />
     </button>
   );
 };

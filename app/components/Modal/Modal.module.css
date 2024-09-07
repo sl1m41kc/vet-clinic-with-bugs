@@ -1,53 +1,53 @@
 .backdrop {
-    position: fixed;
-    inset: 0;
+  position: fixed;
+  inset: 0;
 
-    background-color: rgba(0, 0, 0, 0.5);
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
-    transition: opacity 0.3s;
-    z-index: 10000;
-    cursor: pointer;
+  transition: opacity 0.3s;
+  z-index: 10000;
+  cursor: pointer;
 }
 
 .wrapper {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    padding: 20px 10px;
-    z-index: 10001;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 20px 10px;
+  z-index: 10001;
 }
 
 .modal {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 
-    padding: 20px;
-    border-radius: 30px;
-    background-color: var(--clr2);
+  padding: 20px;
+  border-radius: 30px;
+  background-color: var(--clr2);
 }
 
 .closePanel {
-    display: flex;
-    justify-content: flex-end;
+  display: flex;
+  justify-content: flex-end;
 }
 
 .close {
-    cursor: pointer;
-    position: relative;
-    width: 44px;
-    height: 44px;
-    padding: 10px;
-    border-radius: 50%;
-    border: 2px solid var(--clr6)
+  cursor: pointer;
+  position: relative;
+  width: 44px;
+  height: 44px;
+  padding: 10px;
+  border-radius: 50%;
+  border: 2px solid var(--clr6);
 }
 
 .svg {
-    width: 100%;
-    height: 100%;
-    fill: var(--clr1);
+  width: 100%;
+  height: 100%;
+  fill: var(--clr1);
 }

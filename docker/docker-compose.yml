@@ -1,12 +1,11 @@
 # Production
 
 services:
-
   mongodb:
     build:
       context: ./mongodb_rs
       args:
-        MONGO_VERSION: "latest" # Этот параметр передается в Dockerfile
+        MONGO_VERSION: 'latest' # Этот параметр передается в Dockerfile
     container_name: mongodb
     restart: always
     env_file:
@@ -24,7 +23,7 @@ services:
     env_file:
       - .env.production
     ports:
-      - "3000:3000"
+      - '3000:3000'
     depends_on:
       - mongodb
 
@@ -36,8 +35,8 @@ services:
     depends_on:
       - app
     ports:
-      - "80:80"
-      - "443:443"
+      - '80:80'
+      - '443:443'
     volumes:
       - ./nginx/nginx-conf.d/:/etc/nginx/conf.d
       - ./nginx/etc/letsencrypt:/etc/letsencrypt

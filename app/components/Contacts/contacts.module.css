@@ -1,90 +1,93 @@
 .address {
-    display: flex;
-    align-items: center;
-    gap: 20px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
 }
 
 .address.menu {
-    align-items: flex-start;
-    gap: 10px;
+  align-items: flex-start;
+  gap: 10px;
 }
 
 .info {
-    display: flex;
-    align-items: center;
-    gap: 50px;
+  display: flex;
+  align-items: center;
+  gap: 50px;
 }
 
 .info.menu {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 30px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 30px;
 }
 
 .text {
-    display: flex;
-    flex-direction: column;
-    color: var(--clr1);
-    font-size: 0.875rem;
+  display: flex;
+  flex-direction: column;
+  color: var(--clr1);
+  font-size: 0.875rem;
 }
 
 .phone {
-    display: flex;
-    align-items: center;
-    gap: 6px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
 
-    padding: 10px 20px;
-    margin-right: 15px;
-    text-decoration: none;
-    background-color: var(--clr1);
-    color: var(--clr2);
-    border-radius: 30px;
+  padding: 10px 20px;
+  margin-right: 15px;
+  text-decoration: none;
+  background-color: var(--clr1);
+  color: var(--clr2);
+  border-radius: 30px;
 
-    transition: background-color 0.3s, color 0.3s, transform 0.3s;
+  transition:
+    background-color 0.3s,
+    color 0.3s,
+    transform 0.3s;
 }
 
 .icon {
-    fill: var(--clr2);
+  fill: var(--clr2);
 
-    transition: fill 0.3s;
+  transition: fill 0.3s;
 }
 
 .phone:hover {
-    background-color: var(--clr3);
-    color: var(--clr1);
-    transform: scale(1.05);
+  background-color: var(--clr3);
+  color: var(--clr1);
+  transform: scale(1.05);
 }
 
-.phone:hover .icon{
-    fill: var(--clr1);
+.phone:hover .icon {
+  fill: var(--clr1);
 }
 
 .phone:active {
-    transform: scale(0.99);
+  transform: scale(0.99);
 }
 
 @media (max-width: 1230px) {
-    .info {
-        gap: 20px;
-    }
+  .info {
+    gap: 20px;
+  }
 
-    .address {
-        gap: 10px;
-    }
+  .address {
+    gap: 10px;
+  }
 }
 
 @media (max-width: 768px) {
-    .info.menu {
-        flex-direction: row;
-        justify-content: space-between;
-        width: 100%;
-    }
+  .info.menu {
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+  }
 }
 
 @media (max-width: 520px) {
-    .info.menu {
-        flex-direction: column;
-        justify-content: none;
-        gap: 30px;
-    }
+  .info.menu {
+    flex-direction: column;
+    justify-content: none;
+    gap: 30px;
+  }
 }

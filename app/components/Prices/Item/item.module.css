@@ -1,32 +1,35 @@
 .service {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 
-    gap: 75px;
+  gap: 75px;
 
-    padding: 30px;
+  padding: 30px;
 
-    border: 1px solid var(--clr4);
-    border-radius: 30px;
-    background-color: var(--clr2);
+  border: 1px solid var(--clr4);
+  border-radius: 30px;
+  background-color: var(--clr2);
 
-    cursor: pointer;
+  cursor: pointer;
 
-    transition: background-color 0.5s, border 0.5s, border-radius 0.9s;
+  transition:
+    background-color 0.5s,
+    border 0.5s,
+    border-radius 0.9s;
 }
 
 .service_item {
-    align-items: flex-start;
+  align-items: flex-start;
 
-    padding: 20px 0;
+  padding: 20px 0;
 
-    border-radius: 0;
-    border: none;
-    border-bottom: 1px dashed var(--clr4);
-    background-color: var(--clr6);
+  border-radius: 0;
+  border: none;
+  border-bottom: 1px dashed var(--clr4);
+  background-color: var(--clr6);
 
-    cursor: auto;
+  cursor: auto;
 }
 
 .service_item:hover {
@@ -34,60 +37,58 @@
 }
 
 .hasntNote:last-child .service_item {
-    border-bottom: none;
+  border-bottom: none;
 }
 
-
 .text {
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
 }
 
 .title {
-    font-size: 1.5em;
-    font-weight: 500;
+  font-size: 1.5em;
+  font-weight: 500;
 }
 
 .service_title {
-    font-size: 1.125em;
+  font-size: 1.125em;
 }
 
 .price {
-    font-size: 1.125em;
-    font-weight: 500;
+  font-size: 1.125em;
+  font-weight: 500;
 
-    white-space: nowrap;
+  white-space: nowrap;
 }
 
 .rub {
-    color: var(--clr8);
+  color: var(--clr8);
 }
 
-
 .sub_service {
-    padding-left: 30px;
+  padding-left: 30px;
 }
 
 .note {
-    width: 100%;
-    padding: 30px;
+  width: 100%;
+  padding: 30px;
 
-    text-align: center;
+  text-align: center;
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 @media (max-width: 768px) {
-    .service {
-        gap: 20px;
+  .service {
+    gap: 20px;
 
-        padding-inline: 20px;
-    }
+    padding-inline: 20px;
+  }
 
-    .sub_service {
-        padding-left: 30px;
-    }
+  .sub_service {
+    padding-left: 30px;
+  }
 }

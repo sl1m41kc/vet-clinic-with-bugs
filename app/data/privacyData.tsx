@@ -1,4 +1,4 @@
-import { IPrivacyData } from "../types/IPrivacyData";
+import { IPrivacyData } from '../types/IPrivacyData';
 
 export const PRIVACY_DATA: IPrivacyData = {
   title: <>Политика конфиденциальности</>,
@@ -156,7 +156,7 @@ export const PRIVACY_DATA: IPrivacyData = {
       title: <>4. Цели обработки персональных данных</>,
       content: [
         <>
-          4.1. Цель обработки персональных данных Пользователя&nbsp;&mdash;{" "}
+          4.1. Цель обработки персональных данных Пользователя&nbsp;&mdash;{' '}
           <mark>
             информирование Пользователя посредством отправки электронных писем;
             обратный звонок

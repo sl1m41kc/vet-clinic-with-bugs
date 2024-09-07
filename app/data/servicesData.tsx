@@ -1,14 +1,14 @@
-import HeartSVG from "@/public/Svg/Heart.svg";
-import FlaskSVG from "@/public/Svg/Flask.svg";
-import MedBowlSVG from "@/public/Svg/Med_bowl.svg";
-import { IServiceGroup } from "../types/IServiceGroup";
+import HeartSVG from '@/public/Svg/Heart.svg';
+import FlaskSVG from '@/public/Svg/Flask.svg';
+import MedBowlSVG from '@/public/Svg/Med_bowl.svg';
+import { IServiceGroup } from '../types/IServiceGroup';
 
 export const servicesData: IServiceGroup[] = [
   {
-    title: "Приемное отделение",
+    title: 'Приемное отделение',
     services: [
       {
-        text: "Вакцинация",
+        text: 'Вакцинация',
         isLink: true,
         id: 0,
         description: [
@@ -37,7 +37,7 @@ export const servicesData: IServiceGroup[] = [
           </>,
           <>
             Перед вакцинацией Вашего питомца осмотрит врач и&nbsp;убедится, что
-            нет противопоказаний к&nbsp;прививке.{" "}
+            нет противопоказаний к&nbsp;прививке.{' '}
             <b>Процедура занимает 20&ndash;30&nbsp;минут.</b> Особой подготовки
             не&nbsp;требуется.
           </>,
@@ -58,12 +58,12 @@ export const servicesData: IServiceGroup[] = [
       },
 
       {
-        text: "Прием врача",
+        text: 'Прием врача',
         isLink: true,
         id: 1,
         description: [
           <>
-            В&nbsp;нашей клинике работают <b>более 30&nbsp;специалистов</b>{" "}
+            В&nbsp;нашей клинике работают <b>более 30&nbsp;специалистов</b>{' '}
             различных направлений. Мы&nbsp;предлагаем широкий спектр
             ветеринарных услуг, включая консультации терапевта, хирурга,
             ортопеда, травматолога, дерматолога, офтальмолога, гастроэнтеролога,
@@ -77,14 +77,14 @@ export const servicesData: IServiceGroup[] = [
       },
 
       {
-        text: "Экстренный прием",
+        text: 'Экстренный прием',
         isLink: true,
         id: 2,
         description: [
           <>
             Если ваш питомец в&nbsp;тяжелом состоянии и&nbsp;нет времени
             на&nbsp;планирование визита, просто позвоните в&nbsp;наш кол-центр.
-            Вас направят в&nbsp;ближайший филиал,{" "}
+            Вас направят в&nbsp;ближайший филиал,{' '}
             <b>где смогут оказать экстренную помощь</b> в&nbsp;кратчайшие сроки.
             К&nbsp;неотложным состояниям относятся: шок, потеря сознания,
             множественные травмы, переломы, эпистатус, кровотечение, тепловой
@@ -95,7 +95,7 @@ export const servicesData: IServiceGroup[] = [
       },
 
       {
-        text: "Чипирование",
+        text: 'Чипирование',
         isLink: true,
         id: 3,
         description: [
@@ -118,15 +118,15 @@ export const servicesData: IServiceGroup[] = [
         ],
       },
     ],
-    image: "receptionDepartment",
-    pathName: "polyclinic",
+    image: 'receptionDepartment',
+    pathName: 'polyclinic',
   },
 
   {
-    title: "Хирургия",
+    title: 'Хирургия',
     services: [
       {
-        text: "Лечение переломов любой сложности",
+        text: 'Лечение переломов любой сложности',
         isLink: true,
         id: 0,
         description: [
@@ -155,7 +155,7 @@ export const servicesData: IServiceGroup[] = [
       },
 
       {
-        text: "Оперативное лечение патологий суставов",
+        text: 'Оперативное лечение патологий суставов',
         isLink: true,
         id: 1,
         description: [
@@ -178,7 +178,7 @@ export const servicesData: IServiceGroup[] = [
             <li>
               <b>
                 Хирургическое лечение разрыва передней крестовидной связки (ПКС)
-              </b>{" "}
+              </b>{' '}
               методом TPLO.
             </li>
             <li>
@@ -197,7 +197,7 @@ export const servicesData: IServiceGroup[] = [
       },
 
       {
-        text: "Оперативное лечение при мочекаменной болезни (уретростомия)",
+        text: 'Оперативное лечение при мочекаменной болезни (уретростомия)',
         isLink: true,
         id: 2,
         description: [
@@ -222,7 +222,7 @@ export const servicesData: IServiceGroup[] = [
       },
 
       {
-        text: "Полостные операции",
+        text: 'Полостные операции',
         isLink: true,
         id: 3,
         description: [
@@ -239,7 +239,7 @@ export const servicesData: IServiceGroup[] = [
       },
 
       {
-        text: "Эндоскопические операции",
+        text: 'Эндоскопические операции',
         isLink: true,
         id: 4,
         description: [
@@ -256,7 +256,7 @@ export const servicesData: IServiceGroup[] = [
             в&nbsp;разрезе. Также мы&nbsp;используем эндоскопию для глубокой
             диагностики и&nbsp;лечения заболеваний:
           </>,
-          <ul key='service-ul-2'>
+          <ul key="service-ul-2">
             <li>
               <b>Гастроскопия</b>&nbsp;&mdash; для обследования желудка;
             </li>
@@ -278,7 +278,7 @@ export const servicesData: IServiceGroup[] = [
       },
 
       {
-        text: "Удаление опухолей",
+        text: 'Удаление опухолей',
         isLink: true,
         id: 5,
         description: [
@@ -288,7 +288,7 @@ export const servicesData: IServiceGroup[] = [
             образованиями, так и&nbsp;с&nbsp;более сложными случаями, такими
             как:
           </>,
-          <ul key='service-ul-3'>
+          <ul key="service-ul-3">
             <li>
               <b>Удаление новообразований костей;</b>
             </li>
@@ -298,7 +298,7 @@ export const servicesData: IServiceGroup[] = [
             <li>
               <b>
                 Удаление молочных желез и&nbsp;регионарных лимфатических узлов
-              </b>{" "}
+              </b>{' '}
               при онкологии молочной железы.
             </li>
           </ul>,
@@ -310,7 +310,7 @@ export const servicesData: IServiceGroup[] = [
       },
 
       {
-        text: "Пластические операции",
+        text: 'Пластические операции',
         isLink: true,
         id: 6,
         description: [
@@ -319,7 +319,7 @@ export const servicesData: IServiceGroup[] = [
             но&nbsp;только жизненно необходимые. К&nbsp;таким операциям
             относятся:
           </>,
-          <ul key='service-ul-4'>
+          <ul key="service-ul-4">
             <li>
               <b>Пластика носа</b> у&nbsp;брахиоцефалов, чтобы позволить
               им&nbsp;полноценно дышать;
@@ -343,7 +343,7 @@ export const servicesData: IServiceGroup[] = [
       },
 
       {
-        text: "Кастрация / стерилизация",
+        text: 'Кастрация / стерилизация',
         isLink: true,
         id: 7,
         description: [
@@ -354,7 +354,7 @@ export const servicesData: IServiceGroup[] = [
             и&nbsp;<b>лапароскопия</b> (через небольшой прокол).
           </>,
           <>
-            Операция рекомендована для кошек и&nbsp;собак начиная {""}
+            Операция рекомендована для кошек и&nbsp;собак начиная {''}
             <b>с&nbsp;6&nbsp;месяцев.</b> Ранняя стерилизация возможна после
             дополнительной консультации с&nbsp;врачом. Для некоторых пород собак
             может быть рекомендована более поздняя кастрация, этот вопрос также
@@ -365,7 +365,7 @@ export const servicesData: IServiceGroup[] = [
             мы&nbsp;рекомендуем хорошо к&nbsp;ней подготовиться и&nbsp;снизить
             все риски:
           </>,
-          <ul key='service-ul-5'>
+          <ul key="service-ul-5">
             <li>
               <b>Вакцинировать животное до&nbsp;операции;</b>
             </li>
@@ -397,7 +397,7 @@ export const servicesData: IServiceGroup[] = [
             Самые популярны мифы, с&nbsp;которыми нам приходятся сталкиваться
             в&nbsp;разговорах с&nbsp;владельцами:
           </>,
-          <ul key='service-ul-6'>
+          <ul key="service-ul-6">
             <li>
               <i>Животное должно хоть раз родить для здоровья.</i>
               <br /> Это <b>неправда,</b> роды ни&nbsp;одному виду
@@ -424,12 +424,12 @@ export const servicesData: IServiceGroup[] = [
       },
     ],
     SVG: <HeartSVG />,
-    image: "receptionDepartment",
-    pathName: "surgery",
+    image: 'receptionDepartment',
+    pathName: 'surgery',
   },
 
   {
-    title: "Лаборатория",
+    title: 'Лаборатория',
     description: [
       <>
         Наша клиника оснащена собственным лабораторным оборудованием, что
@@ -437,7 +437,7 @@ export const servicesData: IServiceGroup[] = [
         анализы крови, экспресс-диагностику бабезиоза (пироплазмоза),
         цитологические исследования, анализ мочи с&nbsp;исследованием осадка,
         экспресс-тесты на&nbsp;инфекционные заболевания и&nbsp;дерматологические
-        исследования.{" "}
+        исследования.{' '}
         <b>Результаты этих анализов будут готовы менее чем за&nbsp;час.</b>
       </>,
       <>
@@ -450,13 +450,13 @@ export const servicesData: IServiceGroup[] = [
         от&nbsp;их&nbsp;сложности.
       </>,
       <>
-        <b>Некоторые анализы должны проводиться на&nbsp;голодный желудок.</b>{" "}
+        <b>Некоторые анализы должны проводиться на&nbsp;голодный желудок.</b>{' '}
         Записаться на&nbsp;диагностику можно по&nbsp;телефону клиники.
       </>,
     ],
     services: [
       {
-        text: "Общий анализ крови",
+        text: 'Общий анализ крови',
         isLink: true,
         id: 0,
         description: [
@@ -478,7 +478,7 @@ export const servicesData: IServiceGroup[] = [
       },
 
       {
-        text: "Биохимический анализ крови",
+        text: 'Биохимический анализ крови',
         isLink: true,
         id: 1,
         description: [
@@ -502,7 +502,7 @@ export const servicesData: IServiceGroup[] = [
       },
 
       {
-        text: "Экспресс-тесты на инфекции",
+        text: 'Экспресс-тесты на инфекции',
         isLink: true,
         id: 2,
         description: [
@@ -522,7 +522,7 @@ export const servicesData: IServiceGroup[] = [
       },
 
       {
-        text: "Экспресс-тест на пироплазмоз",
+        text: 'Экспресс-тест на пироплазмоз',
         isLink: true,
         id: 3,
         description: [
@@ -531,7 +531,7 @@ export const servicesData: IServiceGroup[] = [
             передается собакам через укусы клещей. Первые симптомы включают
             вялость, отказ от&nbsp;еды, изменение цвета мочи и&nbsp;повышение
             температуры. Анализ на&nbsp;бабезиоз можно проводить уже через сутки
-            после укуса, и&nbsp;результаты будут готовы примерно через {" "}
+            после укуса, и&nbsp;результаты будут готовы примерно через{' '}
             <b>30&nbsp;минут.</b>
           </>,
         ],
@@ -542,7 +542,7 @@ export const servicesData: IServiceGroup[] = [
       },
 
       {
-        text: "Цитология",
+        text: 'Цитология',
         isLink: true,
         id: 4,
         description: [
@@ -567,7 +567,7 @@ export const servicesData: IServiceGroup[] = [
       },
 
       {
-        text: "Гистология",
+        text: 'Гистология',
         isLink: true,
         id: 5,
         description: [
@@ -587,7 +587,7 @@ export const servicesData: IServiceGroup[] = [
       },
 
       {
-        text: "Анализ мочи",
+        text: 'Анализ мочи',
         isLink: true,
         id: 6,
         description: [
@@ -612,15 +612,15 @@ export const servicesData: IServiceGroup[] = [
       },
     ],
     SVG: <FlaskSVG />,
-    image: "receptionDepartment",
-    pathName: "laboratory",
+    image: 'receptionDepartment',
+    pathName: 'laboratory',
   },
 
   {
-    title: "Госпитализация",
+    title: 'Госпитализация',
     services: [
       {
-        text: "Дневной стационар",
+        text: 'Дневной стационар',
         isLink: true,
         id: 0,
         description: [
@@ -637,7 +637,7 @@ export const servicesData: IServiceGroup[] = [
       },
 
       {
-        text: "Интенсивная терапия",
+        text: 'Интенсивная терапия',
         isLink: true,
         id: 1,
         description: [
@@ -656,7 +656,7 @@ export const servicesData: IServiceGroup[] = [
       },
 
       {
-        text: "Круглосуточный стационар",
+        text: 'Круглосуточный стационар',
         isLink: true,
         id: 2,
         description: [
@@ -674,15 +674,15 @@ export const servicesData: IServiceGroup[] = [
         ],
       },
     ],
-    image: "receptionDepartment",
-    pathName: "hospitalization",
+    image: 'receptionDepartment',
+    pathName: 'hospitalization',
   },
 
   {
-    title: "Диагностика",
+    title: 'Диагностика',
     services: [
       {
-        text: "Рентген",
+        text: 'Рентген',
         isLink: true,
         id: 0,
         description: [
@@ -694,7 +694,7 @@ export const servicesData: IServiceGroup[] = [
           <>
             Мы&nbsp;проводим различные рентгенологические исследования, включая:
           </>,
-          <ul key='service-ul-7'>
+          <ul key="service-ul-7">
             <li>
               Рентген <b>головы;</b>
             </li>
@@ -727,7 +727,7 @@ export const servicesData: IServiceGroup[] = [
       },
 
       {
-        text: "Узи",
+        text: 'Узи',
         isLink: true,
         id: 1,
         description: [
@@ -739,7 +739,7 @@ export const servicesData: IServiceGroup[] = [
             точные и&nbsp;детализированные результаты.
           </>,
           <>Мы&nbsp;проводим ультразвуковое обследование для:</>,
-          <ul key='service-ul-8'>
+          <ul key="service-ul-8">
             <li>
               <b>Органов брюшной полости;</b>
             </li>
@@ -779,12 +779,12 @@ export const servicesData: IServiceGroup[] = [
       },
 
       {
-        text: "Узи сердца",
+        text: 'Узи сердца',
         isLink: true,
         id: 2,
         description: [
           <>
-            В&nbsp;нашей клинике установлен{" "}
+            В&nbsp;нашей клинике установлен{' '}
             <b>УЗИ-аппарат экспертного класса,</b> который обеспечивает
             высокоточную диагностику патологий сердца.
           </>,
@@ -795,7 +795,7 @@ export const servicesData: IServiceGroup[] = [
           <>
             <b>Кошки:</b>
           </>,
-          <ul key='service-ul-9'>
+          <ul key="service-ul-9">
             <li>рэгдоллы</li>
             <li>сфинксы</li>
             <li>мейн-куны</li>
@@ -813,7 +813,7 @@ export const servicesData: IServiceGroup[] = [
           <>
             <b>Собаки:</b>
           </>,
-          <ul key='service-ul-10'>
+          <ul key="service-ul-10">
             <li>ирландские волкодавы</li>
             <li>боксеры</li>
             <li>доберманы</li>
@@ -838,7 +838,7 @@ export const servicesData: IServiceGroup[] = [
       },
 
       {
-        text: "ЭКГ",
+        text: 'ЭКГ',
         isLink: true,
         id: 3,
         description: [
@@ -857,7 +857,7 @@ export const servicesData: IServiceGroup[] = [
       },
 
       {
-        text: "Эндоскопическая диагностика",
+        text: 'Эндоскопическая диагностика',
         isLink: true,
         id: 4,
         description: [
@@ -879,100 +879,100 @@ export const servicesData: IServiceGroup[] = [
         ],
       },
     ],
-    image: "receptionDepartment",
-    pathName: "diagnostics",
+    image: 'receptionDepartment',
+    pathName: 'diagnostics',
   },
 
   {
-    title: "Аптека",
+    title: 'Аптека',
     services: [
       {
-        text: "Ветеринарные диеты",
+        text: 'Ветеринарные диеты',
         isLink: false,
         id: 0,
       },
 
       {
-        text: "Витамины",
+        text: 'Витамины',
         isLink: false,
         id: 1,
       },
 
       {
-        text: "Конакеон, ветмедин",
+        text: 'Конакеон, ветмедин',
         isLink: false,
         id: 2,
       },
 
       {
-        text: "Нестероидные противовоспалительные препараты",
+        text: 'Нестероидные противовоспалительные препараты',
         isLink: false,
         id: 3,
       },
 
       {
-        text: "Препараты для лечения мочевыделительной системы",
+        text: 'Препараты для лечения мочевыделительной системы',
         isLink: false,
         id: 4,
       },
 
       {
-        text: "Средства против блох, клещей, внутренних паразитов",
+        text: 'Средства против блох, клещей, внутренних паразитов',
         isLink: false,
         id: 5,
       },
 
       {
-        text: "хондропротекторы",
+        text: 'хондропротекторы',
         isLink: false,
         id: 6,
       },
     ],
     SVG: <MedBowlSVG />,
-    image: "receptionDepartment",
-    pathName: "pharmacy",
+    image: 'receptionDepartment',
+    pathName: 'pharmacy',
   },
 
   {
-    title: "Зоотовары",
+    title: 'Зоотовары',
     services: [
       {
-        text: "Аксессуары",
+        text: 'Аксессуары',
         isLink: false,
         id: 0,
       },
 
       {
-        text: "Игрушки",
+        text: 'Игрушки',
         isLink: false,
         id: 1,
       },
 
       {
-        text: "Корма",
+        text: 'Корма',
         isLink: false,
         id: 2,
       },
 
       {
-        text: "Переноски, лежанки",
+        text: 'Переноски, лежанки',
         isLink: false,
         id: 3,
       },
 
       {
-        text: "Cредства гигиены",
+        text: 'Cредства гигиены',
         isLink: false,
         id: 4,
       },
 
       {
-        text: "Cредства груминга",
+        text: 'Cредства груминга',
         isLink: false,
         id: 5,
       },
     ],
-    image: "receptionDepartment",
-    pathName: "petSupplies",
+    image: 'receptionDepartment',
+    pathName: 'petSupplies',
   },
 ];

@@ -1,10 +1,10 @@
-import { IPriceSection } from "@/app/types/IPrice";
-import { PRICE_API } from "@/app/utils/API";
-import { DragEndEvent, DragStartEvent } from "@dnd-kit/core";
-import { arrayMove } from "@dnd-kit/sortable";
-import { AppRouterInstance } from "next/dist/shared/lib/app-router-context.shared-runtime";
-import { Dispatch, SetStateAction } from "react";
-import { UseFormGetValues, UseFormReset } from "react-hook-form";
+import { IPriceSection } from '@/app/types/IPrice';
+import { PRICE_API } from '@/app/utils/API';
+import { Active, DragEndEvent, DragStartEvent, Over } from '@dnd-kit/core';
+import { arrayMove } from '@dnd-kit/sortable';
+import { AppRouterInstance } from 'next/dist/shared/lib/app-router-context.shared-runtime';
+import { Dispatch, SetStateAction } from 'react';
+import { UseFormGetValues, UseFormReset } from 'react-hook-form';
 
 // Обработчик удаления раздела
 export const handleDelete = (
@@ -14,13 +14,13 @@ export const handleDelete = (
 ) => {
   if (idPrice) PRICE_API.DELETE(idPrice);
   setIsModalOpen(false);
-  document.body.style.overflow = "";
+  document.body.style.overflow = '';
   router.back();
 };
 
 // Вспомогательная функция
-const extractIndex = (item: any) =>
-  Number(String(item?.data.current?.pathToService).split(".").pop());
+const extractIndex = (item: Active | Over) =>
+  Number(String(item?.data.current?.pathToService).split('.').pop());
 
 // Обработчики перетаскивания
 export const handleDragStart = (
@@ -41,7 +41,7 @@ export const handleDragEnd = (
   const { active, over } = event;
   setDraggingItemIndex(undefined);
 
-  if (active.id !== over?.id) {
+  if (over && active.id !== over?.id) {
     const activeIndex = extractIndex(active);
     const overIndex = extractIndex(over);
 

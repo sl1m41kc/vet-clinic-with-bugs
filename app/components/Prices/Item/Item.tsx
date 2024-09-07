@@ -1,8 +1,8 @@
-import clsx from "clsx";
+import clsx from 'clsx';
 
-import type { IService } from "@/app/types/IPrice";
+import type { IService } from '@/app/types/IPrice';
 
-import classes from "./item.module.css";
+import classes from './item.module.css';
 
 interface IProps {
   services: IService[];
@@ -28,7 +28,7 @@ export const Item = ({ services, groupNote }: IProps) => {
             </div>
             {service.servicePrice && (
               <p className={classes.price}>
-                {service.servicePrice}{" "}
+                {service.servicePrice}{' '}
                 <span className={classes.rub}>&nbsp;₽</span>
               </p>
             )}
@@ -50,7 +50,8 @@ export const Item = ({ services, groupNote }: IProps) => {
                   {priceOption && <p>{priceOption.optionDescription}</p>}
                 </div>
                 <p className={classes.price}>
-                  {priceOption.optionPrice} <span className={classes.rub}> ₽</span>
+                  {priceOption.optionPrice}{' '}
+                  <span className={classes.rub}> ₽</span>
                 </p>
               </div>
             ))}

@@ -1,7 +1,7 @@
-import React, { useState } from "react";
+import React, { useState } from 'react';
 
-import styles from "./burgerMenu.module.css";
-import MenuInterface from "../MenuInterface/MenuInterface";
+import styles from './burgerMenu.module.css';
+import MenuInterface from '../MenuInterface/MenuInterface';
 
 const BurgerMenu = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -12,7 +12,7 @@ const BurgerMenu = () => {
         <span className={styles.line}></span>
         <span className={styles.line}></span>
       </button>
-      
+
       <MenuInterface isOpen={isOpen} setIsOpen={setIsOpen}></MenuInterface>
     </>
   );

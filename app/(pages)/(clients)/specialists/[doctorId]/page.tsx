@@ -1,19 +1,23 @@
-import { PageTemplate } from "@/app/components/PageTemplate/PageTemplate";
+import { PageTemplate } from '@/app/components/PageTemplate/PageTemplate';
 
-import DoctorSVG from "@/public/Svg/doctor.svg";
+import DoctorSVG from '@/public/Svg/doctor.svg';
 
-import { doctorsData } from "@/app/data/doctorsData";
+import { doctorsData } from '@/app/data/doctorsData';
 
-import { DOCTORS_PATH } from "@/app/Сonstants/pathsConsts";
+import { DOCTORS_PATH } from '@/app/Сonstants/pathsConsts';
 
-import classes from "./specialist.module.css";
+import classes from './specialist.module.css';
 
-export default function Home({ params: { doctorId } }: any) {
-  let currentYear = new Date().getFullYear();
+export default function Home({
+  params: { doctorId },
+}: {
+  params: { doctorId: number };
+}) {
+  const currentYear = new Date().getFullYear();
 
-  let experience = currentYear - doctorsData[doctorId].startWork;
+  const experience = currentYear - doctorsData[doctorId].startWork;
 
-  let details = {
+  const details = {
     workDescription: doctorsData[doctorId].details.workDescription,
     outWorkDescription: doctorsData[doctorId].details.outWorkDescription,
     doctorAnimalsDescription:
@@ -36,7 +40,7 @@ export default function Home({ params: { doctorId } }: any) {
           </div>
           {experience > 2 && (
             <p className={classes.description}>
-              В профессии{" "}
+              В профессии{' '}
               <span className={classes.experience}>{experience}</span> лет
             </p>
           )}

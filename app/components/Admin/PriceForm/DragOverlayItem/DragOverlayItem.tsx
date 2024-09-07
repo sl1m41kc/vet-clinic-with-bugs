@@ -1,10 +1,10 @@
-import clsx from "clsx";
+import clsx from 'clsx';
 
-import { DeleteButton } from "@/app/UI/DeleteButton/DeleteButton";
+import { DeleteButton } from '@/app/UI/DeleteButton/DeleteButton';
 
-import classes from "./DragOverlayItem.module.css";
-import { IPrice } from "@/app/types/IPrice";
-import { useSortable } from "@dnd-kit/sortable";
+import classes from './DragOverlayItem.module.css';
+import { IPrice } from '@/app/types/IPrice';
+import { useSortable } from '@dnd-kit/sortable';
 
 interface IProps {
   data: IPrice;
@@ -32,7 +32,7 @@ export const DragOverlayItem = ({
   const style = {
     opacity: isDragging ? 0.3 : 1,
     transform: `${
-      transform ? `translate3d(${transform.x}px, ${transform.y}px, 0)` : ""
+      transform ? `translate3d(${transform.x}px, ${transform.y}px, 0)` : ''
     }`,
     transition,
   };

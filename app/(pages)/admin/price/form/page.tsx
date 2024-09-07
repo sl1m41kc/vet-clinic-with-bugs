@@ -1,7 +1,7 @@
-'use client'
-import { PanelActions } from "@/app/components/Admin/PanelActions/PanelActions";
-import { PriceForm } from "@/app/components/Admin/PriceForm/PriceForm";
-import { useRef } from "react";
+'use client';
+import { PanelActions } from '@/app/components/Admin/PanelActions/PanelActions';
+import { PriceForm } from '@/app/components/Admin/PriceForm/PriceForm';
+import { useRef } from 'react';
 
 interface IProps {
   searchParams: {

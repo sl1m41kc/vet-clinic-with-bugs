@@ -1,7 +1,7 @@
-import React from "react";
-import clsx from "clsx";
+import React from 'react';
+import clsx from 'clsx';
 
-import classes from "./priceTitle.module.css";
+import classes from './priceTitle.module.css';
 
 interface IProps {
   children: React.ReactNode;
@@ -9,7 +9,7 @@ interface IProps {
 
 const PriceTitle = ({ children }: IProps) => {
   return (
-    <section className={clsx("container", classes.content)}>
+    <section className={clsx('container', classes.content)}>
       <p>{children}</p>
     </section>
   );

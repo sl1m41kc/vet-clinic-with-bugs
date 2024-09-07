@@ -1,10 +1,9 @@
 services:
-
   mongodb:
     build:
       context: ./docker/mongodb_rs
       args:
-        MONGO_VERSION: "latest" # Этот параметр передается в Dockerfile
+        MONGO_VERSION: 'latest' # Этот параметр передается в Dockerfile
     container_name: mongodb
     restart: always
     env_file:

@@ -1,25 +1,24 @@
-"use client";
-import clsx from "clsx";
-import classes from "./ListPrice.module.css";
-import { DEFAULT_PRICE_DATA, PRICE_DATA } from "@/app/data/priceData";
-import { useEffect, useState } from "react";
-import { useForm, UseFormGetValues } from "react-hook-form";
+'use client';
+import clsx from 'clsx';
+import classes from './ListPrice.module.css';
+import { DEFAULT_PRICE_DATA } from '@/app/data/priceData';
+import { useEffect, useState } from 'react';
+import { useForm } from 'react-hook-form';
 import {
   DndContext,
   DragEndEvent,
   DragOverlay,
   DragStartEvent,
-} from "@dnd-kit/core";
+} from '@dnd-kit/core';
 import {
-  arrayMove,
   SortableContext,
   verticalListSortingStrategy,
-} from "@dnd-kit/sortable";
-import { DraggableItem } from "./DraggableItem/DraggableItem";
-import { DragOverlayItem } from "./DragOverlayItem/DragOverlayItem";
-import { handleDragEnd, handleDragStart } from "./handle";
-import { PRICE_API } from "@/app/utils/API";
-import { IPriceSection } from "@/app/types/IPrice";
+} from '@dnd-kit/sortable';
+import { DraggableItem } from './DraggableItem/DraggableItem';
+import { DragOverlayItem } from './DragOverlayItem/DragOverlayItem';
+import { handleDragEnd, handleDragStart } from './handle';
+import { PRICE_API } from '@/app/utils/API';
+import { IPriceSection } from '@/app/types/IPrice';
 
 interface IProps {
   formRef: React.RefObject<HTMLFormElement>;
@@ -50,7 +49,7 @@ export const ListPrice = ({ formRef }: IProps) => {
   const data = getValues().priceSections;
 
   return (
-    <section className={"container"}>
+    <section className={'container'}>
       <form
         className={classes.wrapper}
         // Ссылка на компонент, чтобы в page был доступ к форме и ее могли вызвать при нажатии на "сохранить" в другом компоненте
@@ -79,7 +78,11 @@ export const ListPrice = ({ formRef }: IProps) => {
 
           <DragOverlay>
             {isDraggingItem && (
-              <DragOverlayItem price={data[data.findIndex((price) => price.id === isDraggingItem)]} />
+              <DragOverlayItem
+                price={
+                  data[data.findIndex((price) => price.id === isDraggingItem)]
+                }
+              />
             )}
           </DragOverlay>
         </DndContext>

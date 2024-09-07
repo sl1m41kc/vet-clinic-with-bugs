@@ -1,107 +1,107 @@
 .header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
 
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
 
-    padding: 20px;
+  padding: 20px;
 
-    transition: height 0.3s;
-    background-color: var(--clr2);
+  transition: height 0.3s;
+  background-color: var(--clr2);
 
-    z-index: 9999;
+  z-index: 9999;
 }
 
 .logoMenu {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 50px;
 
-    transition: gap 0.3s;
+  transition: gap 0.3s;
 }
 
 .logo {
-    width: 400px;
+  width: 400px;
 
-    transition: width 0.3s;
+  transition: width 0.3s;
 }
 
 .logo.scroll {
-    width: 300px;
+  width: 300px;
 }
 
 .scrolled {
-    padding: 10px 20px;
+  padding: 10px 20px;
 }
 
 .header.scrolled .logoMenu {
-    gap: 20px;
+  gap: 20px;
 }
 
 .phantom {
-    min-height: 140px;
+  min-height: 140px;
 }
 
 @media (max-width: 1230px) {
-    .logoMenu {
-        gap: 20px;
-    }
+  .logoMenu {
+    gap: 20px;
+  }
 }
 
 @media (max-width: 800px) {
-    .header {
-        padding: 10px;
-    }
-    .scrolled {
-        padding: 5px 10px;
-    }
-    .phantom {
-        min-height: 110px;
-    }
-    .logo {
-        width: 350px;
-    }
-    .logo.scroll {
-        width: 250px;
-    }
+  .header {
+    padding: 10px;
+  }
+  .scrolled {
+    padding: 5px 10px;
+  }
+  .phantom {
+    min-height: 110px;
+  }
+  .logo {
+    width: 350px;
+  }
+  .logo.scroll {
+    width: 250px;
+  }
 }
 
 @media (max-width: 500px) {
-    .logo {
-        width: 300px;
-    }
+  .logo {
+    width: 300px;
+  }
 
-    .logo.scroll {
-        width: 250px;
-    }
+  .logo.scroll {
+    width: 250px;
+  }
 
-    .phantom {
-        min-height: 100px;
-    }
+  .phantom {
+    min-height: 100px;
+  }
 }
 
 @media (max-width: 430px) {
-    .logo {
-        width: 250px;
-    }
+  .logo {
+    width: 250px;
+  }
 
-    .logo.scroll {
-        width: 200px;
-    }
+  .logo.scroll {
+    width: 200px;
+  }
 
-    .phantom {
-        min-height: 80px;
-    }
+  .phantom {
+    min-height: 80px;
+  }
 }
 
 @media (max-width: 400px) {
-    .logoMenu {
-        gap: 10px;
-    }
+  .logoMenu {
+    gap: 10px;
+  }
 }

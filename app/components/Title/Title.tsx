@@ -1,7 +1,7 @@
-"use client";
-import React from "react";
-import useResize from "@/app/hooks/useResize";
-import styles from "./title.module.css";
+'use client';
+import React from 'react';
+import useResize from '@/app/hooks/useResize';
+import styles from './title.module.css';
 
 interface IProps {
   marginTop: number;
@@ -13,7 +13,10 @@ const Title = ({ marginTop, marginTopMobile, children }: IProps) => {
   const { width } = useResize();
   return (
     <section className="container">
-      <p className={styles.text} style={{ marginTop: width > 768 ? marginTop : marginTopMobile }}>
+      <p
+        className={styles.text}
+        style={{ marginTop: width > 768 ? marginTop : marginTopMobile }}
+      >
         {children}
       </p>
     </section>

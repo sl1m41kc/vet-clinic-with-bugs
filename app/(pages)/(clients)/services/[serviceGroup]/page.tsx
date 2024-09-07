@@ -1,13 +1,13 @@
 'use client';
-import clsx from "clsx";
-import { notFound } from "next/navigation";
+import clsx from 'clsx';
+import { notFound } from 'next/navigation';
 import { scroller } from 'react-scroll';
-import { PageTemplate } from "@/app/components/PageTemplate/PageTemplate";
-import AccordionItem from "@/app/components/AccordionItem/AccordionItem";
-import { servicesData } from "@/app/data/servicesData";
-import { IMAGES_PATH } from "@/app/Сonstants/pathsConsts";
-import classes from "./serviceGroup.module.css";
-import React, { useEffect } from "react";
+import { PageTemplate } from '@/app/components/PageTemplate/PageTemplate';
+import AccordionItem from '@/app/components/AccordionItem/AccordionItem';
+import { servicesData } from '@/app/data/servicesData';
+import { IMAGES_PATH } from '@/app/Сonstants/pathsConsts';
+import classes from './serviceGroup.module.css';
+import React, { useEffect } from 'react';
 
 interface IProps {
   params: { serviceGroup: string };
@@ -22,7 +22,9 @@ export default function Home({ params, searchParams }: IProps) {
     (item) => item.pathName === serviceGroup
   );
 
-  if (!serviceGroupItem) { notFound(); }
+  if (!serviceGroupItem) {
+    notFound();
+  }
 
   const { title, description, image, services } = serviceGroupItem;
 
@@ -44,18 +46,24 @@ export default function Home({ params, searchParams }: IProps) {
     <PageTemplate image={`${IMAGES_PATH}${image}.png`}>
       <div className={classes.content}>
         <h1 className={classes.title}>{title}</h1>
-        {description &&
+        {description && (
           <div className={classes.textBlock}>
             {description.map((descrContent, index) => {
               // Проверяем, является ли description пустым фрагментом
-              if (React.isValidElement(descrContent) && descrContent.type === React.Fragment) {
+              if (
+                React.isValidElement(descrContent) &&
+                descrContent.type === React.Fragment
+              ) {
                 // Если это пустой фрагмент, выводим <p>
                 return <p key={index}>{descrContent}</p>;
               }
               // Иначе, выводим переданный HTML-элемент
-              return <React.Fragment key={index}>{descrContent}</React.Fragment>;
+              return (
+                <React.Fragment key={index}>{descrContent}</React.Fragment>
+              );
             })}
-          </div>}
+          </div>
+        )}
 
         <ul className={classes.services}>
           {services?.map((service, index) => (
@@ -71,12 +79,19 @@ export default function Home({ params, searchParams }: IProps) {
                   {service.description &&
                     service.description.map((description, index) => {
                       // Проверяем, является ли description пустым фрагментом
-                      if (React.isValidElement(description) && description.type === React.Fragment) {
+                      if (
+                        React.isValidElement(description) &&
+                        description.type === React.Fragment
+                      ) {
                         // Если это пустой фрагмент, выводим <p>
                         return <p key={index}>{description}</p>;
                       }
                       // Иначе, выводим переданный HTML-элемент
-                      return <React.Fragment key={index}>{description}</React.Fragment>;
+                      return (
+                        <React.Fragment key={index}>
+                          {description}
+                        </React.Fragment>
+                      );
                     })}
 
                   {service.notes && (

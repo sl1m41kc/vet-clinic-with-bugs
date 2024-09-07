@@ -1,82 +1,85 @@
 .main {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 
-    gap: 20px;
+  gap: 20px;
 
-    margin-top: 30px;
-    margin-inline: auto;
-    margin-bottom: 60px;
-    padding: 30px;
-    width: min(1000px, 100%);
+  margin-top: 30px;
+  margin-inline: auto;
+  margin-bottom: 60px;
+  padding: 30px;
+  width: min(1000px, 100%);
 
-    border-radius: 30px;
-    border: 1px solid var(--clr4);
+  border-radius: 30px;
+  border: 1px solid var(--clr4);
 
-    color: var(--clr1);
+  color: var(--clr1);
 }
 
 .inputs {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
 .listServices {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
 .input {
-    padding: 5px 0;
-    width: 100%;
+  padding: 5px 0;
+  width: 100%;
 
-    border: none;
-    border-bottom: 1px solid var(--clr4);
+  border: none;
+  border-bottom: 1px solid var(--clr4);
 }
 
 .input::placeholder {
-    color: var(--clr8);
+  color: var(--clr8);
 }
 
 .input:focus {
-    outline: none;
+  outline: none;
 }
 
 .title {
-    font-weight: 500;
-    font-size: 1.5em;
+  font-weight: 500;
+  font-size: 1.5em;
 }
 
 .buttonWrapper {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .buttonDelete {
-    padding: 10px 20px;
-    height: 45px;
-    
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    
-    border: 1px solid var(--clr10);
-    border-radius: 30px;
+  padding: 10px 20px;
+  height: 45px;
 
-    transition: background-color 0.3s, border 0.3s, transform 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid var(--clr10);
+  border-radius: 30px;
+
+  transition:
+    background-color 0.3s,
+    border 0.3s,
+    transform 0.3s;
 }
 
 .buttonDelete:hover {
-    background-color: var(--clr12);
-    border: 1px solid var(--clr13);
+  background-color: var(--clr12);
+  border: 1px solid var(--clr13);
 }
 
 .modal {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    justify-content: center;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  justify-content: center;
 }

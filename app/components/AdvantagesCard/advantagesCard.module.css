@@ -1,20 +1,20 @@
 .card {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
 
-    padding: 30px;
-    height: 165px;
+  padding: 30px;
+  height: 165px;
 
-    background-color: var(--clr6);
-    color: var(--clr1);
-    border-radius: 30px;
+  background-color: var(--clr6);
+  color: var(--clr1);
+  border-radius: 30px;
 }
 
 .title {
-    font-size: 3em;
-    font-weight: 600;
+  font-size: 3em;
+  font-weight: 600;
 }
 
 .description {
@@ -23,8 +23,8 @@
 }
 
 .changeColor {
-    background-color: var(--clr1);
-    color: var(--clr2);
+  background-color: var(--clr1);
+  color: var(--clr2);
 }
 
 @media (max-width: 768px) {

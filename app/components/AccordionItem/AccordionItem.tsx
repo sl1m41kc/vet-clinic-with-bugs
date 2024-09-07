@@ -1,10 +1,10 @@
-"use client";
-import React, { useState, useEffect, useCallback } from "react";
-import clsx from "clsx";
+'use client';
+import React, { useState, useEffect, useCallback } from 'react';
+import clsx from 'clsx';
 
-import ArrowSVG from "/public/Svg/swiper_arrow.svg";
+import ArrowSVG from '/public/Svg/swiper_arrow.svg';
 
-import classes from "./accordionItem.module.css";
+import classes from './accordionItem.module.css';
 
 interface IProps {
   title: string;
@@ -26,7 +26,7 @@ const AccordionItem = ({
   const toggle = useCallback(() => {
     setActive((prev) => !prev);
   }, []);
-  
+
   useEffect(() => {
     if (actived) toggle();
   }, [actived, toggle]);
@@ -36,9 +36,9 @@ const AccordionItem = ({
       <div
         className={clsx(classes.accordion_item, active && classes.active)}
         onClick={() => {
-          isAccordion && toggle();
+          if (isAccordion) toggle();
         }}
-        style={{ cursor: isAccordion ? "pointer" : "default" }}
+        style={{ cursor: isAccordion ? 'pointer' : 'default' }}
       >
         <div className={classes.text}>
           <h1 className={classes.title}>{title}</h1>

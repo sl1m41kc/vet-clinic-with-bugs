@@ -1,11 +1,11 @@
-"use client";
-import { useSortable } from "@dnd-kit/sortable";
-import classes from "./DraggableItem.module.css";
-import { CSS } from "@dnd-kit/utilities";
-import Link from "next/link";
-import { EditButton } from "@/app/UI/EditButton/EditButton";
-import { IPrice } from "@/app/types/IPrice";
-import { PRICE_DATA } from "@/app/data/priceData";
+'use client';
+import { useSortable } from '@dnd-kit/sortable';
+import classes from './DraggableItem.module.css';
+import { CSS } from '@dnd-kit/utilities';
+import Link from 'next/link';
+import { EditButton } from '@/app/UI/EditButton/EditButton';
+import { IPrice } from '@/app/types/IPrice';
+import { PRICE_DATA } from '@/app/data/priceData';
 
 interface IProps {
   price: IPrice;
@@ -48,7 +48,7 @@ export const DraggableItem = ({ price }: IProps) => {
 
         <Link
           href={{
-            pathname: "price/form",
+            pathname: 'price/form',
             query: { idPrice: index },
           }}
           scroll={false}

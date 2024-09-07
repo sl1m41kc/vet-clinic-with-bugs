@@ -12,55 +12,55 @@
 }
 
 .headerPanel {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .button {
-    position: relative;
-    top: -10px;
-    right: -10px;
+  position: relative;
+  top: -10px;
+  right: -10px;
 }
 
 .service {
-    display: flex;
-    align-items: baseline;
+  display: flex;
+  align-items: baseline;
 
-    gap: 10px;
-    fill: var(--clr1);
-    z-index: 1;
+  gap: 10px;
+  fill: var(--clr1);
+  z-index: 1;
 }
 
 .title {
-    font-size: 2em;
-    line-height: 1.15;
-    font-weight: 500;
+  font-size: 2em;
+  line-height: 1.15;
+  font-weight: 500;
 
-    width: auto;
+  width: auto;
 }
 
 .text {
-    font-size: 1.125em;
-    text-transform: lowercase;
+  font-size: 1.125em;
+  text-transform: lowercase;
 }
 
 .svg {
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    fill: var(--clr3);
-    z-index: 0;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  fill: var(--clr3);
+  z-index: 0;
 }
 
 .paw_svg {
-    min-width: 16px;
+  min-width: 16px;
 }
 
 @media (max-width: 768px) {
-    .title {
-        font-size: 1.7em;
-    }
+  .title {
+    font-size: 1.7em;
+  }
 
     .card {
         margin-top: 10px;

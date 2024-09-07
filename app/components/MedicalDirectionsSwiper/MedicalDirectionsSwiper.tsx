@@ -1,12 +1,12 @@
-import React from "react";
-import { Swiper, SwiperSlide } from "swiper/react";
+import React from 'react';
+import { Swiper, SwiperSlide } from 'swiper/react';
 
-import { medicialDirectionsData } from "@/app/data/medicialDirectionsData";
+import { medicialDirectionsData } from '@/app/data/medicialDirectionsData';
 
-import MedicialDirection from "@/app/components/MedicalDirection/MedicialDirection";
+import MedicialDirection from '@/app/components/MedicalDirection/MedicialDirection';
 
-import "swiper/css";
-import classes from './medicalDirectionsSwiper.module.css'
+import 'swiper/css';
+import classes from './medicalDirectionsSwiper.module.css';
 
 const MedicialDirectionsSwiper = () => {
   return (

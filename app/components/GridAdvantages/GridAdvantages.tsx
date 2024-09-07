@@ -1,17 +1,17 @@
-import React from "react";
+import React from 'react';
 
-import PetCard from "@/app/components/PetCard/PetCard";
-import ActionCard from "@/app/components/ActionCard/ActionCard";
+import PetCard from '@/app/components/PetCard/PetCard';
+import ActionCard from '@/app/components/ActionCard/ActionCard';
 
-import dogPNG from "/public/Images/Corgi_dog.png";
-import catPNG from "/public/Images/Cat.png";
-import VKLogoSVG from "/public/Svg/VK_logo.svg";
+import dogPNG from '/public/Images/Corgi_dog.png';
+import catPNG from '/public/Images/Cat.png';
+import VKLogoSVG from '/public/Svg/VK_logo.svg';
 
-import styles from "./gridAdvantages.module.css";
+import styles from './gridAdvantages.module.css';
 
 const GridAdvantages = () => {
   return (
-    <section className='container'>
+    <section className="container">
       <div className={styles.grid}>
         <div className={styles.gridCard}>
           <PetCard
@@ -36,8 +36,8 @@ const GridAdvantages = () => {
             title="Записаться на&nbsp;приём"
             description="Наши специалисты ответят на&nbsp;все ваши вопросы"
             button={{
-              text: "Записаться",
-              link: "/",
+              text: 'Записаться',
+              link: '/',
             }}
           />
         </div>
@@ -46,8 +46,8 @@ const GridAdvantages = () => {
             title="Онлайн-консультация"
             description="Наши специалисты ответят на&nbsp;все ваши вопросы"
             button={{
-              text: "Перейти в VK",
-              link: "https://vk.com/vetlekar",
+              text: 'Перейти в VK',
+              link: 'https://vk.com/vetlekar',
             }}
             SVG={<VKLogoSVG width={147} height={94} />}
           />

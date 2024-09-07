@@ -49,17 +49,17 @@
 
 @media (max-width: 768px) {
   .footer {
-      margin-top: 60px;
+    margin-top: 60px;
   }
 }
 
 @media (max-width: 730px) {
-    .footer {
-        gap: 30px;
-    }
+  .footer {
+    gap: 30px;
+  }
 
-    .info {
-        flex-direction: column;
-        gap: 30px;
-    }
+  .info {
+    flex-direction: column;
+    gap: 30px;
+  }
 }

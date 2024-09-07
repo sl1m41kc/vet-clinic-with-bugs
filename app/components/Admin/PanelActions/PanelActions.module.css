@@ -1,18 +1,18 @@
 .prices {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 
-    gap: 10px;
+  gap: 10px;
 
-    margin-top: 160px;
+  margin-top: 160px;
 }
 
 .addBtn {
-    text-decoration: none;
+  text-decoration: none;
 }
 
 .title {
-    color: var(--clr1);
-    font-size: 2.5em;
+  color: var(--clr1);
+  font-size: 2.5em;
 }

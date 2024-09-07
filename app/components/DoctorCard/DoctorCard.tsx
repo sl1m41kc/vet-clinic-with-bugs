@@ -1,10 +1,10 @@
-import React from "react";
-import Image from "next/image";
-import Link from "next/link";
-import { IDoctorCard } from "@/app/types/IDoctorCard";
-import CircleButton from "@/app/UI/СircleButton/CircleButton";
-import classes from "./DoctorCard.module.css";
-import { DOCTORS_PATH } from "@/app/Сonstants/pathsConsts";
+import React from 'react';
+import Image from 'next/image';
+import Link from 'next/link';
+import { IDoctorCard } from '@/app/types/IDoctorCard';
+import CircleButton from '@/app/UI/СircleButton/CircleButton';
+import classes from './DoctorCard.module.css';
+import { DOCTORS_PATH } from '@/app/Сonstants/pathsConsts';
 
 const DoctorCard = ({
   id,
@@ -14,10 +14,9 @@ const DoctorCard = ({
   startWork,
   alt,
 }: IDoctorCard) => {
+  const currentYear = new Date().getFullYear();
 
-  let currentYear = new Date().getFullYear();
-
-  let experience = currentYear - startWork;
+  const experience = currentYear - startWork;
   return (
     <Link href={`specialists/${id}`} className={classes.card}>
       <div className={classes.button}>
@@ -37,12 +36,15 @@ const DoctorCard = ({
           <p className={classes.professions}>{professions}</p>
         </div>
       </div>
-      {experience >= 2 && <div className={classes.experience}>
-        <hr className={classes.line} />
-        <p>
-          Стаж:<span className={classes.experience_number}> {experience}</span> лет
-        </p>
-      </div>}
+      {experience >= 2 && (
+        <div className={classes.experience}>
+          <hr className={classes.line} />
+          <p>
+            Стаж:
+            <span className={classes.experience_number}> {experience}</span> лет
+          </p>
+        </div>
+      )}
     </Link>
   );
 };

@@ -1,4 +1,4 @@
-import { nullable, z } from "zod";
+import { z } from 'zod';
 
 // ! нужно будет удалить
 export interface IPriceSection {
@@ -17,8 +17,6 @@ export interface IPrice {
   description?: string;
   services?: IPrice[];
 }
-
-
 
 // Определяем типы данных для валидации
 export const PriceOptionSchema = z.object({
@@ -46,7 +44,7 @@ export const BaseGroupPriceSchema = z.object({
 });
 
 export const GroupPriceSchema = BaseGroupPriceSchema.extend({
-  id: z.string()
+  id: z.string(),
 });
 
 // На основе этих типов создаем интерфейсы (на самом деле типы,

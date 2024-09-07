@@ -1,12 +1,12 @@
-import { PRIVACY_DATA } from "@/app/data/privacyData";
-import classes from "./page.module.css";
-import clsx from "clsx";
+import { PRIVACY_DATA } from '@/app/data/privacyData';
+import classes from './page.module.css';
+import clsx from 'clsx';
 
 export default function Page() {
   const { title, content } = PRIVACY_DATA;
 
   return (
-    <section className={clsx("container", classes.container)}>
+    <section className={clsx('container', classes.container)}>
       <h1 className={classes.title}>{title}</h1>
       {content.map((item, index) => (
         <div key={index} className={classes.item}>

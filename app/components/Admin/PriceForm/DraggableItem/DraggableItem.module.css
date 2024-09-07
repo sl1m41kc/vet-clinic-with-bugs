@@ -1,101 +1,101 @@
 .service {
-    position: relative;
+  position: relative;
 
-    padding: 30px;
-    overflow: hidden;
+  padding: 30px;
+  overflow: hidden;
 
-    background-color: var(--clr6);
-    border-radius: 10px;
+  background-color: var(--clr6);
+  border-radius: 10px;
 
-    color: var(--clr1);
-    cursor: default;
+  color: var(--clr1);
+  cursor: default;
 }
 
 .actions {
-    display: flex;
-    justify-content: space-between;
-    gap: 20px;
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
 }
 
 .listenerContainer {
-    position: absolute;
-    inset: 0;
-    z-index: 1;
+  position: absolute;
+  inset: 0;
+  z-index: 1;
 }
 
 .content {
-    position: relative;
-    z-index: 2;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
 .inner {
-    width: 100%;
-    background-color: var(--clr9);
+  width: 100%;
+  background-color: var(--clr9);
 }
 
 .inputs {
-    display: flex;
-    align-items: flex-start;
-    justify-content: space-between;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
 
-    gap: 20px;
-    width: 100%;  
+  gap: 20px;
+  width: 100%;
 }
 
 .text {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 
-    gap: 10px;
-    width: 100%;
+  gap: 10px;
+  width: 100%;
 }
 
 .title {
-    font-weight: 500;
-    font-size: 1.125em;
+  font-weight: 500;
+  font-size: 1.125em;
 }
 
 .input {
-    padding: 5px 0;
+  padding: 5px 0;
 
-    background-color: var(--clr6);
-    border: none;
-    border-bottom: 1px solid var(--clr4);
+  background-color: var(--clr6);
+  border: none;
+  border-bottom: 1px solid var(--clr4);
 }
 
 .input::placeholder {
-    color: var(--clr8);
+  color: var(--clr8);
 }
 
 .inner .input {
-    background-color: var(--clr9);
+  background-color: var(--clr9);
 }
 
 .input:focus {
-    outline: none;
+  outline: none;
 }
 
 .price {
-    position: relative;
+  position: relative;
 }
 
 .currency {
-    position: absolute;
-    top: 5px;
-    right: 0;
+  position: absolute;
+  top: 5px;
+  right: 0;
 
-    color: var(--clr8);
+  color: var(--clr8);
 
-    pointer-events: none;
+  pointer-events: none;
 }
 
 .button {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
-    width: 100%;
+  width: 100%;
 }

@@ -1,50 +1,53 @@
 .arrowButton {
-    display: flex;
-    align-items: center;
-    gap: 5px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
 
-    padding: 10px 20px;
+  padding: 10px 20px;
 
-    color: var(--clr1);
-    border-radius: 30px;
+  color: var(--clr1);
+  border-radius: 30px;
 
-    transition: background-color 0.3s, color 0.3s, transform 0.3s;
+  transition:
+    background-color 0.3s,
+    color 0.3s,
+    transform 0.3s;
 }
 
 .icon {
-    fill: var(--clr1);
+  fill: var(--clr1);
 
-    transition: fill 0.3s;
+  transition: fill 0.3s;
 }
 
 .fill {
-    background-color: none;
-    border: 1px solid var(--clr4);
+  background-color: none;
+  border: 1px solid var(--clr4);
 }
 
 .fill:hover {
-    color: var(--clr2);
-    background-color: var(--clr1);
-    transform: scale(1.05);
+  color: var(--clr2);
+  background-color: var(--clr1);
+  transform: scale(1.05);
 }
 
 .fill:hover .icon {
-    fill: var(--clr2);
+  fill: var(--clr2);
 }
 
 .fill:active {
-    transform: scale(0.99);
+  transform: scale(0.99);
 }
 
 .notFill {
-    background-color: var(--clr2);
+  background-color: var(--clr2);
 }
 
 .notFill:hover {
-    background-color: var(--clr3);
-    transform: scale(1.05);
+  background-color: var(--clr3);
+  transform: scale(1.05);
 }
 
 .notFill:active {
-    transform: scale(0.99);
+  transform: scale(0.99);
 }

@@ -1,8 +1,8 @@
-import { IPriceSection } from "@/app/types/IPrice";
-import { DragEndEvent, DragStartEvent } from "@dnd-kit/core";
-import { arrayMove } from "@dnd-kit/sortable";
-import { Dispatch, SetStateAction } from "react";
-import { FieldValues, UseFormGetValues, UseFormReset } from "react-hook-form";
+import { IPriceSection } from '@/app/types/IPrice';
+import { DragEndEvent, DragStartEvent } from '@dnd-kit/core';
+import { arrayMove } from '@dnd-kit/sortable';
+import { Dispatch, SetStateAction } from 'react';
+import { UseFormGetValues, UseFormReset } from 'react-hook-form';
 
 // Обработчики перетаскивания
 export const handleDragStart = (

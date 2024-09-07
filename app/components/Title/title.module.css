@@ -1,28 +1,28 @@
 .text {
-    padding-inline: 20px;
+  padding-inline: 20px;
 
-    font-size: 2.5em;
-    line-height: 130%;
-    text-indent: 20%;
-    
-    color: var(--clr7);
+  font-size: 2.5em;
+  line-height: 130%;
+  text-indent: 20%;
+
+  color: var(--clr7);
 }
 
 .text span {
-    color: var(--clr1);
-    font-weight: 500;
+  color: var(--clr1);
+  font-weight: 500;
 }
 
 @media (max-width: 1100px) {
-    .text {
-        font-size: 2em;
-        text-indent: 0%;
-    }
+  .text {
+    font-size: 2em;
+    text-indent: 0%;
+  }
 }
 
 @media (max-width: 780px) {
-    .text {
-        font-size: 1.75em;
-        margin-top: 60px;
-    }
+  .text {
+    font-size: 1.75em;
+    margin-top: 60px;
+  }
 }

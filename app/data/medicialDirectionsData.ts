@@ -1,41 +1,41 @@
-import { IMedicialDirection } from "@/app/types/IMedicialDirection";
+import { IMedicialDirection } from '@/app/types/IMedicialDirection';
 
 export const medicialDirectionsData: IMedicialDirection[] = [
-    {
-        title: 'Терапевт'
-    },
+  {
+    title: 'Терапевт',
+  },
 
-    {
-        title: 'Хирург'
-    },
+  {
+    title: 'Хирург',
+  },
 
-    {
-        title: 'Ортопед'
-    },
+  {
+    title: 'Ортопед',
+  },
 
-    {
-        title: 'Эндоскопист'
-    },
-    
-    {
-        title: 'кардиолог'
-    },
+  {
+    title: 'Эндоскопист',
+  },
 
-    {
-        title: 'Дерматолог'
-    },
+  {
+    title: 'кардиолог',
+  },
 
-    {
-        title: 'Стоматолог'
-    },
+  {
+    title: 'Дерматолог',
+  },
 
-    {
-        title: 'Cпециалист по визуальной диагностике ',
-        description: "(узи, рентген)"
-    },
+  {
+    title: 'Стоматолог',
+  },
 
-    {
-        title: 'нефролог',
-        description: '(урология)'
-    }
-]
+  {
+    title: 'Cпециалист по визуальной диагностике ',
+    description: '(узи, рентген)',
+  },
+
+  {
+    title: 'нефролог',
+    description: '(урология)',
+  },
+];

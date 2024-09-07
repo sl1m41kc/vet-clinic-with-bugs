@@ -3,8 +3,8 @@ services:
     image: nginx:1.19.8-alpine
     container_name: nginx
     ports:
-      - "80:80"
-      - "443:443"
+      - '80:80'
+      - '443:443'
     volumes:
       - ./nginx/nginx-init.d:/etc/nginx/conf.d
       - ./nginx/etc/letsencrypt:/etc/letsencrypt
@@ -24,4 +24,4 @@ services:
       - ./nginx/etc/letsencrypt:/etc/letsencrypt
       - ./nginx/www:/var/www/html
       - ./certbot-entrypoint.sh:/certbot-entrypoint.sh
-    entrypoint: ["/certbot-entrypoint.sh"]
+    entrypoint: ['/certbot-entrypoint.sh']
