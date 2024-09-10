@@ -40,7 +40,8 @@ export const Item = ({ services, groupNote }: IProps) => {
                 className={clsx(
                   classes.service,
                   classes.service_item,
-                  classes.sub_service
+                  classes.sub_service,
+                  !groupNote && classes.hasntNote
                 )}
               >
                 <div className={classes.text}>

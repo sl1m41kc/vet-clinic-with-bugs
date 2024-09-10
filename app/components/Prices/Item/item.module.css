@@ -36,8 +36,8 @@
   border-bottom: 1px solid var(--clr8);
 }
 
-.hasntNote:last-child .service_item {
-  border-bottom: none;
+.hasntNote:last-child .service_item:last-child {
+    border-bottom: none;
 }
 
 .text {
