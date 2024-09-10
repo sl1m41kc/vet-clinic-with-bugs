@@ -38,6 +38,10 @@
   gap: 20px;
 }
 
+.text {
+  line-height: 1.3em;
+}
+
 .text mark {
   background-color: var(--clr3);
 }

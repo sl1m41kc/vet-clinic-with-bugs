@@ -28,7 +28,7 @@
 
 @media (max-width: 930px) {
   .imageWrapper {
-    max-width: 375px;
+    max-height: 375px;
   }
 }
 
@@ -44,5 +44,12 @@
     max-width: inherit;
     position: relative;
     top: inherit;
+    min-height: 400px;
+  }
+}
+
+@media (max-width: 450px) {
+  .imageWrapper {
+    min-height: 300px;
   }
 }

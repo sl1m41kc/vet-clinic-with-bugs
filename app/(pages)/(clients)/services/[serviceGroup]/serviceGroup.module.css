@@ -74,6 +74,11 @@
   margin-top: 0.5em;
 }
 
+.description {
+  font-size: 1.125em;
+  line-height: 1.3em;
+}
+
 .notes {
   display: flex;
   flex-direction: column;

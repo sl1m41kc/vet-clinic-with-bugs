@@ -14,7 +14,7 @@ export default function NotFound() {
         </p>
         <p className="text-[1.5em]">
           Перейти на{' '}
-          <Link href="/" className="border-b border-[--clr3]">
+          <Link href="/">
             главную страницу
           </Link>
         </p>

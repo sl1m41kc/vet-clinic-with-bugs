@@ -84,7 +84,7 @@ export default function Home({ params, searchParams }: IProps) {
                         description.type === React.Fragment
                       ) {
                         // Если это пустой фрагмент, выводим <p>
-                        return <p key={index}>{description}</p>;
+                        return <p key={index} className={classes.description}>{description}</p>;
                       }
                       // Иначе, выводим переданный HTML-элемент
                       return (
