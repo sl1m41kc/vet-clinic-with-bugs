@@ -6,8 +6,8 @@ import classes from './medicialDirection.module.css';
 const MedicialDirection = ({ title, description }: IMedicialDirection) => {
   return (
     <div className={classes.direction}>
-        <h1 className={classes.title}>{title}</h1>
-        <p className={classes.description}>{description}</p>
+      <h1 className={classes.title}>{title}</h1>
+      <p className={classes.description}>{description}</p>
     </div>
   );
 };

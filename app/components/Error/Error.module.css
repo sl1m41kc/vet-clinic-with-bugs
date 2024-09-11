@@ -1,0 +1,17 @@
+.loader {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+    margin-top: 60px;
+    border-radius: 30px;
+    background-color: var(--clr13);
+    color: var(--clr1);
+    overflow: hidden;
+  }
+  
+  .text {
+    font-size: 1.8rem;
+    text-align: center;
+  }

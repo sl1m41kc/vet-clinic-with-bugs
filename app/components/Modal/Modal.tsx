@@ -17,7 +17,7 @@ export const Modal = ({ children, isOpen, setIsOpen }: IProps) => {
     } else {
       document.body.style.overflow = '';
     }
-  }, []);
+  }, [isOpen]);
 
   if (!isOpen || typeof window === 'undefined') return null;
 

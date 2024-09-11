@@ -1,9 +1,7 @@
 'use client';
 import clsx from 'clsx';
-
 import { AddButton } from '@/app/UI/AddButton/AddButton';
 import { DeleteButton } from '@/app/UI/DeleteButton/DeleteButton';
-
 import classes from './PriceForm.module.css';
 import {
   DndContext,
@@ -11,7 +9,7 @@ import {
   DragOverlay,
   DragStartEvent,
 } from '@dnd-kit/core';
-import { IPriceSection } from '@/app/types/IPrice';
+import { IGroupPrice } from '@/app/types/IPrice';
 import {
   restrictToParentElement,
   restrictToVerticalAxis,
@@ -20,15 +18,20 @@ import {
   SortableContext,
   verticalListSortingStrategy,
 } from '@dnd-kit/sortable';
-import { DEFAULT_PRICE_SECTION_DATA } from '@/app/data/priceData';
 import { Controller, useFieldArray, useForm } from 'react-hook-form';
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
-import { PRICE_API } from '@/app/utils/API';
+import {
+  fetchCreatePrice,
+  fetchPriceById,
+  fetchUpdatePrice,
+} from '@/app/utils/API';
 import { Modal } from '@/app/components/Modal/Modal';
-import { DraggableItem } from './DraggableItem/DraggableItem';
-import { DragOverlayItem } from './DragOverlayItem/DragOverlayItem';
 import { handleDelete, handleDragEnd, handleDragStart } from './handle';
+import { Loading } from '@/app/UI/Loading/Loading';
+import { Error } from '@/app/components/Error/Error';
+import { DraggableService } from './DraggableService/DraggableService';
+import { DragOverlayService } from './DragOverlayService/DragOverlayService';
 
 interface IProps {
   formRef: React.RefObject<HTMLFormElement>;
@@ -41,22 +44,14 @@ export const PriceForm = ({ idPrice, formRef }: IProps) => {
 
   // Инициализация стейта для перетаскивания
   const [draggingItemIndex, setDraggingItemIndex] = useState<number>();
-
-  // Инициализация стейта для модального окна
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState('');
 
   // Инициализация формы
-  const { control, handleSubmit, reset, getValues } = useForm<IPriceSection>();
+  const { control, handleSubmit, reset, getValues } = useForm<IGroupPrice>();
 
-  // Инициализация начальных данных формы
-  useEffect(() => {
-    if (!idPrice) return reset(DEFAULT_PRICE_SECTION_DATA);
-    PRICE_API.GET_BY_ID(idPrice).then((data) => {
-      reset(data);
-    });
-  }, [idPrice, reset]);
-
-  // Инициализация динамических полей формы (списка services в IPriceService)
+  // Инициализация динамических полей формы (списка services в IGroupPrice)
   const {
     fields,
     append: appendService,
@@ -66,18 +61,36 @@ export const PriceForm = ({ idPrice, formRef }: IProps) => {
     name: 'services',
   });
 
+  // Инициализация начальных данных формы
+  useEffect(() => {
+    const getPrice = async () => {
+      if (!idPrice) return;
+      setIsLoading(true);
+      const response = await fetchPriceById(idPrice);
+      setIsLoading(false);
+      if ('error' in response) return setError(response.error);
+      reset(response);
+    };
+    getPrice();
+  }, [idPrice, reset]);
+
   // Обработчик формы
-  const onSubmit = (data: IPriceSection) => {
+  const onSubmit = async (data: IGroupPrice) => {
     if (idPrice) {
-      // TODO: Написать запрос на редактирование
+      const response = await fetchUpdatePrice(idPrice, data);
+      if (response.error) return setError(response.error);
     } else {
-      PRICE_API.POST(data);
-      router.back();
+      const response = await fetchCreatePrice(data);
+      if (response.error) return setError(response.error);
     }
+    router.back();
   };
 
   // Условия
   const isServices = fields.length > 0;
+
+  if (error) return <Error text={error} />;
+  if (isLoading) return <Loading />;
 
   return (
     <section className="container">
@@ -88,7 +101,6 @@ export const PriceForm = ({ idPrice, formRef }: IProps) => {
         // Submit обработчик формы
         onSubmit={handleSubmit(onSubmit)}
       >
-        {/* Логика кнопки удаления с подтверждением */}
         <DeleteButton onClick={() => setIsModalOpen(true)} />
         <Modal isOpen={isModalOpen} setIsOpen={setIsModalOpen}>
           <div className={classes.modal}>
@@ -104,7 +116,7 @@ export const PriceForm = ({ idPrice, formRef }: IProps) => {
 
         <div className={classes.inputs}>
           <Controller
-            name="title"
+            name="groupTitle"
             control={control}
             defaultValue=""
             render={({ field }) => (
@@ -116,7 +128,7 @@ export const PriceForm = ({ idPrice, formRef }: IProps) => {
             )}
           />
           <Controller
-            name="description"
+            name="groupDescription"
             control={control}
             defaultValue=""
             render={({ field }) => (
@@ -124,6 +136,7 @@ export const PriceForm = ({ idPrice, formRef }: IProps) => {
                 {...field}
                 placeholder="Описание раздела"
                 className={classes.input}
+                value={field.value ?? ''} // Преобразование null в пустую строку
               />
             )}
           />
@@ -136,8 +149,9 @@ export const PriceForm = ({ idPrice, formRef }: IProps) => {
                 handleDragStart(event, setDraggingItemIndex)
               }
               onDragEnd={(event: DragEndEvent) =>
-                handleDragEnd(event, getValues, reset, setDraggingItemIndex)
+                handleDragEnd(event, getValues, reset)
               }
+              onDragCancel={() => setDraggingItemIndex(undefined)}
               // Настройки перетаскивания:
               // restrictToVerticalAxis - ограничивает перетаскивание только по вертикали
               // restrictToParentElement - ограничивает перетаскивание только внутри контейнера
@@ -150,9 +164,9 @@ export const PriceForm = ({ idPrice, formRef }: IProps) => {
                 strategy={verticalListSortingStrategy}
               >
                 {fields.map((service, index) => (
-                  <DraggableItem
+                  <DraggableService
                     id={service.id}
-                    key={clsx(index, service.id, service.title + 'item')}
+                    key={service.id}
                     control={control}
                     reset={reset}
                     getValues={getValues}
@@ -162,13 +176,9 @@ export const PriceForm = ({ idPrice, formRef }: IProps) => {
                 ))}
               </SortableContext>
 
-              {/* Панель перетаскивания */}
               <DragOverlay>
                 {typeof draggingItemIndex === 'number' && (
-                  <DragOverlayItem
-                    data={fields[draggingItemIndex]}
-                    isTopLevelService
-                  />
+                  <DragOverlayService data={fields[draggingItemIndex]} />
                 )}
               </DragOverlay>
             </DndContext>
@@ -177,14 +187,21 @@ export const PriceForm = ({ idPrice, formRef }: IProps) => {
 
         <div className={classes.buttonWrapper}>
           <AddButton
-            onClick={() => appendService({ id: String(Date.now()), title: '' })}
+            onClick={() =>
+              appendService({
+                priceOptions: [],
+                serviceTitle: '',
+                serviceDescription: '',
+                servicePrice: 0,
+              })
+            }
             text="Добавить услугу"
             animated={true}
           />
         </div>
 
         <Controller
-          name="note"
+          name="groupNote"
           defaultValue=""
           control={control}
           render={({ field }) => (
@@ -192,6 +209,7 @@ export const PriceForm = ({ idPrice, formRef }: IProps) => {
               {...field}
               className={classes.input}
               placeholder="Примечание для раздела"
+              value={field.value ?? ''} // Преобразование null в пустую строку
             />
           )}
         />

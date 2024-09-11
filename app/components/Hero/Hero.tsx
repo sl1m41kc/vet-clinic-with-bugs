@@ -24,7 +24,8 @@ const Hero = () => {
           <div className={styles.text}>
             <p className={styles.discount}>-20%</p>
             <p className={styles.term}>
-              До&nbsp;17&nbsp;июня действует скидка 20% на&nbsp;вакцинацию<br/> 
+              До&nbsp;17&nbsp;июня действует скидка 20% на&nbsp;вакцинацию
+              <br />
               от&nbsp;клеща
             </p>
           </div>

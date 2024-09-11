@@ -1,4 +1,4 @@
-import { IPriceSection } from '@/app/types/IPrice';
+import { IGroupPrice, IPriceSection } from '@/app/types/IPrice';
 
 export const PRICE_DATA: IPriceSection[] = [
   {
@@ -75,12 +75,13 @@ export const PRICE_DATA: IPriceSection[] = [
   },
 ];
 
-export const DEFAULT_PRICE_DATA: IPriceSection[] = [];
+export const DEFAULT_PRICE_DATA: IGroupPrice[] = [];
 
-export const DEFAULT_PRICE_SECTION_DATA: IPriceSection = {
+export const DEFAULT_PRICE_SECTION_DATA: IGroupPrice = {
   id: '',
-  title: '',
-  description: '',
+  sortOrder: 0,
+  groupTitle: '',
+  groupDescription: '',
   services: [],
-  note: '',
+  groupNote: '',
 };

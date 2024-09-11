@@ -1,4 +1,4 @@
-import { IPriceSection } from '@/app/types/IPrice';
+import { IGroupPrice } from '@/app/types/IPrice';
 import { DragEndEvent, DragStartEvent } from '@dnd-kit/core';
 import { arrayMove } from '@dnd-kit/sortable';
 import { Dispatch, SetStateAction } from 'react';
@@ -14,22 +14,22 @@ export const handleDragStart = (
 
 export const handleDragEnd = (
   { active, over }: DragEndEvent,
-  getValues: UseFormGetValues<{ priceSections: IPriceSection[] }>,
-  reset: UseFormReset<{ priceSections: IPriceSection[] }>,
+  getValues: UseFormGetValues<{ priceList: IGroupPrice[] }>,
+  reset: UseFormReset<{ priceList: IGroupPrice[] }>,
   setIsDraggingItem: Dispatch<SetStateAction<string | undefined>>
 ) => {
   setIsDraggingItem(undefined);
-  const data = getValues().priceSections;
+  const data = getValues().priceList;
 
   if (active.id !== over?.id) {
     const activeIndex = data.findIndex(
-      (section: IPriceSection) => section.id === active.id
+      (section: IGroupPrice) => section.id === active.id
     );
     const overIndex = data.findIndex(
-      (section: IPriceSection) => section.id === over?.id
+      (section: IGroupPrice) => section.id === over?.id
     );
     reset({
-      priceSections: arrayMove(data, activeIndex, overIndex),
+      priceList: arrayMove(data, activeIndex, overIndex),
     });
   }
 };

@@ -4,16 +4,14 @@ import classes from './DraggableItem.module.css';
 import { CSS } from '@dnd-kit/utilities';
 import Link from 'next/link';
 import { EditButton } from '@/app/UI/EditButton/EditButton';
-import { IPrice } from '@/app/types/IPrice';
-import { PRICE_DATA } from '@/app/data/priceData';
+import { IGroupPrice } from '@/app/types/IPrice';
 
 interface IProps {
-  price: IPrice;
+  price: IGroupPrice;
 }
 
 export const DraggableItem = ({ price }: IProps) => {
-  const { id, title, description } = price;
-  const index = PRICE_DATA.findIndex((price) => price.id === id);
+  const { id, groupTitle, groupDescription } = price;
 
   const {
     attributes,
@@ -42,14 +40,14 @@ export const DraggableItem = ({ price }: IProps) => {
       <div className={classes.listenerContainer} {...listeners} />
       <div className={classes.content}>
         <div className={classes.text}>
-          <h1 className={classes.title}>{title}</h1>
-          <p>{description}</p>
+          <h1 className={classes.title}>{groupTitle}</h1>
+          {groupDescription && <p>{groupDescription}</p>}
         </div>
 
         <Link
           href={{
             pathname: 'price/form',
-            query: { idPrice: index },
+            query: { idPrice: id },
           }}
           scroll={false}
         >

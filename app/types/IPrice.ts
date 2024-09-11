@@ -1,23 +1,5 @@
 import { z } from 'zod';
 
-// ! нужно будет удалить
-export interface IPriceSection {
-  id: string;
-  title: string;
-  services: IPrice[];
-  description?: string;
-  note?: string;
-}
-
-// ! нужно будет удалить
-export interface IPrice {
-  id: string;
-  title: string;
-  price?: number;
-  description?: string;
-  services?: IPrice[];
-}
-
 // Определяем типы данных для валидации
 export const PriceOptionSchema = z.object({
   optionTitle: z.string(),

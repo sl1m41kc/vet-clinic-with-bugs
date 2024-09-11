@@ -10,12 +10,16 @@ import {
   ArrayPath,
   Path,
 } from 'react-hook-form';
-import { DndContext, DragEndEvent } from '@dnd-kit/core';
+import {
+  DndContext,
+  DragEndEvent,
+  DragOverlay,
+  DragStartEvent,
+} from '@dnd-kit/core';
 import { CSS } from '@dnd-kit/utilities';
 import { arrayMove, SortableContext, useSortable } from '@dnd-kit/sortable';
-import { IPrice } from '@/app/types/IPrice';
 import clsx from 'clsx';
-import classes from './DraggableItem.module.css';
+import classes from './DraggableService.module.css';
 import { DeleteButton } from '@/app/UI/DeleteButton/DeleteButton';
 import { MoveButton } from '@/app/UI/MoveButton/MoveButton';
 import {
@@ -23,6 +27,11 @@ import {
   restrictToVerticalAxis,
 } from '@dnd-kit/modifiers';
 import { AddButton } from '@/app/UI/AddButton/AddButton';
+import { DraggablePriceOption } from '../DraggablePriceOption /DraggablePriceOption';
+import { useState } from 'react';
+import { IService } from '@/app/types/IPrice';
+import { DragOverlayPriceOption } from '../DragOverlayPriceOption/DragOverlayPriceOption';
+import { handleDragStart } from '../handle';
 
 interface IProps<T extends FieldValues> {
   control: Control<T>; // Тип Control из react-hook-form
@@ -34,7 +43,7 @@ interface IProps<T extends FieldValues> {
   isDragOverlay?: boolean; // Флаг, указывающий, является ли элемент поверхностным при перетаскивании
 }
 
-export const DraggableItem = <T extends FieldValues>({
+export const DraggableService = <T extends FieldValues>({
   control,
   id,
   reset,
@@ -57,14 +66,13 @@ export const DraggableItem = <T extends FieldValues>({
     },
   });
 
+  const [draggingItemIndex, setDraggingItemIndex] = useState<number>();
+
   const style = {
     opacity: isDragging ? 0.3 : 1,
     transform: CSS.Transform.toString(transform),
     transition,
   };
-
-  const isTopLevelService = pathToService.split('.').length === 2;
-  const indexInGroup = Number(pathToService.split('.').pop());
 
   const {
     fields,
@@ -72,10 +80,12 @@ export const DraggableItem = <T extends FieldValues>({
     remove: removeNestedService,
   } = useFieldArray({
     control,
-    name: `${pathToService}.services` as ArrayPath<T>,
+    name: `${pathToService}.priceOptions` as ArrayPath<T>,
   });
 
   const isGroup = fields.length > 0;
+  const isTopLevelService = true;
+  const indexInGroup = Number(pathToService.split('.').pop());
 
   const handleDragEnd = ({ active, over }: DragEndEvent) => {
     if (active.id !== over?.id) {
@@ -88,7 +98,7 @@ export const DraggableItem = <T extends FieldValues>({
 
       if (activeIndex >= 0 && overIndex >= 0 && getValues) {
         const newServices = arrayMove(
-          getValues().services[indexInGroup].services,
+          getValues().services[indexInGroup].priceOptions,
           activeIndex,
           overIndex
         );
@@ -96,9 +106,9 @@ export const DraggableItem = <T extends FieldValues>({
           reset({
             ...getValues(),
             services: getValues().services.map(
-              (service: IPrice, index: number) =>
+              (service: IService, index: number) =>
                 index === indexInGroup
-                  ? { ...service, services: newServices }
+                  ? { ...service, priceOptions: newServices }
                   : service
             ),
           });
@@ -123,7 +133,7 @@ export const DraggableItem = <T extends FieldValues>({
         <div className={classes.inputs}>
           <div className={classes.text}>
             <Controller
-              name={`${pathToService}.title` as Path<T>}
+              name={`${pathToService}.serviceTitle` as Path<T>}
               control={control}
               render={({ field }) => (
                 <input
@@ -135,7 +145,7 @@ export const DraggableItem = <T extends FieldValues>({
               )}
             />
             <Controller
-              name={`${pathToService}.description` as Path<T>}
+              name={`${pathToService}.serviceDescription` as Path<T>}
               control={control}
               render={({ field }) => (
                 <input
@@ -151,7 +161,7 @@ export const DraggableItem = <T extends FieldValues>({
           {!isGroup && !isDragging && (
             <div className={classes.price}>
               <Controller
-                name={`${pathToService}.price` as Path<T>}
+                name={`${pathToService}.servicePrice` as Path<T>}
                 control={control}
                 render={({ field }) => (
                   <input
@@ -169,29 +179,44 @@ export const DraggableItem = <T extends FieldValues>({
 
         {isGroup && !isDragOverlay && !isDragging && (
           <DndContext
-            id={'DndContextPriceDraggableItem' + pathToService}
+            onDragStart={(event: DragStartEvent) =>
+              handleDragStart(event, setDraggingItemIndex)
+            }
             onDragEnd={handleDragEnd}
+            onDragCancel={() => setDraggingItemIndex(undefined)}
             modifiers={[restrictToVerticalAxis, restrictToParentElement]}
           >
-            <SortableContext items={fields.map((field) => field.id)}>
-              {fields.map((price, index: number) => (
-                <DraggableItem
-                  id={price.id}
-                  key={clsx(index, price.id, 'nestedPrice')}
+            <SortableContext items={fields}>
+              {fields.map((_, index: number) => (
+                <DraggablePriceOption
+                  key={index + 'nestedPrice'}
                   control={control}
                   pathToService={
-                    `${pathToService}.services.${index}` as Path<T>
+                    `${pathToService}.priceOptions.${index}` as Path<T>
                   }
                   remove={removeNestedService}
                 />
               ))}
             </SortableContext>
+
+            <DragOverlay>
+              {typeof draggingItemIndex === 'number' && (
+                <DragOverlayPriceOption
+                  // @ts-ignore
+                  data={fields[draggingItemIndex]}
+                  pathToService={
+                    `${pathToService}.priceOptions.${draggingItemIndex}` as Path<T>
+                  }
+                />
+              )}
+            </DragOverlay>
           </DndContext>
         )}
 
         {isTopLevelService && !isDragging && (
           <div className={classes.button}>
             <AddButton
+              // @ts-ignore
               onClick={() => appendNestedService({})}
               text="Добавить услугу"
               animated={true}

@@ -1,26 +1,15 @@
 import React from 'react';
-
 import AccordionItem from '@/app/components/AccordionItem/AccordionItem';
 import { Item } from './Item/Item';
-
 import { fetchPrices } from '@/app/utils/API';
-
 import classes from './prices.module.css';
-import styles from '@/app/UI/PriceLoading/PriceLoading.module.css';
 import type { IGroupPrice } from '@/app/types/IPrice';
 import type { IError } from '@/app/types/IError';
+import { Error } from '../Error/Error';
 
 const Prices = async () => {
   const prices: IGroupPrice[] | IError = await fetchPrices();
-  if ('error' in prices) {
-    return (
-      <section className="container">
-        <div className={styles.loader}>
-          <p className={styles.text}>{prices.error}</p>
-        </div>
-      </section>
-    );
-  }
+  if ('error' in prices) return <Error text={prices.error} />;
 
   return (
     <section className="container">

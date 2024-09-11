@@ -23,7 +23,8 @@
       "error",
       { "argsIgnorePattern": "^_" }
     ], // Ошибка для неиспользуемых переменных, игнорируя переменные, начинающиеся с "_"
-    "prettier/prettier": ["error", { "endOfLine": "auto" }] // Настройки Prettier
+    "prettier/prettier": ["error", { "endOfLine": "auto" }],
+    "@typescript-eslint/ban-ts-comment": "warn" // Настройки Prettier
   },
   "settings": {
     "react": {

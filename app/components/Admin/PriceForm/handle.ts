@@ -1,4 +1,4 @@
-import { IPriceSection } from '@/app/types/IPrice';
+import { IGroupPrice } from '@/app/types/IPrice';
 import { PRICE_API } from '@/app/utils/API';
 import { Active, DragEndEvent, DragStartEvent, Over } from '@dnd-kit/core';
 import { arrayMove } from '@dnd-kit/sortable';
@@ -34,12 +34,10 @@ export const handleDragStart = (
 
 export const handleDragEnd = (
   event: DragEndEvent,
-  getValues: UseFormGetValues<IPriceSection>,
-  reset: UseFormReset<IPriceSection>,
-  setDraggingItemIndex: Dispatch<React.SetStateAction<number | undefined>>
+  getValues: UseFormGetValues<IGroupPrice>,
+  reset: UseFormReset<IGroupPrice>
 ) => {
   const { active, over } = event;
-  setDraggingItemIndex(undefined);
 
   if (over && active.id !== over?.id) {
     const activeIndex = extractIndex(active);

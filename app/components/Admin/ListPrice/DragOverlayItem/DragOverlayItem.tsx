@@ -1,14 +1,14 @@
 'use client';
 import classes from './DragOverlayItem.module.css';
 import { EditButton } from '@/app/UI/EditButton/EditButton';
-import { IPrice } from '@/app/types/IPrice';
+import { IGroupPrice } from '@/app/types/IPrice';
 
 interface IProps {
-  price: IPrice;
+  price: IGroupPrice;
 }
 
 export const DragOverlayItem = ({ price }: IProps) => {
-  const { title, description } = price;
+  const { groupTitle: title, groupDescription: description } = price;
 
   return (
     <div className={classes.price}>

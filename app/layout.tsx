@@ -1,7 +1,6 @@
 import './globals.css';
 import type { Metadata } from 'next';
 
-import { SetupMocks } from './utils/setupMocks';
 import { headers } from 'next/headers';
 import { AdminLayout } from './layouts/AdminLayout';
 import { FrontLayout } from './layouts/FrontLayout';
@@ -40,7 +39,6 @@ export default async function RootLayout({
       <body>
         <LayoutComponent>{children}</LayoutComponent>
       </body>
-      <SetupMocks />
     </html>
   );
 }

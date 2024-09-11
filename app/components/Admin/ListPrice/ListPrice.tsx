@@ -1,7 +1,5 @@
 'use client';
-import clsx from 'clsx';
 import classes from './ListPrice.module.css';
-import { DEFAULT_PRICE_DATA } from '@/app/data/priceData';
 import { useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import {
@@ -17,36 +15,52 @@ import {
 import { DraggableItem } from './DraggableItem/DraggableItem';
 import { DragOverlayItem } from './DragOverlayItem/DragOverlayItem';
 import { handleDragEnd, handleDragStart } from './handle';
-import { PRICE_API } from '@/app/utils/API';
-import { IPriceSection } from '@/app/types/IPrice';
+import { fetchPrices } from '@/app/utils/API';
+import { IGroupPrice } from '@/app/types/IPrice';
+import { Error } from '../../Error/Error';
+import { Loading } from '@/app/UI/Loading/Loading';
 
 interface IProps {
   formRef: React.RefObject<HTMLFormElement>;
 }
 
+interface IFormValues {
+  priceList: IGroupPrice[];
+}
+
 export const ListPrice = ({ formRef }: IProps) => {
   // Инициализация состояния
   const [isDraggingItem, setIsDraggingItem] = useState<string>();
+  const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState('');
 
   // Инициализация формы
-  const { getValues, reset, handleSubmit } = useForm({
-    defaultValues: { priceSections: DEFAULT_PRICE_DATA },
+  const { getValues, reset, handleSubmit } = useForm<IFormValues>({
+    defaultValues: { priceList: [] },
   });
 
   // Инициализация данных
   useEffect(() => {
-    PRICE_API.GET().then((data) => {
-      reset({ priceSections: data });
-    });
+    const getPrice = async () => {
+      setIsLoading(true);
+      const response = await fetchPrices();
+      setIsLoading(false);
+      if ('error' in response) return setError(response.error);
+      reset({ priceList: response });
+    };
+    getPrice();
   }, []);
 
   // Обработчик формы
-  const onSubmit = (data: { priceSections: IPriceSection[] }) => {
-    PRICE_API.PUT(data.priceSections);
+  const onSubmit = (data: IFormValues) => {
+    // TODO: Реализовать изменение сортировки
   };
 
   // Данные
-  const data = getValues().priceSections;
+  const data = getValues().priceList;
+
+  if (error) return <Error text={error} />;
+  if (isLoading) return <Loading />;
 
   return (
     <section className={'container'}>
@@ -71,8 +85,8 @@ export const ListPrice = ({ formRef }: IProps) => {
             // Стратегия сортировки - по вертикали
             strategy={verticalListSortingStrategy}
           >
-            {data.map((price: IPriceSection, index: number) => (
-              <DraggableItem key={clsx(index, price.id)} price={price} />
+            {data.map((price: IGroupPrice) => (
+              <DraggableItem key={price.id} price={price} />
             ))}
           </SortableContext>
 

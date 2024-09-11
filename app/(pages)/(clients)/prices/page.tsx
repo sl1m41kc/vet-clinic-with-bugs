@@ -3,7 +3,7 @@ import Hero from '@/app/components/Hero/Hero';
 import Prices from '@/app/components/Prices/Prices';
 import PriceTitle from '@/app/components/PriceTitle/PriceTitle';
 import Vaccines from '@/app/components/Vaccines/Vaccines';
-import { PriceLoading } from '@/app/UI/PriceLoading/PriceLoading';
+import { Loading } from '@/app/UI/Loading/Loading';
 
 export default function Home() {
   return (
@@ -15,7 +15,7 @@ export default function Home() {
         расценками и&nbsp;узнать стоимость консультаций у&nbsp;наших
         специалистов.
       </PriceTitle>
-      <Suspense fallback={<PriceLoading />}>
+      <Suspense fallback={<Loading />}>
         <Prices />
       </Suspense>
       <Vaccines />
