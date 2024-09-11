@@ -14,12 +14,14 @@ import { DeleteButton } from '@/app/UI/DeleteButton/DeleteButton';
 import { MoveButton } from '@/app/UI/MoveButton/MoveButton';
 
 interface IProps<T extends FieldValues> {
+  id: string;
   control: Control<T>; // Тип Control из react-hook-form
   pathToService: FieldPath<T>; // Путь к сервису, тип FieldPath<T>
   remove: UseFieldArrayRemove; // Функция удаления элемента из массива
 }
 
 export const DraggablePriceOption = <T extends FieldValues>({
+  id,
   control,
   pathToService,
   remove,
@@ -33,7 +35,7 @@ export const DraggablePriceOption = <T extends FieldValues>({
     transition,
     isDragging,
   } = useSortable({
-    id: pathToService,
+    id,
     data: {
       pathToService,
     },
@@ -99,6 +101,7 @@ export const DraggablePriceOption = <T extends FieldValues>({
                     type="number"
                     placeholder="Цена"
                     {...field}
+                    onChange={(e) => field.onChange(e.target.value ? Number(e.target.value) : '')} // Парсинг значения как числа
                     className={classes.input}
                   />
                 )}

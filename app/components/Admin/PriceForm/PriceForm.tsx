@@ -79,6 +79,7 @@ export const PriceForm = ({ idPrice, formRef }: IProps) => {
   const onSubmit = async (data: IGroupPrice) => {
     if (idPrice) {
       const response = await fetchUpdatePrice(idPrice, data);
+      console.log(data, response)
       if (response.error) return setError(response.error);
     } else {
       const response = await fetchCreatePrice(data);

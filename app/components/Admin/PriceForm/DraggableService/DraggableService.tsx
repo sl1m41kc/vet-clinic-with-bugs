@@ -168,6 +168,7 @@ export const DraggableService = <T extends FieldValues>({
                     type="number"
                     placeholder="Цена"
                     {...field}
+                    onChange={(e) => field.onChange(e.target.value ? Number(e.target.value) : '')} // Парсинг значения как числа
                     className={classes.input}
                   />
                 )}
@@ -187,9 +188,10 @@ export const DraggableService = <T extends FieldValues>({
             modifiers={[restrictToVerticalAxis, restrictToParentElement]}
           >
             <SortableContext items={fields}>
-              {fields.map((_, index: number) => (
+              {fields.map((priceOption, index: number) => (
                 <DraggablePriceOption
                   key={index + 'nestedPrice'}
+                  id={priceOption.id}
                   control={control}
                   pathToService={
                     `${pathToService}.priceOptions.${index}` as Path<T>
