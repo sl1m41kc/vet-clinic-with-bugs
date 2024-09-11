@@ -21,14 +21,17 @@ export const authOptions: NextAuthOptions = {
           placeholder: 'Password',
         },
       },
-      async authorize() {
-        // TODO: Добавить логику авторизации
-        return {
-          id: '1',
-          name: 'Danil',
-          role: 'ADMIN',
-        } as CustomUser;
-      },
+      async authorize(credentials): Promise<any> {
+        if (!credentials?.email || !credentials.password) return null;
+        if (credentials.email === 'vetlekaradmin@vetlekar' && credentials.password === '868.@123aA') {
+          return {
+            id: '1',
+            name: 'vetlekaradmin',
+            role: 'ADMIN',
+          } as CustomUser;
+        }
+        return null;
+      } 
     }),
   ],
   secret: process.env.SECRET,
