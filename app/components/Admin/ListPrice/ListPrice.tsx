@@ -15,7 +15,7 @@ import {
 import { DraggableItem } from './DraggableItem/DraggableItem';
 import { DragOverlayItem } from './DragOverlayItem/DragOverlayItem';
 import { handleDragEnd, handleDragStart } from './handle';
-import { fetchPrices } from '@/app/utils/API';
+import { fetchPrices, fetchSortListPrice } from '@/app/utils/API';
 import { IGroupPrice } from '@/app/types/IPrice';
 import { Error } from '../../Error/Error';
 import { Loading } from '@/app/UI/Loading/Loading';
@@ -52,8 +52,11 @@ export const ListPrice = ({ formRef }: IProps) => {
   }, []);
 
   // Обработчик формы
-  const onSubmit = (data: IFormValues) => {
-    // TODO: Реализовать изменение сортировки
+  const onSubmit = async (data: IFormValues) => {
+    const idList: string[] = data.priceList.map((item) => item.id);
+    const response = await fetchSortListPrice(idList);
+    if ('error' in response) return setError(response.error);
+    console.log(response)
   };
 
   // Данные

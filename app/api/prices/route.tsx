@@ -14,7 +14,10 @@ export async function GET() {
     if (prices.length === 0) {
       throw new Error();
     }
-    return NextResponse.json(prices, { status: 200 });
+    return NextResponse.json(
+      prices.sort((a, b) => a.sortOrder - b.sortOrder),
+      { status: 200 }
+    );
   } catch {
     return NextResponse.json(
       { error: 'Или цен нет, или произошла ошибка. Попробуйте еще раз' },

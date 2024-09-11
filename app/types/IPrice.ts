@@ -29,6 +29,8 @@ export const GroupPriceSchema = BaseGroupPriceSchema.extend({
   id: z.string(),
 });
 
+export const ListIdSchema = z.array(z.string());
+
 // На основе этих типов создаем интерфейсы (на самом деле типы,
 // но в данном случае это не важно)
 export type IGroupPrice = z.infer<typeof GroupPriceSchema>;

@@ -103,3 +103,24 @@ export async function fetchDeletePrice(id: string) {
     return { error: 'Не удалось подключиться к серверу.' };
   }
 }
+
+export async function fetchSortListPrice(idList: string[]) {
+  try {
+    const response = await fetch(`${BASE_URL}/api/admin/prices/sort`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(idList),
+      next: { revalidate: REVALIDATE_TIME },
+    });
+    if (!response.ok) {
+      // Обработка ошибок HTTP
+      const error = await response.json();
+      return { error: error.error || 'Не удалось получить данные о ценах.' };
+    }
+    // Успешный ответ
+    return await response.json();
+  } catch {
+    // Обработка сетевых ошибок
+    return { error: 'Не удалось подключиться к серверу.' };
+  }
+}
