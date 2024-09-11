@@ -10,6 +10,10 @@ export async function middleware(request: NextRequest) {
   const token = await getToken({ req: request, secret: process.env.SECRET });
   const role = String(token?.role).toUpperCase();
 
+  if(pathname.startsWith('/api/admin')) {
+    if (role !== 'ADMIN') return NextResponse.json({ message: 'Access Denied: You are not an admin.' }, { status: 403 });
+  }
+
   if (pathname.startsWith('/admin')) {
     if (role !== 'ADMIN')
       return NextResponse.redirect(new URL('/login', request.url));
@@ -27,5 +31,8 @@ export async function middleware(request: NextRequest) {
 
 // Укажите путь, для которого middleware должен срабатывать
 export const config = {
-  matcher: ['/((?!api|_next|static|favicon.ico).*)'],
+  matcher: [
+    '/api/:path*', // Добавляем проверку для всех API маршрутов
+    '/((?!_next|static|favicon.ico).*)', // Проверка для всех остальных маршрутов
+  ],
 };
