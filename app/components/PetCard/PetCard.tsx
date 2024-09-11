@@ -1,7 +1,7 @@
-import React from "react";
-import clsx from "clsx";
-import Image, { StaticImageData } from "next/image";
-import Link from "next/link";
+import React from 'react';
+import clsx from 'clsx';
+import Image, { StaticImageData } from 'next/image';
+import Link from 'next/link';
 
 import CircleButton from '@/app/UI/СircleButton/CircleButton';
 

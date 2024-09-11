@@ -23,11 +23,12 @@ import { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import {
   fetchCreatePrice,
+  fetchDeletePrice,
   fetchPriceById,
   fetchUpdatePrice,
 } from '@/app/utils/API';
 import { Modal } from '@/app/components/Modal/Modal';
-import { handleDelete, handleDragEnd, handleDragStart } from './handle';
+import { handleDragEnd, handleDragStart } from './handle';
 import { Loading } from '@/app/UI/Loading/Loading';
 import { Error } from '@/app/components/Error/Error';
 import { DraggableService } from './DraggableService/DraggableService';
@@ -86,6 +87,18 @@ export const PriceForm = ({ idPrice, formRef }: IProps) => {
     router.back();
   };
 
+  // Обработчик удаления раздела
+  const handleDelete = async (idPrice?: string) => {
+    if (idPrice) {
+      const response = await fetchDeletePrice(idPrice);
+      if (response.error) return setError(response.error);
+    }
+    setIsModalOpen(false);
+    document.body.style.overflow = '';
+    reset({ services: [] });
+    router.back();
+  };
+
   // Условия
   const isServices = fields.length > 0;
 
@@ -106,7 +119,7 @@ export const PriceForm = ({ idPrice, formRef }: IProps) => {
           <div className={classes.modal}>
             <h3>Вы уверены что хотите безвозвратно удалить ценовую секцию?</h3>
             <button
-              onClick={() => handleDelete(router, setIsModalOpen, idPrice)}
+              onClick={() => handleDelete(idPrice)}
               className={classes.buttonDelete}
             >
               Удалить

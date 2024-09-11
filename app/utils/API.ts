@@ -83,3 +83,23 @@ export async function fetchUpdatePrice(id: string, data: IGroupPrice) {
     return { error: 'Не удалось подключиться к серверу.' };
   }
 }
+
+export async function fetchDeletePrice(id: string) {
+  try {
+    const response = await fetch(`${BASE_URL}/api/admin/prices/${id}`, {
+      method: 'DELETE',
+      headers: { 'Content-Type': 'application/json' },
+      next: { revalidate: REVALIDATE_TIME },
+    });
+    if (!response.ok) {
+      // Обработка ошибок HTTP
+      const error = await response.json();
+      return { error: error.error || 'Не удалось получить данные о ценах.' };
+    }
+    // Успешный ответ
+    return await response.json();
+  } catch {
+    // Обработка сетевых ошибок
+    return { error: 'Не удалось подключиться к серверу.' };
+  }
+}

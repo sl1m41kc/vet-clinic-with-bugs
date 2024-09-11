@@ -13,10 +13,7 @@ export default function NotFound() {
           Запрашиваемая страница не существует или была удалена.
         </p>
         <p className="text-[1.5em]">
-          Перейти на{' '}
-          <Link href="/">
-            главную страницу
-          </Link>
+          Перейти на <Link href="/">главную страницу</Link>
         </p>
       </div>
       <Link href="/">

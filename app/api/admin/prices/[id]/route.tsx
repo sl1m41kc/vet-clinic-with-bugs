@@ -53,3 +53,33 @@ export async function PUT(request: NextRequest, { params: { id } }: IProps) {
     );
   }
 }
+
+export async function DELETE(_: NextRequest, { params: { id } }: IProps) {
+  try {
+    // Запрашиваем из БД с нужным id.
+    const priceGroup = await prisma.priceList.findUnique({
+      where: {
+        id: id,
+      },
+    });
+    // Если группы цен не существует, выбрасываем ошибку
+    if (!priceGroup) {
+      throw new Error();
+    }
+
+    // Иначе удаляем группу цен из БД
+    await prisma.priceList.delete({
+      where: {
+        id: id,
+      },
+    });
+
+    // Возвращаем
+    return NextResponse.json({ id }, { status: 200 });
+  } catch {
+    return NextResponse.json(
+      { error: 'Такая группа цен не найдена' },
+      { status: 404 }
+    );
+  }
+}
