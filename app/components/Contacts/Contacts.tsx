@@ -1,7 +1,6 @@
 'use client';
 import React from 'react';
 import clsx from 'clsx';
-import Link from 'next/link';
 import useResize from '@/app/hooks/useResize';
 import LocationSVG from '/public/Svg/location.svg';
 import PhoneSVG from '/public/Svg/phone_iphone.svg';
@@ -24,9 +23,9 @@ const Contacts = ({ style }: IProps) => {
             <p>Зорге, 77а</p> <p>Большевистская, 132</p>
           </div>
         </div>
-        <Link className={styles.phone} href="tel:+73832850204">
+        <a className={styles.phone} href="tel:+73832850204">
           <PhoneSVG className={styles.icon} /> +7 (383) 285-02-04
-        </Link>
+        </a>
       </div>
     );
   }
@@ -47,9 +46,9 @@ const Contacts = ({ style }: IProps) => {
           </p>
         </div>
       )}
-      <Link className={styles.phone} href="tel:+73832850204">
+      <a className={styles.phone} href="tel:+73832850204">
         <PhoneSVG className={styles.icon} /> +7 (383) 285-02-04
-      </Link>
+      </a>
     </div>
   );
 };

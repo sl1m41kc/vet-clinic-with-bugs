@@ -54,14 +54,16 @@
   transition: fill 0.3s;
 }
 
-.phone:hover {
-  background-color: var(--clr3);
-  color: var(--clr1);
-  transform: scale(1.05);
-}
-
-.phone:hover .icon {
-  fill: var(--clr1);
+@media (hover: hover) {
+  .phone:hover {
+    background-color: var(--clr3);
+    color: var(--clr1);
+    transform: scale(1.05);
+  }
+  
+  .phone:hover .icon {
+    fill: var(--clr1);
+  }
 }
 
 .phone:active {
@@ -78,7 +80,7 @@
   }
 }
 
-@media (max-width: 768px) {
+/* @media (max-width: 768px) {
   .info.menu {
     flex-direction: row;
     justify-content: space-between;
@@ -92,4 +94,4 @@
     justify-content: none;
     gap: 30px;
   }
-}
+} */

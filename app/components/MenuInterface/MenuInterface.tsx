@@ -10,7 +10,6 @@ import CircleButton from '@/app/UI/СircleButton/CircleButton';
 import LogoSVG from '/public/Svg/logo.svg';
 
 import classes from './menuInterface.module.css';
-import style from '@/app/components/PetCard/petCard.module.css';
 
 const MenuInterface = ({
   isOpen,
@@ -52,7 +51,7 @@ const MenuInterface = ({
         onClick={() => setIsOpen(false)}
       />
       <div className={clsx(classes.menu, isOpen && classes.open)}>
-        <div className={style.button} onClick={() => setIsOpen(false)}>
+        <div className={classes.button} onClick={() => setIsOpen(false)}>
           <CircleButton image="cross" />
         </div>
         <div className={classes.content} onClick={(e) => e.stopPropagation()}>
@@ -69,14 +68,15 @@ const MenuInterface = ({
 
           <ul className={classes.list}>
             {menuNavData.map((item, index) => (
-              <Link
-                key={index}
-                className={classes.item}
-                href={item.href}
-                onClick={() => setIsOpen(false)}
-              >
-                {item.title}
-              </Link>
+              <li key={index} className={classes.item}>
+                <Link
+                  href={item.href}
+                  className={classes.link}
+                  onClick={() => setIsOpen(false)}
+                >
+                  {item.title}
+                </Link>
+              </li>
             ))}
           </ul>
         </div>
