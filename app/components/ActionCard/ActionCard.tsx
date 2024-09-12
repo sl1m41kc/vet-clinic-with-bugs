@@ -9,6 +9,7 @@ interface IProps {
     text: string;
     link: string;
     isBlank?: boolean;
+    isPhone?: boolean;
   };
   phone?: {
     phone: string;
@@ -25,18 +26,18 @@ const ActionCard = ({ title, description, button, phone, SVG }: IProps) => {
         {description && <p className={classes.description}>{description}</p>}
       </div>
       {button && button.text && button.link && (
-        <Link
+        <a
           className={classes.link}
-          href={button.link}
+          href={button.isPhone ? `tel:${button.link}` : button.link}
           target={button.isBlank ? '_blank' : '_self'}
         >
           <ArrowButton text={button.text} isFill={true} />
-        </Link>
+        </a>
       )}
       {phone && (
-        <Link className={classes.link} href={phone.link}>
+        <a className={classes.link} href={phone.link}>
           <p className={classes.phone}>{phone.phone}</p>
-        </Link>
+        </a>
       )}
       {SVG && <div className={classes.svgWrapper}>{SVG}</div>}
     </div>

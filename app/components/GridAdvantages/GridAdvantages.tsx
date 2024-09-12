@@ -39,7 +39,8 @@ const GridAdvantages = () => {
             description="Наши специалисты ответят на&nbsp;все ваши вопросы"
             button={{
               text: 'Записаться',
-              link: '/',
+              isPhone: true,
+              link: '+73832850204',
             }}
           />
         </div>
