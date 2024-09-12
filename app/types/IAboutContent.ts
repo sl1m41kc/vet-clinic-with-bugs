@@ -1,16 +1,20 @@
+import { StaticImageData } from 'next/image';
 import { ReactNode } from 'react';
 
 export interface IAboutContent {
   title: ReactNode;
   content: IContentItem[];
-  image: string;
+  image: {
+    src: StaticImageData;
+    alt: string;
+  };
 }
 
 interface IContentItem {
   title: ReactNode;
   description: ReactNode[];
   image?: {
-    src: string;
+    src: StaticImageData;
     alt: string;
   };
 }

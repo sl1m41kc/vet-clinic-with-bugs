@@ -1,9 +1,13 @@
+import { StaticImageData } from 'next/image';
 import { ReactElement } from 'react';
 
 export interface IServiceGroup {
   title: string;
   description?: ReactElement[];
-  image: string;
+  image?: {
+    src: StaticImageData;
+    alt: string;
+  };
   pathName: string; // название группы в стороке URL
   services: {
     id: number;

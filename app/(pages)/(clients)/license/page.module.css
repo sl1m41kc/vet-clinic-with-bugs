@@ -28,6 +28,8 @@
 
 .license {
   cursor: pointer;
+  width: 300px;
+  height: 100%  ;
   max-width: 300px;
   aspect-ratio: 75/106;
   box-shadow:

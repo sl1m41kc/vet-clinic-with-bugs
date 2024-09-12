@@ -1,11 +1,6 @@
 import { PageTemplate } from '@/app/components/PageTemplate/PageTemplate';
-
 import DoctorSVG from '@/public/Svg/doctor.svg';
-
 import { doctorsData } from '@/app/data/doctorsData';
-
-import { DOCTORS_PATH } from '@/app/Сonstants/pathsConsts';
-
 import classes from './specialist.module.css';
 
 export default function Home({
@@ -24,7 +19,7 @@ export default function Home({
       doctorsData[doctorId].details.doctorAnimalsDescription,
   };
   return (
-    <PageTemplate image={`${DOCTORS_PATH}${doctorsData[doctorId].image}.png`}>
+    <PageTemplate image={doctorsData[doctorId].image}>
       <div className={classes.info}>
         <div className={classes.specialist}>
           {doctorsData[doctorId].post && (

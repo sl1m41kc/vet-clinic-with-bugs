@@ -4,7 +4,6 @@ import Link from 'next/link';
 import { IDoctorCard } from '@/app/types/IDoctorCard';
 import CircleButton from '@/app/UI/СircleButton/CircleButton';
 import classes from './DoctorCard.module.css';
-import { DOCTORS_PATH } from '@/app/Сonstants/pathsConsts';
 
 const DoctorCard = ({
   id,
@@ -12,7 +11,6 @@ const DoctorCard = ({
   fullName,
   professions,
   startWork,
-  alt,
 }: IDoctorCard) => {
   const currentYear = new Date().getFullYear();
 
@@ -27,8 +25,9 @@ const DoctorCard = ({
           <Image
             className={classes.img}
             fill
-            src={`${DOCTORS_PATH}${image}.png`}
-            alt={alt}
+            src={image.src}
+            alt={image.alt}
+            placeholder="blur"
           />
         </div>
         <div className={classes.text}>

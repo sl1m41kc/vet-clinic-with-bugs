@@ -26,6 +26,7 @@ export default function page() {
                   alt={item.image.alt}
                   width={1920}
                   height={1080}
+                  placeholder="blur"
                 />
               )}
             </div>

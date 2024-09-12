@@ -1,12 +1,18 @@
 import { IDoctorCard } from '../types/IDoctorCard';
+import Oleg_Anatolyevich_Teterin from '@/public/Doctors/Oleg_Anatolyevich_Teterin.jpg';
+import Olesya_Borisovna_Teterina from '@/public/Doctors/Olesya_Borisovna_Teterina.jpg';
+import Natalia_Nikolaevna_Sidorova from '@/public/Doctors/Natalia_Nikolaevna_Sidorova.jpg';
+import Anastasia_Vladimirovna_Mayer from '@/public/Doctors/Anastasia_Vladimirovna_Mayer.jpg';
 
 export const doctorsData: IDoctorCard[] = [
   {
-    image: 'Oleg_Anatolyevich_Teterin',
+    image: {
+      src: Oleg_Anatolyevich_Teterin,
+      alt: 'Олег Анатольевич Тетерин',
+    },
     fullName: 'Олег Анатольевич Тетерин',
     professions: 'Главный ветеринарный врач, хирург, ортопед',
     startWork: 1999,
-    alt: '',
     id: 0,
 
     post: 'Ветеринарный врач',
@@ -20,11 +26,13 @@ export const doctorsData: IDoctorCard[] = [
   },
 
   {
-    image: 'Olesya_Borisovna_Teterina',
+    image: {
+      src: Olesya_Borisovna_Teterina,
+      alt: 'Олеся Борисовна Тетерина',
+    },
     fullName: 'Олеся Борисовна Тетерина',
     professions: 'Заведующая терапевтическим отделением, терапевт, дерматолог',
     startWork: 1999,
-    alt: '',
     id: 1,
     details: {
       workDescription:
@@ -36,11 +44,13 @@ export const doctorsData: IDoctorCard[] = [
   },
 
   {
-    image: 'Natalia_Nikolaevna_Sidorova',
+    image: {
+      src: Natalia_Nikolaevna_Sidorova,
+      alt: 'Наталья Николаевна Сидорова',
+    },
     fullName: 'Наталья Николаевна Сидорова',
     professions: 'Ветеринарный врач терапевт, дерматолог',
     startWork: 2007,
-    alt: '',
     id: 2,
     details: {
       workDescription:
@@ -52,11 +62,13 @@ export const doctorsData: IDoctorCard[] = [
   },
 
   {
-    image: 'Anastasia_Vladimirovna_Mayer',
+    image: {
+      src: Anastasia_Vladimirovna_Mayer,
+      alt: 'Анастасия Владимировна Майер',
+    },
     fullName: 'Анастасия Владимировна Майер',
     professions: 'Ветеринарный врач, хирург',
     startWork: 2012,
-    alt: '',
     id: 3,
 
     post: 'Ветеринарный врач',
@@ -68,12 +80,15 @@ export const doctorsData: IDoctorCard[] = [
         'Беспородные кошки Соня и Муся, собаки дратхар Герда и йоркширский терьер Партик. Питаются готовыми рационами Monge и Royal Canin. Дегельминтизация Мильбемакс, обработка от блок и клещей - бравекто.',
     },
   },
+
   {
-    image: 'Oleg_Anatolyevich_Teterin',
+    image: {
+      src: Oleg_Anatolyevich_Teterin,
+      alt: 'Олег Анатольевич Тетерин',
+    },
     fullName: 'Олег Анатольевич Тетерин',
     professions: 'Главный ветеринарный врач, хирург, ортопед',
     startWork: 1999,
-    alt: '',
     id: 0,
 
     post: 'Ветеринарный врач',
@@ -87,11 +102,13 @@ export const doctorsData: IDoctorCard[] = [
   },
 
   {
-    image: 'Olesya_Borisovna_Teterina',
+    image: {
+      src: Olesya_Borisovna_Teterina,
+      alt: 'Олеся Борисовна Тетерина',
+    },
     fullName: 'Олеся Борисовна Тетерина',
     professions: 'Заведующая терапевтическим отделением, терапевт, дерматолог',
     startWork: 1999,
-    alt: '',
     id: 1,
     details: {
       workDescription:
@@ -103,11 +120,13 @@ export const doctorsData: IDoctorCard[] = [
   },
 
   {
-    image: 'Natalia_Nikolaevna_Sidorova',
+    image: {
+      src: Natalia_Nikolaevna_Sidorova,
+      alt: 'Наталья Николаевна Сидорова',
+    },
     fullName: 'Наталья Николаевна Сидорова',
     professions: 'Ветеринарный врач терапевт, дерматолог',
     startWork: 2007,
-    alt: '',
     id: 2,
     details: {
       workDescription:
@@ -119,30 +138,16 @@ export const doctorsData: IDoctorCard[] = [
   },
 
   {
-    image: 'Anastasia_Vladimirovna_Mayer',
+    image: {
+      src: Anastasia_Vladimirovna_Mayer,
+      alt: 'Анастасия Владимировна Майер',
+    },
     fullName: 'Анастасия Владимировна Майер',
     professions: 'Ветеринарный врач, хирург',
     startWork: 2012,
-    alt: '',
     id: 3,
 
     post: 'Ветеринарный врач',
-    details: {
-      workDescription:
-        'С детства мечтала быть врачом, закончила медицинский колледж, но решила, что спасать животных ей больше по душе. Получила высшее ветеринарное образование. Ежегодно посещает Российские и международные конференции, прошла обучение в европейской школе ветеринарной дерматологии, повышение квалификации по ветеринарной дерматологии, практические и теоретические курсы по УЗИ органов брюшной полости.',
-      outWorkDescription: 'Олеся Ивановна прекрасная мама, жена и хозяйка.',
-      doctorAnimalsDescription:
-        'Беспородные кошки Соня и Муся, собаки дратхар Герда и йоркширский терьер Партик. Питаются готовыми рационами Monge и Royal Canin. Дегельминтизация Мильбемакс, обработка от блок и клещей - бравекто.',
-    },
-  },
-
-  {
-    image: 'Natalia_Nikolaevna_Sidorova',
-    fullName: 'Наталья Николаевна Сидорова',
-    professions: 'Ветеринарный врач терапевт, дерматолог',
-    startWork: 2007,
-    alt: '',
-    id: 2,
     details: {
       workDescription:
         'С детства мечтала быть врачом, закончила медицинский колледж, но решила, что спасать животных ей больше по душе. Получила высшее ветеринарное образование. Ежегодно посещает Российские и международные конференции, прошла обучение в европейской школе ветеринарной дерматологии, повышение квалификации по ветеринарной дерматологии, практические и теоретические курсы по УЗИ органов брюшной полости.',

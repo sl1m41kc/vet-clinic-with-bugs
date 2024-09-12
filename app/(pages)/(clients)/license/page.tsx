@@ -18,10 +18,11 @@ export default function page() {
             >
               <Image
                 className={classes.image}
-                src={license.image.path}
+                src={license.image.src}
                 alt={license.image.alt}
                 width={280}
                 height={400}
+                placeholder="blur"
               />
             </Link>
           ))}

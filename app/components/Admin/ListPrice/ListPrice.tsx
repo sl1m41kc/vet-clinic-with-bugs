@@ -67,42 +67,42 @@ export const ListPrice = ({ formRef }: IProps) => {
       {isLoading && <Loading />}
       {!error && !isLoading && (
         <form
-        className={classes.wrapper}
-        // Ссылка на компонент, чтобы в page был доступ к форме и ее могли вызвать при нажатии на "сохранить" в другом компоненте
-        ref={formRef}
-        // Обработчик формы
-        onSubmit={handleSubmit(onSubmit)}
-      >
-        <DndContext
-          onDragStart={(event: DragStartEvent) =>
-            handleDragStart(event, setIsDraggingItem)
-          }
-          onDragEnd={(event: DragEndEvent) =>
-            handleDragEnd(event, getValues, reset, setIsDraggingItem)
-          }
+          className={classes.wrapper}
+          // Ссылка на компонент, чтобы в page был доступ к форме и ее могли вызвать при нажатии на "сохранить" в другом компоненте
+          ref={formRef}
+          // Обработчик формы
+          onSubmit={handleSubmit(onSubmit)}
         >
-          <SortableContext
-            // Передаем список динамических полей в контекст
-            items={data}
-            // Стратегия сортировки - по вертикали
-            strategy={verticalListSortingStrategy}
+          <DndContext
+            onDragStart={(event: DragStartEvent) =>
+              handleDragStart(event, setIsDraggingItem)
+            }
+            onDragEnd={(event: DragEndEvent) =>
+              handleDragEnd(event, getValues, reset, setIsDraggingItem)
+            }
           >
-            {data.map((price: IGroupPrice) => (
-              <DraggableItem key={price.id} price={price} />
-            ))}
-          </SortableContext>
+            <SortableContext
+              // Передаем список динамических полей в контекст
+              items={data}
+              // Стратегия сортировки - по вертикали
+              strategy={verticalListSortingStrategy}
+            >
+              {data.map((price: IGroupPrice) => (
+                <DraggableItem key={price.id} price={price} />
+              ))}
+            </SortableContext>
 
-          <DragOverlay>
-            {isDraggingItem && (
-              <DragOverlayItem
-                price={
-                  data[data.findIndex((price) => price.id === isDraggingItem)]
-                }
-              />
-            )}
-          </DragOverlay>
-        </DndContext>
-      </form>
+            <DragOverlay>
+              {isDraggingItem && (
+                <DragOverlayItem
+                  price={
+                    data[data.findIndex((price) => price.id === isDraggingItem)]
+                  }
+                />
+              )}
+            </DragOverlay>
+          </DndContext>
+        </form>
       )}
     </section>
   );

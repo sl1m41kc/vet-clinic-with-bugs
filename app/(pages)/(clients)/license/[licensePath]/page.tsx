@@ -21,11 +21,12 @@ export default function page({ params: { licensePath } }: IProps) {
         <div className={classes.license}>
           <Image
             className={classes.image}
-            src={activeLicense.image.path}
+            src={activeLicense.image.src}
             alt={activeLicense.image.alt}
             width={1050}
             quality={100}
             height={750}
+            placeholder="blur"
           />
         </div>
       </div>

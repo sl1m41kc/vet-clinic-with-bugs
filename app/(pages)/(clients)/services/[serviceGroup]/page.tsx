@@ -5,7 +5,6 @@ import { scroller } from 'react-scroll';
 import { PageTemplate } from '@/app/components/PageTemplate/PageTemplate';
 import AccordionItem from '@/app/components/AccordionItem/AccordionItem';
 import { servicesData } from '@/app/data/servicesData';
-import { IMAGES_PATH } from '@/app/Сonstants/pathsConsts';
 import classes from './serviceGroup.module.css';
 import React, { useEffect } from 'react';
 
@@ -43,7 +42,7 @@ export default function Home({ params, searchParams }: IProps) {
   }, [serviceActiveId]);
 
   return (
-    <PageTemplate image={`${IMAGES_PATH}${image}.png`}>
+    <PageTemplate image={image!}>
       <div className={classes.content}>
         <h1 className={classes.title}>{title}</h1>
         {description && (

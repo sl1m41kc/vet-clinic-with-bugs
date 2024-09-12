@@ -2,6 +2,7 @@ import HeartSVG from '@/public/Svg/Heart.svg';
 import FlaskSVG from '@/public/Svg/Flask.svg';
 import MedBowlSVG from '@/public/Svg/Med_bowl.svg';
 import { IServiceGroup } from '../types/IServiceGroup';
+import ReceptionDepartmentPhoto from '@/public/Images/receptionDepartment.jpg';
 
 export const servicesData: IServiceGroup[] = [
   {
@@ -118,7 +119,7 @@ export const servicesData: IServiceGroup[] = [
         ],
       },
     ],
-    image: 'receptionDepartment',
+    image: { src: ReceptionDepartmentPhoto, alt: 'Описание фото' },
     pathName: 'polyclinic',
   },
 
@@ -424,7 +425,7 @@ export const servicesData: IServiceGroup[] = [
       },
     ],
     SVG: <HeartSVG />,
-    image: 'receptionDepartment',
+    image: { src: ReceptionDepartmentPhoto, alt: 'Описание фото' },
     pathName: 'surgery',
   },
 
@@ -612,7 +613,7 @@ export const servicesData: IServiceGroup[] = [
       },
     ],
     SVG: <FlaskSVG />,
-    image: 'receptionDepartment',
+    image: { src: ReceptionDepartmentPhoto, alt: 'Описание фото' },
     pathName: 'laboratory',
   },
 
@@ -674,7 +675,7 @@ export const servicesData: IServiceGroup[] = [
         ],
       },
     ],
-    image: 'receptionDepartment',
+    image: { src: ReceptionDepartmentPhoto, alt: 'Описание фото' },
     pathName: 'hospitalization',
   },
 
@@ -879,7 +880,7 @@ export const servicesData: IServiceGroup[] = [
         ],
       },
     ],
-    image: 'receptionDepartment',
+    image: { src: ReceptionDepartmentPhoto, alt: 'Описание фото' },
     pathName: 'diagnostics',
   },
 
@@ -929,7 +930,7 @@ export const servicesData: IServiceGroup[] = [
       },
     ],
     SVG: <MedBowlSVG />,
-    image: 'receptionDepartment',
+    image: { src: ReceptionDepartmentPhoto, alt: 'Описание фото' },
     pathName: 'pharmacy',
   },
 
@@ -972,7 +973,7 @@ export const servicesData: IServiceGroup[] = [
         id: 5,
       },
     ],
-    image: 'receptionDepartment',
+    image: { src: ReceptionDepartmentPhoto, alt: 'Описание фото' },
     pathName: 'petSupplies',
   },
 ];

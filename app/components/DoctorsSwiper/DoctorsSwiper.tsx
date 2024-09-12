@@ -48,7 +48,6 @@ const DoctorsSwiper = () => {
               fullName={doctor.fullName}
               professions={doctor.professions}
               startWork={doctor.startWork}
-              alt={doctor.alt}
               details={{
                 workDescription: '',
                 outWorkDescription: '',

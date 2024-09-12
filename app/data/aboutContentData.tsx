@@ -1,4 +1,6 @@
 import { IAboutContent } from '../types/IAboutContent';
+import OnePhoto from '../../public/Images/about/1.jpg';
+import MainPhoto from '../../public/Images/about/main.jpg';
 
 export const ABOUT_CONTENT_DATA: IAboutContent = {
   title: <>О&nbsp;нашей клинике</>,
@@ -59,7 +61,7 @@ export const ABOUT_CONTENT_DATA: IAboutContent = {
         </>,
       ],
       image: {
-        src: '/Images/about/1.jpg',
+        src: OnePhoto,
         alt: 'Современное оснащение и комплексный подход к лечению',
       },
     },
@@ -77,5 +79,8 @@ export const ABOUT_CONTENT_DATA: IAboutContent = {
       ],
     },
   ],
-  image: '/Images/about/main.jpg',
+  image: {
+    src: MainPhoto,
+    alt: 'О нашей клинике',
+  },
 };

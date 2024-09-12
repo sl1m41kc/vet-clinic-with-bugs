@@ -25,7 +25,6 @@ const Services = () => {
             title={service.title}
             services={service.services}
             SVG={service.SVG}
-            image={''}
             pathName={service.pathName}
           />
         ))}

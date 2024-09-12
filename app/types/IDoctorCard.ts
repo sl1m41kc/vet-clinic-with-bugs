@@ -1,3 +1,5 @@
+import { StaticImageData } from 'next/image';
+
 interface IDetails {
   workDescription: string;
   outWorkDescription: string;
@@ -6,12 +8,13 @@ interface IDetails {
 
 export interface IDoctorCard {
   id: number;
-  image: string;
+  image: {
+    src: StaticImageData;
+    alt: string;
+  };
   fullName: string;
   professions: string;
   post?: string;
   startWork: number;
-  alt: string;
-
   details: IDetails;
 }
