@@ -29,7 +29,6 @@
 
   width: 100%;
   max-width: 300px;
-  max-height: 300px;
 
   aspect-ratio: 1/1;
 
@@ -97,5 +96,9 @@
     .card {
         max-width: 340px;
         height: 550px;
+    }
+
+    .avatar {
+      max-width: 250px;
     }
 }
