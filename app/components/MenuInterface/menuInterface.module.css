@@ -78,7 +78,7 @@
 
 .item {
   font-size: 1.125em;
-  line-height: 1em;
+  line-height: 1.13em;
   width: 100%;
   border-bottom: 1px solid var(--clr4);
   cursor: pointer;
