@@ -20,6 +20,7 @@
 
 @font-face {
   font-family: 'Montserrat';
+  font-display: swap;
   src: url('./fonts/Montserrat-VariableFont.woff2') format('woff2');
 }
 
@@ -28,7 +29,7 @@ body {
   flex-direction: column;
   justify-content: space-between;
   height: 100vh;
-  font-family: 'Montserrat';
+  font-family: 'Montserrat', sans-serif, Arial;
   font-size: 16px;
 }
 

@@ -21,9 +21,12 @@ export const authOptions: NextAuthOptions = {
           placeholder: 'Password',
         },
       },
-      async authorize(credentials): Promise<any> {
+      async authorize(credentials): Promise<CustomUser | null> {
         if (!credentials?.email || !credentials.password) return null;
-        if (credentials.email === 'vetlekaradmin@vetlekar' && credentials.password === '868.@123aA') {
+        if (
+          credentials.email === 'vetlekaradmin@vetlekar' &&
+          credentials.password === '868.@123aA'
+        ) {
           return {
             id: '1',
             name: 'vetlekaradmin',
@@ -31,7 +34,7 @@ export const authOptions: NextAuthOptions = {
           } as CustomUser;
         }
         return null;
-      } 
+      },
     }),
   ],
   secret: process.env.SECRET,

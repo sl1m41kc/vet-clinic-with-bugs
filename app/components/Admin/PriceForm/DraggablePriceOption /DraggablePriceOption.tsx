@@ -101,7 +101,11 @@ export const DraggablePriceOption = <T extends FieldValues>({
                     type="number"
                     placeholder="Цена"
                     {...field}
-                    onChange={(e) => field.onChange(e.target.value ? Number(e.target.value) : '')} // Парсинг значения как числа
+                    onChange={(e) =>
+                      field.onChange(
+                        e.target.value ? Number(e.target.value) : ''
+                      )
+                    } // Парсинг значения как числа
                     className={classes.input}
                   />
                 )}

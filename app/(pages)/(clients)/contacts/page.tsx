@@ -6,6 +6,7 @@ import ADogSVG from '@/public/Svg/aDog.svg';
 import ActionCard from '@/app/components/ActionCard/ActionCard';
 import clsx from 'clsx';
 import { AddressCard } from '@/app/components/AddressCard/AddressCard';
+import { LazyMapIframe } from '@/app/components/LazyMapIframe/LazyMapIframe';
 
 export default function page() {
   const ACTION_CARD_DATA = [
@@ -124,10 +125,9 @@ export default function page() {
             <AddressCard {...card} />
           </div>
         ))}
-        <iframe
-          className={classes.map}
-          src="https://yandex.ru/map-widget/v1/?um=constructor%3A7369060039cd0e80c294a106e855a50e053215a86afca235bac488aca89e6a93&amp;source=constructor"
-        />
+        <div className={classes.map}>
+          <LazyMapIframe />
+        </div>
       </div>
     </section>
   );

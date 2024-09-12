@@ -17,8 +17,8 @@ import { DragOverlayItem } from './DragOverlayItem/DragOverlayItem';
 import { handleDragEnd, handleDragStart } from './handle';
 import { fetchPrices, fetchSortListPrice } from '@/app/utils/API';
 import { IGroupPrice } from '@/app/types/IPrice';
-import { Error } from '../../Error/Error';
 import { Loading } from '@/app/UI/Loading/Loading';
+import { Error } from '@/app/UI/Error/Error';
 
 interface IProps {
   formRef: React.RefObject<HTMLFormElement>;
@@ -56,18 +56,17 @@ export const ListPrice = ({ formRef }: IProps) => {
     const idList: string[] = data.priceList.map((item) => item.id);
     const response = await fetchSortListPrice(idList);
     if ('error' in response) return setError(response.error);
-    console.log(response)
   };
 
   // Данные
   const data = getValues().priceList;
 
-  if (error) return <Error text={error} />;
-  if (isLoading) return <Loading />;
-
   return (
     <section className={'container'}>
-      <form
+      {error && <Error text={error} />}
+      {isLoading && <Loading />}
+      {!error && !isLoading && (
+        <form
         className={classes.wrapper}
         // Ссылка на компонент, чтобы в page был доступ к форме и ее могли вызвать при нажатии на "сохранить" в другом компоненте
         ref={formRef}
@@ -104,6 +103,7 @@ export const ListPrice = ({ formRef }: IProps) => {
           </DragOverlay>
         </DndContext>
       </form>
+      )}
     </section>
   );
 };

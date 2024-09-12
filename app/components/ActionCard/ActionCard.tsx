@@ -1,5 +1,4 @@
 import ArrowButton from '@/app/UI/ArrowButton/ArrowButton';
-import Link from 'next/link';
 import classes from './ActionCard.module.css';
 
 interface IProps {

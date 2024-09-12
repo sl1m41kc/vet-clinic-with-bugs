@@ -30,7 +30,7 @@ export async function POST(request: NextRequest) {
   const prices = await prisma.priceList.findMany();
   if (prices.length === 0) {
     return NextResponse.json(
-      { error: "Не найдено ни одной цены" },
+      { error: 'Не найдено ни одной цены' },
       { status: 400 }
     );
   }

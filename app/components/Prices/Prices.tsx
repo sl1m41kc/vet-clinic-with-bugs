@@ -5,11 +5,11 @@ import { fetchPrices } from '@/app/utils/API';
 import classes from './prices.module.css';
 import type { IGroupPrice } from '@/app/types/IPrice';
 import type { IError } from '@/app/types/IError';
-import { Error } from '../Error/Error';
+import { Error } from '@/app/UI/Error/Error';
 
 const Prices = async () => {
   const prices: IGroupPrice[] | IError = await fetchPrices();
-  if ('error' in prices) return <Error text={prices.error} />;
+  if ('error' in prices) return <section className='container'><Error text={prices.error} /></section>;
 
   return (
     <section className="container">
