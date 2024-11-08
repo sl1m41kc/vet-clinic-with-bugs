@@ -81,18 +81,3 @@
   }
 }
 
-/* @media (max-width: 768px) {
-  .info.menu {
-    flex-direction: row;
-    justify-content: space-between;
-    width: 100%;
-  }
-}
-
-@media (max-width: 530px) {
-  .info.menu {
-    flex-direction: column;
-    justify-content: none;
-    gap: 30px;
-  }
-} */
