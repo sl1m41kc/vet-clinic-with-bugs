@@ -13,15 +13,6 @@
   object-fit: cover;
 }
 
-.blackout {
-  position: absolute;
-
-    inset: 0;
-
-  background: linear-gradient(to right, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0));
-  z-index: 1;
-}
-
 .description {
   display: flex;
   flex-direction: column;

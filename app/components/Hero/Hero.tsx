@@ -8,12 +8,11 @@ const Hero = () => {
   return (
     <section className="container">
       <div className={styles.hero}>
-        <div className={styles.blackout} />
         <Image
           className={styles.img}
           fill
           src={hero}
-          alt="собака бежит на фоне парка"
+          alt="собака лежит на фоне парка"
           priority
           placeholder="blur"
         />
