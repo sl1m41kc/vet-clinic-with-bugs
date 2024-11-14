@@ -59,6 +59,12 @@ ul {
   padding-right: 20px;
 }
 
+@media (min-width: 1440px) {
+  .container {
+    padding-inline: 0;
+  }
+}
+
 @media (max-width: 1030px) {
   body {
     font-size: 14px;
