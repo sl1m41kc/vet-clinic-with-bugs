@@ -1,6 +1,6 @@
 import './globals.css';
 import type { Metadata } from 'next';
-
+import { montserrat } from './fonts/fonts';
 import { headers } from 'next/headers';
 import { AdminLayout } from './layouts/AdminLayout';
 import { FrontLayout } from './layouts/FrontLayout';
@@ -36,7 +36,7 @@ export default async function RootLayout({
       <head>
         <link rel="icon" href="/favicon.ico" />
       </head>
-      <body>
+      <body className={montserrat.variable}>
         <LayoutComponent>{children}</LayoutComponent>
       </body>
     </html>

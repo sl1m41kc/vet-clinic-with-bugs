@@ -18,18 +18,12 @@
   --clr13: rgba(255, 226, 221, 0.2);
 }
 
-@font-face {
-  font-family: 'Montserrat';
-  font-display: swap;
-  src: url('./fonts/Montserrat-VariableFont.woff2') format('woff2');
-}
-
 body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   height: 100vh;
-  font-family: 'Montserrat', sans-serif, Arial;
+  font-family: var(--font-montserrat);
   font-size: 16px;
 }
 
