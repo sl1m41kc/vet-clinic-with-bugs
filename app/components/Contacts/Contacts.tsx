@@ -23,7 +23,7 @@ const Contacts = ({ style }: IProps) => {
             <p>Зорге, 77а</p> <p>Большевистская, 132</p>
           </div>
         </div>
-        <a className={styles.phone} href="tel:+73832850204">
+        <a className={styles.phone} href="/">
           <PhoneSVG className={styles.icon} /> +7 (383) 285-02-04
         </a>
       </div>

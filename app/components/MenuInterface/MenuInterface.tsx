@@ -48,7 +48,6 @@ const MenuInterface = ({
     <>
       <div
         className={clsx(classes.blackout, isOpen && classes.active)}
-        onClick={() => setIsOpen(false)}
       />
       <div className={clsx(classes.menu, isOpen && classes.open)}>
         <div className={classes.button} onClick={() => setIsOpen(false)}>

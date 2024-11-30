@@ -19,6 +19,16 @@
   transform: translateX(0);
 }
 
+@media (max-width: 400px) {
+  .menu.open {
+    transform: translateX(-100%);
+  }
+
+  .blackout {
+    display: none;
+  }
+}
+
 .blackout {
   position: absolute;
   top: 0;
@@ -87,7 +97,7 @@
 
 .link {
   display: block;
-  padding: 20px;
+  padding: 15px;
   text-decoration: none;
 }
 

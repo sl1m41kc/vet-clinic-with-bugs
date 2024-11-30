@@ -42,7 +42,7 @@
 .svgWrapper {
   position: absolute;
   bottom: 0;
-  right: 0;
+  right: 30px;
   fill: var(--clr3);
   z-index: -1;
 }

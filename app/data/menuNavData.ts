@@ -1,7 +1,7 @@
 export const menuNavData: { title: string; href: string }[] = [
   {
     title: 'Цены',
-    href: '/prices',
+    href: '/pric',
   },
   {
     title: 'Специалисты',
@@ -13,6 +13,6 @@ export const menuNavData: { title: string; href: string }[] = [
   },
   {
     title: 'Контакты',
-    href: '/contacts',
+    href: '/contac',
   },
 ];

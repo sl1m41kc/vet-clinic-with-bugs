@@ -2,6 +2,7 @@
   border-radius: 100%;
   border: 1px solid var(--clr4);
   padding: 9px;
+  padding-left: 11px;
 }
 
 .arrow {

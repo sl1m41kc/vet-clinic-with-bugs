@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 :root {
-  --clr1: #12305c;
+  --clr1: #0e264b;
   --clr2: white;
   --clr3: #dbe4f0;
   --clr4: rgba(18, 48, 92, 0.2);
@@ -29,7 +29,6 @@ body {
 
 /* Typography */
 a {
-  text-decoration: underline;
   text-decoration-style: solid;
   text-decoration-color: var(--clr4);
   text-underline-offset: 0.4em;
@@ -41,7 +40,7 @@ ul {
 
 .container {
   width: min(1400px, 100%);
-  margin-inline: auto;
+  margin-inline: 10px 10px;
   padding-inline: 20px;
 }
 

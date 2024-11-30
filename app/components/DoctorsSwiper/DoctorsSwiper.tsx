@@ -25,7 +25,6 @@ const DoctorsSwiper = () => {
         spaceBetween={20}
         modules={[Navigation]}
         navigation={{
-          prevEl: '.doctorSwiper-btn-prev',
           nextEl: '.doctorSwiper-btn-next',
         }}
         breakpoints={{

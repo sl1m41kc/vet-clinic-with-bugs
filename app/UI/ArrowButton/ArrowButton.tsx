@@ -19,7 +19,7 @@ const ArrowButton = ({ text, isFill }: IProps) => {
       )}
     >
       {text}
-      <ArrowSVG className={styles.icon} />
+      
     </button>
   );
 };

@@ -27,7 +27,7 @@
 
 .title {
   font-size: 2em;
-  font-weight: 500;
+  font-weight: 400;
   line-height: 1em;
 }
 
@@ -47,7 +47,7 @@
 .image {
   position: absolute;
   bottom: 0;
-  right: 0;
+  right: 50px;
 }
 
 .reverse_image {
